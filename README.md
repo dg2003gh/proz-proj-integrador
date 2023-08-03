@@ -1,6 +1,9 @@
-# Projeto Integrador - Site para Avaliar a Acessibilidade de Estabelecimentos
+# Projeto Integrador - Site Acessuratio
 
-**Envolvidos:**
+## Objetivo
+Nosso site objetiva valiar a Acessibilidade de Estabelecimentos
+
+**Desenvolvedores:**
 
 [Douglas Guimarães](https://github.com/dg2003gh)
 
