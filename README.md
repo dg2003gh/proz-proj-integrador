@@ -8,6 +8,12 @@ Recentemente, Pedro sofreu um acidente que imobilizou suas pernas. Além do impa
 
 Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços acessíveis. Ele então acessa o link é levado para um site que exibe diversos locais que estão preparados para proporcionar o que ele tanto desejava, um lugares onde ele não precisaria pedir a ninguém uma "ajudinha".
 
+|Desenvolvedores                |Redes Sociais|
+-------------------------------
+|![David](fotos-devs/foto_David)|             |
+
+
+
 **Desenvolvedores:**
 
 [Douglas Guimarães](https://github.com/dg2003gh)
