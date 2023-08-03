@@ -1,7 +1,7 @@
 # Projeto Integrador - Site Acessuratio
 
 ## Objetivo
-Nosso site objetiva valiar a Acessibilidade de Estabelecimentos
+Nosso site objetiva ajudar pessoas com deficiência a encontrar estabelecimentos que possam lhes proporcionar conforto e independência. Também almejamos contribuir para a divulcação de estabelecimentos acessíveis, para que estes possam atrair clientes com necessídades especiais. Dessa forma, podemos incentivar que mais e mais empresas e estabelecimentos adodem a acessibilidade. 
 
 **Desenvolvedores:**
 
