@@ -11,7 +11,7 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 |Desenvolvedores                                |Nomes                                                |
 |-----------------------------------------------|-----------------------------------------------------|
 |![Foto do David](arqs/foto-devs/foto_David.png)|[David Shelton](https://github.com/DavidSheltonSF)   |
-|![Foto do David](arqs/foto-devs/foto_David.png)|[Douglas Gabriel](https://github.com/dg2003gh)       |
-|![Foto do David](arqs/foto-devs/foto_David.png)|[Elisângela Rosa](https://github.com/ElisangelaRosa) |
-|![Foto do David](arqs/foto-devs/foto_David.png)|[Isabelle Flauzino]((https://github.com/IsaFlauzin0))|
+|![Foto do David](arqs/foto-devs/img_silhueta.jpg)|[Douglas Gabriel](https://github.com/dg2003gh)       |
+|![Foto do David](arqs/foto-devs/img_silhueta.jpg)|[Elisângela Rosa](https://github.com/ElisangelaRosa) |
+|![Foto do David](arqs/foto-devs/img_silhueta.jpg)|[Isabelle Flauzino]((https://github.com/IsaFlauzin0))|
 |![Foto do Rafael](arqs/foto-devs/foto_Rafael.png)|[Rafael S. Frazão](https://github.com/rafaelsfrazao) |
