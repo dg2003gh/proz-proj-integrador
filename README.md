@@ -10,7 +10,7 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 
 |Desenvolvedores                |Redes Sociais|
 -------------------------------
-|![David](fotos-devs/foto_David)|             |
+|![David](fotos-devs/foto_David.png)|             |
 
 
 
