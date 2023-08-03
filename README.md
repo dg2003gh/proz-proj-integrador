@@ -8,13 +8,13 @@ Recentemente, Pedro sofreu um acidente que imobilizou suas pernas. Além do impa
 
 Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços acessíveis. Ele então acessa o link é levado para um site que exibe diversos locais que estão preparados para proporcionar o que ele tanto desejava, um lugares onde ele não precisaria pedir a ninguém uma "ajudinha".
 
-|Desenvolvedores                            |Nomes            |Redes Sociais                                                        |
-|-------------------------------------------|-----------------|---------------------------------------------------------------------|
-|![Foto do David](fotos-devs/foto_David.png)|David Shelton    |[![Foto do David](fotos-devs/foto_David.png)](https://www.google.com)|
-|![Foto do David](fotos-devs/foto_David.png)|Douglas Gabriel  |[![Foto do David](fotos-devs/foto_David.png)](https://www.google.com)|
-|![Foto do David](fotos-devs/foto_David.png)|Elisângela Rosa  |[![Foto do David](fotos-devs/foto_David.png)](https://www.google.com)|
-|![Foto do David](fotos-devs/foto_David.png)|Isabelle Flauzino|[![Foto do David](fotos-devs/foto_David.png)](https://www.google.com)|
-|![Foto do David](fotos-devs/foto_David.png)|Rafael           |[![Foto do David](fotos-devs/foto_David.png)](https://www.google.com)|
+|Desenvolvedores                                |Nomes            |Redes Sociais                                                     |
+|-----------------------------------------------|-----------------|------------------------------------------------------------------|
+|![Foto do David](arqs/foto-devs/foto_David.png)|David Shelton    |[![Foto do David](arqs/icones/github.png)](https://www.google.com)|
+|![Foto do David](arqs/foto-devs/foto_David.png)|Douglas Gabriel  |[![Foto do David](arqs/icones/github.png)](https://www.google.com)|
+|![Foto do David](arqs/foto-devs/foto_David.png)|Elisângela Rosa  |[![Foto do David](arqs/icones/github.png)](https://www.google.com)|
+|![Foto do David](arqs/foto-devs/foto_David.png)|Isabelle Flauzino|[![Foto do David](arqs/icones/github.png)](https://www.google.com)|
+|![Foto do David](arqs/foto-devs/foto_David.png)|Rafael           |[![Foto do David](arqs/icones/github.png)](https://www.google.com)|
 
 
 
