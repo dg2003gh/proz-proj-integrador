@@ -1,3 +1,4 @@
+----
 <style>
     img.foto{
         width:120px;
@@ -7,6 +8,7 @@
         width:114px;
         height: 35px
     }
+----
 </style>
 
 # Projeto Integrador - Site Acessuratio
