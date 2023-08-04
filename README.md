@@ -17,4 +17,9 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 |<img class="foto" src="arqs/foto_Douglas.jpg" width="120px" height="120px">|Douglas Gabriel  |<a href="https://github.com/dg2003gh"><img src="arqs/github.png" width="114px" height="35px"></a>      |<a href="https://www.linkedin.com/in/douglas-guimar%C3%A3es-691241263"><img src="arqs/linkedin.png" width="114px" height="35px"></a>    |
 |<img class="foto" src="arqs/foto_Elis.png" width="120px" height="120px">   |Elisângela Rosa  |<a href="https://github.com/ElisangelaRosa"><img src="arqs/github.png" width="114px" height="35px"></a>|<a href="https://www.linkedin.com/in/elis%C3%A2ngela-maria-rosa-da-silva/"><img src="arqs/linkedin.png" width="114px" height="35px"></a>|
 |<img class="foto" src="arqs/foto_Isa.jpg" width="120px" height="120px">    |Isabella Flauzino|<a href="https://github.com/IsaFlauzin0"><img src="arqs/github.png" width="114px" height="35px"></a>   |<a href="https://www.linkedin.com/in/isabellaflauzino/"><img src="arqs/linkedin.png" width="114px" height="35px"></a>                   |
-|<img class="foto" src="arqs/foto_Rafael.png" width="120px" height="120px"> |Rafael S. Frazão |<a href="https://github.com/rafaelsfrazao"><img src="arqs/github.png" width="114px" height="35px"></a> |<a href="https://www.linkedin.com/in/rafael-fraz%C3%A3o-b8aa38197/"><img src="arqs/linkedin.png" width="114px" height="35px"></a>       |
+|<img class="foto" src="arqs/foto_Rafael.png" width="120px" height="120px"> |Rafael S. Frazão |<a href="https://github.com/rafaelsfrazao"><img src="arqs/github.png" width="114px" height="35px"></a> |<a href="https://www.linkedin.com/in/rafael-fraz%C3%A3o-b8aa38197/"><img src="arqs/linkedin.png" width="114px" height="35px"></a> 
+
+
+
+*Icones*
+<a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Pixel perfect - Flaticon</a>      |
