@@ -8,10 +8,10 @@ Recentemente, Pedro sofreu um acidente que imobilizou suas pernas. Além do impa
 
 Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços acessíveis. Ele então acessa o link, eg é levado para um site que exibe diversos locais que estão preparados para proporcionar o que ele tanto desejava, um lugares onde ele não precisaria pedir a ninguém uma "ajudinha".
 
-|Desenvolvedores                                |Nomes                                                |
-|-----------------------------------------------|-----------------------------------------------------|
-|![Foto do David](arqs/foto-devs/foto_David.png)|[David Shelton](https://github.com/DavidSheltonSF)   |
+|Desenvolvedores                                    |Nomes                                                |
+|:-------------------------------------------------:|-----------------------------------------------------|
+|![Foto do David](arqs/foto-devs/foto_David.png)    |[David Shelton](https://github.com/DavidSheltonSF)   |
 |![Foto do Douglas](arqs/foto-devs/foto_Douglas.jpg)|[Douglas Gabriel](https://github.com/dg2003gh)       |
 |![Foto da Elisângela](arqs/foto-devs/foto_Elis.png)|[Elisângela Rosa](https://github.com/ElisangelaRosa) |
-|![Foto da Isabella](arqs/foto-devs/foto_Isa.png)|[Isabella Flauzino](https://github.com/IsaFlauzin0)|
-|![Foto do Rafael](arqs/foto-devs/foto_Rafael.png)|[Rafael S. Frazão](https://github.com/rafaelsfrazao) |
+|![Foto da Isabella](arqs/foto-devs/foto_Isa.png)   |[Isabella Flauzino](https://github.com/IsaFlauzin0)  |
+|![Foto do Rafael](arqs/foto-devs/foto_Rafael.png)  |[Rafael S. Frazão](https://github.com/rafaelsfrazao) |
