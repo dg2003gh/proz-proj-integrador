@@ -21,5 +21,6 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 
 
 
-*Icones*
+### *Icones*
+
 <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Pixel perfect - Flaticon</a>      |
