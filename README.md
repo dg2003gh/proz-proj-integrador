@@ -8,9 +8,8 @@
         width:114px;
         height: 35px
     }
+</style>git 
 ----
-</style>
-
 # Projeto Integrador - Site Acessuratio
 
 ## Objetivo
@@ -24,8 +23,8 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 
 |Desenvolvedores                               |Nomes            |Github                                                                                   | Linkedin                                                                                                                 | 
 |:--------------------------------------------:|-----------------|:---------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------:|
-|<img class="foto" src="arqs/foto_David.png">  |David Shelton    |<a href="https://github.com/DavidSheltonSF"><img class="icone" src="arqs/github.png"></a>|<a href="https://www.linkedin.com/in/davidsheltonsf/"><img class="icone" src="arqs/linkedin.png"></a>                     |
-|<img class="foto" src="arqs/foto_Douglas.jpg">|Douglas Gabriel  |<a href="https://github.com/dg2003gh"><img class="icone" src="arqs/github.png"></a>      |<a href="https://www.linkedin.com/in/douglas-guimar%C3%A3es-691241263"><img class="icone" src="arqs/linkedin.png"></a>    |
-|<img class="foto" src="arqs/foto_Elis.png">   |Elisângela Rosa  |<a href="https://github.com/ElisangelaRosa"><img class="icone" src="arqs/github.png"></a>|<a href="https://www.linkedin.com/in/elis%C3%A2ngela-maria-rosa-da-silva/"><img class="icone" src="arqs/linkedin.png"></a>|
-|<img class="foto" src="arqs/foto_Isa.jpg">    |Isabella Flauzino|<a href="https://github.com/IsaFlauzin0"><img class="icone" src="arqs/github.png"></a>   |<a href="https://www.linkedin.com/in/isabellaflauzino/"><img class="icone" src="arqs/linkedin.png"></a>                   |
-|<img class="foto" src="arqs/foto_Rafael.png"> |Rafael S. Frazão |<a href="https://github.com/rafaelsfrazao"><img class="icone" src="arqs/github.png"></a> |<a href="https://www.linkedin.com/in/rafael-fraz%C3%A3o-b8aa38197/"><img class="icone" src="arqs/linkedin.png"></a>       |
+|<img class="foto" src="arqs/foto_David.png" width="120px" height="120px">  |David Shelton    |<a href="https://github.com/DavidSheltonSF"><img class="icone" src="arqs/github.png"></a>|<a href="https://www.linkedin.com/in/davidsheltonsf/"><img class="icone" src="arqs/linkedin.png"></a>                     |
+|<img class="foto" src="arqs/foto_Douglas.jpg" width="120px" height="120px">|Douglas Gabriel  |<a href="https://github.com/dg2003gh"><img class="icone" src="arqs/github.png"></a>      |<a href="https://www.linkedin.com/in/douglas-guimar%C3%A3es-691241263"><img class="icone" src="arqs/linkedin.png"></a>    |
+|<img class="foto" src="arqs/foto_Elis.png" width="120px" height="120px">   |Elisângela Rosa  |<a href="https://github.com/ElisangelaRosa"><img class="icone" src="arqs/github.png"></a>|<a href="https://www.linkedin.com/in/elis%C3%A2ngela-maria-rosa-da-silva/"><img class="icone" src="arqs/linkedin.png"></a>|
+|<img class="foto" src="arqs/foto_Isa.jpg" width="120px" height="120px">    |Isabella Flauzino|<a href="https://github.com/IsaFlauzin0"><img class="icone" src="arqs/github.png"></a>   |<a href="https://www.linkedin.com/in/isabellaflauzino/"><img class="icone" src="arqs/linkedin.png"></a>                   |
+|<img class="foto" src="arqs/foto_Rafael.png" width="120px" height="120px"> |Rafael S. Frazão |<a href="https://github.com/rafaelsfrazao"><img class="icone" src="arqs/github.png"></a> |<a href="https://www.linkedin.com/in/rafael-fraz%C3%A3o-b8aa38197/"><img class="icone" src="arqs/linkedin.png"></a>       |
