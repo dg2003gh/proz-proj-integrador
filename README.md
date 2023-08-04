@@ -12,6 +12,6 @@ Navegando na internet, Pedro vê uma publicação no Instagram sobre espaços ac
 |-----------------------------------------------|-----------------------------------------------------|
 |![Foto do David](arqs/foto-devs/foto_David.png)|[David Shelton](https://github.com/DavidSheltonSF)   |
 |![Foto do Douglas](arqs/foto-devs/foto_Douglas.jpg)|[Douglas Gabriel](https://github.com/dg2003gh)       |
-|![Foto do Eisângela](arqs/foto-devs/foto_Elis.png)|[Elisângela Rosa](https://github.com/ElisangelaRosa) |
-|![Foto do David](arqs/foto-devs/foto_Isa.png)|[Isabelle Flauzino]((https://github.com/IsaFlauzin0))|
+|![Foto da Elisângela](arqs/foto-devs/foto_Elis.png)|[Elisângela Rosa](https://github.com/ElisangelaRosa) |
+|![Foto da Isabella](arqs/foto-devs/foto_Isa.png)|[Isabella Flauzino](https://github.com/IsaFlauzin0)|
 |![Foto do Rafael](arqs/foto-devs/foto_Rafael.png)|[Rafael S. Frazão](https://github.com/rafaelsfrazao) |
