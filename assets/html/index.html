@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,191 +7,134 @@
   </head>
   <body>
     <header>
-      <img src="" alt="ícone do site" /><input
-        type="text"
-        placeholder="Pesquisar estabelecimentos..."
-      />
-      <button><i></i></button>
+      <img src="" alt="website icon" />
+      <input type="text" placeholder="Search establishments..." />
+      <button id="header_search_button"><i></i></button>
     </header>
     <main>
       <form id="login_modal">
-        <label for="usuario_login">Usuário</label>
+        <label for="user_input_login_modal">User</label>
         <input
-          id="usuario_login"
+          id="user_input_login_modal"
           type="text"
-          placeholder="Digite seu usuário..."
+          placeholder="Enter your username..."
         />
-        <label for="senha_login">Senha</label>
-        <input id="senha_login" type="text" placeholder="Digite sua senha..." />
-        <button>Login</button>
-        <a href="">Esqueceu a senha?</a>
+        <label for="password_input_login_modal">Password</label>
+        <input
+          id="password_input_login_modal"
+          type="text"
+          placeholder="Enter your password..."
+        />
+        <button id="submit_login_modal" type="submit">Login</button>
+        <a href="">forgot your password?</a>
       </form>
-      <form id="email_esqueci_senha_modal">
+      <form id="recover_password_modal">
         <h2>
-          Para recuperarmos sua senha enviaremos um link de recuperação para seu
-          E-mail.
+          In order for us to recover your password, we will send a recovery link
+          to your email.
         </h2>
-        <label for="email_esqueci_senha">E-mail</label>
+        <label for="email_input_recover_password_modal">Email</label>
         <input
-          id="email_esqueci_senha"
+          id="email_input_recover_password_modal"
           type="text"
-          placeholder="Digite sua e-mail..."
+          placeholder="Enter your email..."
         />
-        <button>Enviar e-mail</button>
+        <button id="submit_recover_password_modal">send email</button>
       </form>
-      <form id="nova_senha_modal">
-        <h2>E-mail confirmado, digite sua nova senha!</h2>
-        <label for="input_senha_nova_senha">Senha</label>
+      <form id="new_password_modal">
+        <h2>Email confirmed, enter your new password!</h2>
+        <label for="password_input_new_password_modal">password</label>
         <input
-          id="input_senha_nova_senha"
+          id="password_input_new_password_modal"
           type="text"
-          placeholder="Digite sua senha.."
+          placeholder="Enter your password.."
         />
-        <label for="input_senha_verificar_nova_senha">Verificar senha</label>
+        <label for="retype_password_input_new_password_modal">
+          check password
+        </label>
         <input
-          id="input_senha_verificar_nova_senha"
+          id="retype_password_input_new_password_modal"
           type="text"
-          placeholder="Re-digite sua senha..."
+          placeholder="Retype your password..."
         />
-        <textarea id="nova_senha_texto_erro" disabled>
-            Campo de válidação caso algum dado 
-            esteja incorreto! escondido por padrão.
-             </textarea
-        >
-        <button>Salvar</button>
+        <textarea id="error_field_new_password_modal" disabled>
+              Validation field if any data
+              are exempt! hidden by default.
+        </textarea>
+        <button type="send" id="save_button_new_password_modal">To save</button>
       </form>
-      <form id="como_registrar_modal">
-        <h2>Deseja se registrar como:</h2>
-        <button>estabelecimento</button>
-        <button>Usuário</button>
+      <form id="register_type_modal">
+        <h2>Would you like to register as:</h2>
+        <button id="establishment_button_register_type_modal">
+          establishment
+        </button>
+        <button id="user_register_button_type_modal">User</button>
       </form>
-      <form id="estabelecimento_modal">
-        <img src="" alt="Foto_usuário" />
-        <label for="nome_estabelecimento">Nome</label>
+      <form id="modal_establishment">
+        <img id="establishment_photo" src="" alt="Establishment photo" />
+        <label for="name_input_establishment_modal">Name</label>
         <input
-          id="nome_estabelecimento"
+          id="name_input_establishment_modal"
           type="text"
-          placeholder="Digite o nome do estabelecimento..."
+          placeholder="Enter the name of the establishment..."
         />
-        <label for="proprietario_estabelecimento">Nome</label>
+        <label for="owner_input_establishment_modal">owner</label>
         <input
-          id="proprietario_estabelecimento"
+          id="owner_input_establishment_modal"
           type="text"
-          placeholder="Digite o nome do proprietário..."
+          placeholder="Enter the name of the owner..."
         />
-        <label for="estabelecimento_email">E-mail</label>
+        <label for="email_input_establishment_modal">Email</label>
         <input
-          id="estabelecimento_email"
+          id="email_input_establishment_modal"
           type="text"
-          placeholder="Digite o e-mail do estabelecimento.."
+          placeholder="Enter the establishment's email.."
         />
-        <label for="usuario_estabelecimento">Usuário</label>
+        <label for="username_input_establishment_modal">Username</label>
         <input
-          id="usuario_estabelecimento"
+          id="username_input_establishment_modal"
           type="text"
-          placeholder="Digite seu usuário..."
+          placeholder="Enter your username..."
         />
-        <label for="estabelecimento_senha">Senha</label>
+        <label for="password_input_establishment_modal">password</label>
         <input
-          id="estabelecimento_senha"
+          id="password_input_establishment_modal"
           type="text"
-          placeholder="Digite sua senha.."
+          placeholder="Enter your password.."
         />
-        <label for="estabelecimento_verificar_senha">Verificar senha</label>
+        <label for="retype_password_input_establishment_modal">
+          Check Password
+        </label>
         <input
-          id="estabelecimento_verificar_senha"
+          id="retype_password_input_establishment_modal"
           type="text"
-          placeholder="Re-digite sua senha..."
+          placeholder="Retype your password..."
         />
 
-        <label for="estabelecimento_telefone">Telefone</label>
+        <label for="telephone_input_establishment_modal">Telephone</label>
         <input
-          id="estabelecimento_telefone"
-          type="text"
-          placeholder="Digite o telefone da empresa..."
+          id="telephone_input_establishment_modal"
+          type="number"
+          placeholder="Enter your company phone number..."
         />
         <label
-          for="estabelecimento_cnpj"
-          title="Necessário para registrar seu estabelecimento como único no site."
-          >CNPJ</label
+          for="cnpj_input_establishment_modal"
+          title="Needed to register your property as unique on the site."
         >
+          CNPJ
+        </label>
         <input
-          id="estabelecimento_cnpj"
+          id="cnpj_input_modal_establishment"
           type="text"
-          placeholder="Digite o CNPJ do estabelecimento..."
+          placeholder="Type the CNPJ of the establishment..."
         />
-        <span
-          ><input type="date" name="" id="estabelecimento_data_inauguracao"
-        /></span>
-        <label for="estabelecimento_descricao"
-          >Descrição do estabelecimento:</label
-        >
-        <textarea
-          id="estabelecimento_descricao"
-          placeholder="Dê a descrição da empresa..."
-        ></textarea>
-        <label for="estabelecimento_fotos">Fotos do estabelecimento:</label>
-        <div id="estabelecimento_drop_zone_fotos" ondrop="">
-          <p>Clique para fazer upload das fotos do seu estabelecimento.</p>
-        </div>
-        <textarea id="estabelecimento_texto_erro" disabled>
-            Campo de válidação caso algum dado 
-            esteja incorreto! escondido por padrão.
-             </textarea
-        >
-        <button>Registrar-se</button>
-      </form>
-      <form id="usuario_modal">
-        <img src="" alt="Foto_usuário" />
-        <label for="nome_usuario">Nome</label>
-        <input
-          id="nome_usuario"
-          type="text"
-          placeholder="Digite o seu nome..."
-        />
-        <label for="sobrenome_usuario">Sobrenome</label>
-        <input
-          id="sobrenome_usuario"
-          type="text"
-          placeholder="Digite o seu sobrenome..."
-        />
-        <label for="email_usuario">E-mail</label>
-        <input
-          id="email_usuario"
-          type="text"
-          placeholder="Digite o seu e-mail.."
-        />
-        <label for="nomeUsuario_usuario">Usuário</label>
-        <input
-          id="nomeUsuario_usuario"
-          type="text"
-          placeholder="Digite seu usuário..."
-        />
-        <label for="usuario_senha">Senha</label>
-        <input
-          id="usuario_senha"
-          type="text"
-          placeholder="Digite sua senha.."
-        />
-        <label for="usuario_verificar_senha">Verificar senha</label>
-        <input
-          id="usuario_verificar_senha"
-          type="text"
-          placeholder="Re-digite sua senha..."
-        />
-        <span
-          title="Necessário caso você queira que o site de recomende estabelecimentos com suporte a essa deficiência."
-          ><h3>Deseja declarar a deficiência que possui?</h3>
-          <select name="" id="">
-            <option value="">Não declarada</option>
-            <option value=""></option></select
-        ></span>
-        <textarea id="usuario_texto_erro" disabled>
-            Campo de válidação caso algum dado 
-            esteja incorreto! escondido por padrão.
-             </textarea
-        >
-        <button>Registrar-se</button>
+        <span>
+          <input
+            type="date"
+            name=""
+            id="inauguration_input_establishment_modal"
+          />
+        </span>
       </form>
     </main>
   </body>
