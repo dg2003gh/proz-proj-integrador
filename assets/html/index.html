@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessuratio</title>
+  </head>
+  <body>
+    <header>
+      <img src="" alt="ícone do site" /><input
+        type="text"
+        placeholder="Pesquisar estabelecimentos..."
+      />
+      <button><i></i></button>
+    </header>
+    <main>
+      <form id="login_modal">
+        <label for="usuario_login">Usuário</label>
+        <input
+          id="usuario_login"
+          type="text"
+          placeholder="Digite seu usuário..."
+        />
+        <label for="senha_login">Senha</label>
+        <input id="senha_login" type="text" placeholder="Digite sua senha..." />
+        <button>Login</button>
+        <a href="">Esqueceu a senha?</a>
+      </form>
+      <form id="email_esqueci_senha_modal">
+        <h2>
+          Para recuperarmos sua senha enviaremos um link de recuperação para seu
+          E-mail.
+        </h2>
+        <label for="email_esqueci_senha">E-mail</label>
+        <input
+          id="email_esqueci_senha"
+          type="text"
+          placeholder="Digite sua e-mail..."
+        />
+        <button>Enviar e-mail</button>
+      </form>
+      <form id="nova_senha_modal">
+        <h2>E-mail confirmado, digite sua nova senha!</h2>
+        <label for="input_senha_nova_senha">Senha</label>
+        <input
+          id="input_senha_nova_senha"
+          type="text"
+          placeholder="Digite sua senha.."
+        />
+        <label for="input_senha_verificar_nova_senha">Verificar senha</label>
+        <input
+          id="input_senha_verificar_nova_senha"
+          type="text"
+          placeholder="Re-digite sua senha..."
+        />
+        <textarea id="nova_senha_texto_erro" disabled>
+            Campo de válidação caso algum dado 
+            esteja incorreto! escondido por padrão.
+             </textarea
+        >
+        <button>Salvar</button>
+      </form>
+      <form id="como_registrar_modal">
+        <h2>Deseja se registrar como:</h2>
+        <button>estabelecimento</button>
+        <button>Usuário</button>
+      </form>
+      <form id="estabelecimento_modal">
+        <img src="" alt="Foto_usuário" />
+        <label for="nome_estabelecimento">Nome</label>
+        <input
+          id="nome_estabelecimento"
+          type="text"
+          placeholder="Digite o nome do estabelecimento..."
+        />
+        <label for="proprietario_estabelecimento">Nome</label>
+        <input
+          id="proprietario_estabelecimento"
+          type="text"
+          placeholder="Digite o nome do proprietário..."
+        />
+        <label for="estabelecimento_email">E-mail</label>
+        <input
+          id="estabelecimento_email"
+          type="text"
+          placeholder="Digite o e-mail do estabelecimento.."
+        />
+        <label for="usuario_estabelecimento">Usuário</label>
+        <input
+          id="usuario_estabelecimento"
+          type="text"
+          placeholder="Digite seu usuário..."
+        />
+        <label for="estabelecimento_senha">Senha</label>
+        <input
+          id="estabelecimento_senha"
+          type="text"
+          placeholder="Digite sua senha.."
+        />
+        <label for="estabelecimento_verificar_senha">Verificar senha</label>
+        <input
+          id="estabelecimento_verificar_senha"
+          type="text"
+          placeholder="Re-digite sua senha..."
+        />
+
+        <label for="estabelecimento_telefone">Telefone</label>
+        <input
+          id="estabelecimento_telefone"
+          type="text"
+          placeholder="Digite o telefone da empresa..."
+        />
+        <label
+          for="estabelecimento_cnpj"
+          title="Necessário para registrar seu estabelecimento como único no site."
+          >CNPJ</label
+        >
+        <input
+          id="estabelecimento_cnpj"
+          type="text"
+          placeholder="Digite o CNPJ do estabelecimento..."
+        />
+        <span
+          ><input type="date" name="" id="estabelecimento_data_inauguracao"
+        /></span>
+        <label for="estabelecimento_descricao"
+          >Descrição do estabelecimento:</label
+        >
+        <textarea
+          id="estabelecimento_descricao"
+          placeholder="Dê a descrição da empresa..."
+        ></textarea>
+        <label for="estabelecimento_fotos">Fotos do estabelecimento:</label>
+        <div id="estabelecimento_drop_zone_fotos" ondrop="">
+          <p>Clique para fazer upload das fotos do seu estabelecimento.</p>
+        </div>
+        <textarea id="estabelecimento_texto_erro" disabled>
+            Campo de válidação caso algum dado 
+            esteja incorreto! escondido por padrão.
+             </textarea
+        >
+        <button>Registrar-se</button>
+      </form>
+      <form id="usuario_modal">
+        <img src="" alt="Foto_usuário" />
+        <label for="nome_usuario">Nome</label>
+        <input
+          id="nome_usuario"
+          type="text"
+          placeholder="Digite o seu nome..."
+        />
+        <label for="sobrenome_usuario">Sobrenome</label>
+        <input
+          id="sobrenome_usuario"
+          type="text"
+          placeholder="Digite o seu sobrenome..."
+        />
+        <label for="email_usuario">E-mail</label>
+        <input
+          id="email_usuario"
+          type="text"
+          placeholder="Digite o seu e-mail.."
+        />
+        <label for="nomeUsuario_usuario">Usuário</label>
+        <input
+          id="nomeUsuario_usuario"
+          type="text"
+          placeholder="Digite seu usuário..."
+        />
+        <label for="usuario_senha">Senha</label>
+        <input
+          id="usuario_senha"
+          type="text"
+          placeholder="Digite sua senha.."
+        />
+        <label for="usuario_verificar_senha">Verificar senha</label>
+        <input
+          id="usuario_verificar_senha"
+          type="text"
+          placeholder="Re-digite sua senha..."
+        />
+        <span
+          title="Necessário caso você queira que o site de recomende estabelecimentos com suporte a essa deficiência."
+          ><h3>Deseja declarar a deficiência que possui?</h3>
+          <select name="" id="">
+            <option value="">Não declarada</option>
+            <option value=""></option></select
+        ></span>
+        <textarea id="usuario_texto_erro" disabled>
+            Campo de válidação caso algum dado 
+            esteja incorreto! escondido por padrão.
+             </textarea
+        >
+        <button>Registrar-se</button>
+      </form>
+    </main>
+  </body>
+</html>
