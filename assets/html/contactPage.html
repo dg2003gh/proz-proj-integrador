@@ -9,7 +9,9 @@
     <header>
       <img src="" alt="website icon" />
       <input type="text" placeholder="Search establishments..." />
-      <button id="header_search_button"><i></i></button>
+      <button id="header_search_button" aria-label="Search button.">
+        <i class="ri-search-line"></i>
+      </button>
     </header>
     <main>
       <form id="login_modal">
@@ -19,6 +21,7 @@
           id="user_input_login_modal"
           type="text"
           placeholder="Enter your username..."
+          aria-label="Enter your username."
         />
         <label for="password_input_login_modal">Password</label>
         <input
@@ -26,8 +29,11 @@
           id="password_input_login_modal"
           type="text"
           placeholder="Enter your password..."
+          aria-label="Enter your password."
         />
-        <button id="submit_login_modal" type="submit">Login</button>
+        <button id="submit_login_modal" type="submit" aria-label="Login button">
+          Login
+        </button>
         <a href="">forgot your password?</a>
       </form>
       <form id="recover_password_modal">
@@ -40,9 +46,15 @@
           required
           id="email_input_recover_password_modal"
           type="text"
-          placeholder="Enter your email..."
+          placeholder="Enter your e-mail..."
+          aria-label="Enter your e-mail"
         />
-        <button id="submit_recover_password_modal">send email</button>
+        <button
+          id="submit_recover_password_modal"
+          aria-label="Button to sen your email."
+        >
+          send email
+        </button>
       </form>
       <form id="new_password_modal">
         <h2>Email confirmed, enter your new password!</h2>
@@ -52,6 +64,7 @@
           id="password_input_new_password_modal"
           type="text"
           placeholder="Enter your password.."
+          aria-label="Enter your password."
         />
         <label for="retype_password_input_new_password_modal">
           check password
@@ -61,19 +74,36 @@
           id="retype_password_input_new_password_modal"
           type="text"
           placeholder="Retype your password..."
+          aria-label="Retype your password."
         />
+        <label for="error_field_new_password_modal">Error output:</label>
         <textarea id="error_field_new_password_modal" disabled>
-              Validation field if any data
-              are exempt! hidden by default.
-        </textarea>
-        <button type="send" id="save_button_new_password_modal">To save</button>
+               Validation field if any data
+               are exempt! hidden by default.
+         </textarea
+        >
+        <button
+          type="submit"
+          id="save_button_new_password_modal"
+          aria-label="Save new password button"
+        >
+          To save
+        </button>
       </form>
       <form id="register_type_modal">
         <h2>Would you like to register as:</h2>
-        <button id="establishment_button_register_type_modal">
+        <button
+          id="establishment_button_register_type_modal"
+          aria-label="Button register  a establishment . "
+        >
           establishment
         </button>
-        <button id="user_register_button_type_modal">User</button>
+        <button
+          id="user_register_button_type_modal"
+          aria-label="Button register  as a user. "
+        >
+          User
+        </button>
       </form>
       <form id="modal_establishment">
         <img id="establishment_photo" src="" alt="Establishment photo" />
@@ -83,6 +113,7 @@
           id="name_input_establishment_modal"
           type="text"
           placeholder="Enter the name of the establishment..."
+          aria-label="Enter the name of the establishment."
         />
         <label for="owner_input_establishment_modal">owner</label>
         <input
@@ -90,6 +121,7 @@
           id="owner_input_establishment_modal"
           type="text"
           placeholder="Enter the name of the owner..."
+          aria-label="Enter the name of the owner."
         />
         <label for="email_input_establishment_modal">Email</label>
         <input
@@ -97,6 +129,7 @@
           id="email_input_establishment_modal"
           type="text"
           placeholder="Enter the establishment's email.."
+          aria-label="Enter the establishment's email."
         />
         <label for="username_input_establishment_modal">Username</label>
         <input
@@ -104,13 +137,15 @@
           id="username_input_establishment_modal"
           type="text"
           placeholder="Enter your username..."
+          aria-label="Enter your username."
         />
         <label for="password_input_establishment_modal">password</label>
         <input
           required
           id="password_input_establishment_modal"
           type="text"
-          placeholder="Enter your password.."
+          placeholder="Enter your password..."
+          aria-label="Enter your password."
         />
         <label for="retype_password_input_establishment_modal">
           Check Password
@@ -120,6 +155,7 @@
           id="retype_password_input_establishment_modal"
           type="text"
           placeholder="Retype your password..."
+          aria-label="Retype your password."
         />
 
         <label for="telephone_input_establishment_modal">Telephone</label>
@@ -128,6 +164,7 @@
           id="telephone_input_establishment_modal"
           type="number"
           placeholder="Enter your company phone number..."
+          aria-label="Enter your company phone number."
         />
         <label
           for="cnpj_input_establishment_modal"
@@ -140,6 +177,7 @@
           id="cnpj_input_modal_establishment"
           type="text"
           placeholder="Type the CNPJ of the establishment..."
+          aria-label="Type the CNPJ of the establishment."
         />
         <span>
           <input
@@ -147,6 +185,7 @@
             type="date"
             name=""
             id="inauguration_input_establishment_modal"
+            aria-label="Type the establishment inauguration date."
           />
         </span>
       </form>
@@ -160,9 +199,32 @@
               Front-End Developer certified by the Introduction to Front-End
               Programming by Proz Educação.
             </p>
-            <i></i>
-            <i></i>
-            <i></i>
+            <a href="https://github.com/DavidSheltonSF" target="_blank">
+              <img
+                src="../imgs/icons/github-icon.svg"
+                alt="Github link icon."
+                width="50"
+                height="50"
+              />
+            </a>
+            <a href="mailto:david.faria012@gmail.com" target="_blank">
+              <img
+                src="../imgs/icons/gmail-icon.svg"
+                alt="E-mail link icon."
+                width="50"
+                height="50"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/davidsheltonsf/"
+              target="_blank"
+            >
+              <img
+                src="../imgs/icons/linkedin-icon.svg"
+                alt="Linkedin link icon."
+                width="50"
+                height="50"
+              />
+            </a>
           </article>
           <article>
             <img src="../imgs/foto_Douglas.jpg" alt="Douglas's image" />
@@ -171,9 +233,32 @@
               Front-End Developer certified by the Introduction to Front-End
               Programming by Proz Educação.
             </p>
-            <i></i>
-            <i></i>
-            <i></i>
+            <a href="https://github.com/dg2003gh" target="_blank">
+              <img
+                src="../imgs/icons/github-icon.svg"
+                alt="Github link icon."
+                width="50"
+                height="50"
+              />
+            </a>
+            <a href="mailto:dg2003gh@gmail.com" target="_blank">
+              <img
+                src="../imgs/icons/gmail-icon.svg"
+                alt="E-mail link icon."
+                width="50"
+                height="50"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/douglas-guimar%C3%A3es-691241263"
+              target="_blank"
+            >
+              <img
+                src="../imgs/icons/linkedin-icon.svg"
+                alt="Linkedin link icon."
+                width="50"
+                height="50"
+              />
+            </a>
           </article>
           <article>
             <img src="../imgs/foto_Elis.png" alt="elis's image" />
@@ -182,9 +267,32 @@
               Front-End Developer certified by the Introduction to Front-End
               Programming by Proz Educação.
             </p>
-            <i></i>
-            <i></i>
-            <i></i>
+            <a href="https://github.com/ElisangelaRosa" target="_blank">
+              <img
+                src="../imgs/icons/github-icon.svg"
+                alt="Github link icon."
+                width="50"
+                height="50"
+              />
+            </a>
+            <a href="mailto:elisangela.rosa1@hotmail.com" target="_blank">
+              <img
+                src="../imgs/icons/gmail-icon.svg"
+                alt="E-mail link icon."
+                width="50"
+                height="50"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/elis%C3%A2ngela-maria-rosa-da-silva/"
+              target="_blank"
+            >
+              <img
+                src="../imgs/icons/linkedin-icon.svg"
+                alt="Linkedin link icon."
+                width="50"
+                height="50"
+              />
+            </a>
           </article>
           <article>
             <img src="../imgs/foto_Isa.jpg" alt="Isabella's image" />
@@ -193,9 +301,33 @@
               Front-End Developer certified by the Introduction to Front-End
               Programming by Proz Educação.
             </p>
-            <i></i>
-            <i></i>
-            <i></i>
+            <a href="https://github.com/IsaFlauzin0" target="_blank">
+              <img
+                src="../imgs/icons/github-icon.svg"
+                alt="Github link icon."
+                width="50"
+                height="50"
+              />
+            </a>
+
+            <a href="isabella.oliveira2009@gmail.com" target="_blank">
+              <img
+                src="../imgs/icons/gmail-icon.svg"
+                alt="E-mail link icon."
+                width="50"
+                height="50"
+            /></a>
+            <a
+              href="https://www.linkedin.com/in/isabellaflauzino/"
+              target="_blank"
+            >
+              <img
+                src="../imgs/icons/linkedin-icon.svg"
+                alt="Linkedin link icon."
+                width="50"
+                height="50"
+              />
+            </a>
           </article>
         </div>
       </section>
