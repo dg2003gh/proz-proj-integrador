@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
     <link
+      rel="shortcut icon"
+      href="../imgs/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <img src="" alt="website icon" />
+      <img src="../imgs/favicon/favicon.ico" alt="website icon" />
       <input
         type="text"
         placeholder="Search establishments..."
@@ -114,7 +119,13 @@
         </button>
       </form>
       <form id="modal_establishment">
-        <img id="establishment_photo" src="" alt="Establishment photo" />
+        <img
+          id="establishment_photo"
+          src="../imgs/icons/establishment.png"
+          alt="Establishment photo"
+          width="70"
+          height="70"
+        />
         <label for="name_input_establishment_modal">Name</label>
         <input
           required
@@ -196,9 +207,18 @@
             aria-label="Type the establishment inauguration date."
           />
         </span>
+        <button type="submit" aria-label="Button to register the establishment">
+          Register
+        </button>
       </form>
       <form id="user_modal">
-        <img id="user_photo" src="" alt="User photo" />
+        <img
+          id="user_photo"
+          src="../imgs/icons/user.png"
+          alt="User photo"
+          width="70"
+          height="70"
+        />
         <label for="name_input_user_modal">Name</label>
         <input
           required
@@ -261,6 +281,9 @@
                are exempt! hidden by default.
          </textarea
         >
+        <button type="submit" aria-label="Button to register the user.">
+          Register
+        </button>
       </form>
       <section>
         <span><label for="developers-container">Developers:</label></span>
