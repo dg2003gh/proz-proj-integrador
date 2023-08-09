@@ -5,14 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
     <link
+      rel="shortcut icon"
+      href="../imgs/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <img src="" alt="website icon" />
-      <input type="text" placeholder="Search establishments..." />
+      <img src="../imgs/favicon/favicon.ico" alt="website icon" />
+      <input
+        type="text"
+        placeholder="Search establishments..."
+        class="ri-search-line"
+      />
       <button id="header_search_button" aria-label="Search button.">
         <i class="ri-search-line"></i>
       </button>
@@ -110,7 +119,13 @@
         </button>
       </form>
       <form id="modal_establishment">
-        <img id="establishment_photo" src="" alt="Establishment photo" />
+        <img
+          id="establishment_photo"
+          src="../imgs/icons/establishment.png"
+          alt="Establishment photo"
+          width="70"
+          height="70"
+        />
         <label for="name_input_establishment_modal">Name</label>
         <input
           required
@@ -127,14 +142,6 @@
           placeholder="Enter the name of the owner..."
           aria-label="Enter the name of the owner."
         />
-        <label for="email_input_establishment_modal">Email</label>
-        <input
-          required
-          id="email_input_establishment_modal"
-          type="text"
-          placeholder="Enter the establishment's email.."
-          aria-label="Enter the establishment's email."
-        />
         <label for="username_input_establishment_modal">Username</label>
         <input
           required
@@ -142,6 +149,14 @@
           type="text"
           placeholder="Enter your username..."
           aria-label="Enter your username."
+        />
+        <label for="email_input_establishment_modal">E-mail</label>
+        <input
+          required
+          id="email_input_establishment_modal"
+          type="text"
+          placeholder="Enter the establishment's e-mail.."
+          aria-label="Enter the establishment's e-mail."
         />
         <label for="password_input_establishment_modal">password</label>
         <input
@@ -178,8 +193,8 @@
         </label>
         <input
           required
-          id="cnpj_input_modal_establishment"
-          type="text"
+          id="cnpj_input_establishment_modal"
+          type="number"
           placeholder="Type the CNPJ of the establishment..."
           aria-label="Type the CNPJ of the establishment."
         />
@@ -192,6 +207,83 @@
             aria-label="Type the establishment inauguration date."
           />
         </span>
+        <button type="submit" aria-label="Button to register the establishment">
+          Register
+        </button>
+      </form>
+      <form id="user_modal">
+        <img
+          id="user_photo"
+          src="../imgs/icons/user.png"
+          alt="User photo"
+          width="70"
+          height="70"
+        />
+        <label for="name_input_user_modal">Name</label>
+        <input
+          required
+          id="name_input_user_modal"
+          type="text"
+          placeholder="Enter the name of the user..."
+          aria-label="Enter the name of the user."
+        />
+        <label for="surname_input_user_modal">Surname</label>
+        <input
+          required
+          id="surname_input_user_modal"
+          type="text"
+          placeholder="Enter your surname..."
+          aria-label="Enter your surname."
+        />
+        <label for="username_input_user_modal">Username</label>
+        <input
+          required
+          id="username_input_user_modal"
+          type="text"
+          placeholder="Enter your username..."
+          aria-label="Enter your username."
+        />
+        <label for="email_input_user_modal">Email</label>
+        <input
+          required
+          id="email_input_user_modal"
+          type="text"
+          placeholder="Enter the user's email.."
+          aria-label="Enter the user's email."
+        />
+        <label for="password_input_user_modal">password</label>
+        <input
+          required
+          id="password_input_user_modal"
+          type="text"
+          placeholder="Enter your password..."
+          aria-label="Enter your password."
+        />
+        <label for="retype_password_input_user_modal"> Check Password </label>
+        <input
+          required
+          id="retype_password_input_user_modal"
+          type="text"
+          placeholder="Retype your password..."
+          aria-label="Retype your password."
+        />
+        <span>
+          <label for="disability_select_user_modal">
+            Do you want to declare your disability?
+          </label>
+          <select name="" id="disability_select_user_modal">
+            <option value="">Not declared</option>
+          </select>
+        </span>
+        <label for="error_field_user_modal">Error output:</label>
+        <textarea id="error_field_user_modal" disabled>
+               Validation field if any data
+               are exempt! hidden by default.
+         </textarea
+        >
+        <button type="submit" aria-label="Button to register the user.">
+          Register
+        </button>
       </form>
       <section>
         <h2>
