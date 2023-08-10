@@ -5,31 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
     <link
+      rel="shortcut icon"
+      href="../imgs/favicon/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
   <body>
     <header>
-      <img src="" alt="website icon" />
-      <input type="text" placeholder="Search establishments..." />
-      <button id="header_search_button"><i class="ri-search-line"></i></button>
+      <img
+        src="../imgs/site-icon.png"
+        alt="website icon"
+        width="180"
+        height="180"
+      />
+      <input
+        type="text"
+        placeholder="Search establishments..."
+        class="ri-search-line"
+      />
+      <button id="header_search_button" aria-label="Search button.">
+        <i class="ri-search-line"></i>
+      </button>
     </header>
     <main>
       <form id="login_modal">
         <label for="user_input_login_modal">User</label>
         <input
+          required
           id="user_input_login_modal"
           type="text"
           placeholder="Enter your username..."
+          aria-label="Enter your username."
         />
+        <br />
         <label for="password_input_login_modal">Password</label>
         <input
+          required
           id="password_input_login_modal"
           type="text"
           placeholder="Enter your password..."
+          aria-label="Enter your password."
         />
-        <button id="submit_login_modal" type="submit">Login</button>
+        <br />
+        <button id="submit_login_modal" type="submit" aria-label="Login button">
+          Login
+        </button>
+        <br />
         <a href="">forgot your password?</a>
       </form>
       <form id="recover_password_modal">
@@ -37,91 +62,152 @@
           In order for us to recover your password, we will send a recovery link
           to your email.
         </h2>
+        <br />
         <label for="email_input_recover_password_modal">Email</label>
         <input
+          required
           id="email_input_recover_password_modal"
           type="text"
           placeholder="Enter your email..."
+          aria-label="Enter your email"
         />
-        <button id="submit_recover_password_modal">send email</button>
+        <br />
+        <button
+          id="submit_recover_password_modal"
+          aria-label="Button to sen your email."
+        >
+          send email
+        </button>
       </form>
       <form id="new_password_modal">
         <h2>Email confirmed, enter your new password!</h2>
+        <br />
         <label for="password_input_new_password_modal">password</label>
         <input
+          required
           id="password_input_new_password_modal"
           type="text"
           placeholder="Enter your password.."
+          aria-label="Enter your password."
         />
+        <br />
         <label for="retype_password_input_new_password_modal">
           check password
         </label>
         <input
+          required
           id="retype_password_input_new_password_modal"
           type="text"
           placeholder="Retype your password..."
+          aria-label="Retype your password."
         />
+        <br />
+        <label for="error_field_new_password_modal">Error output:</label>
+        <br />
         <textarea id="error_field_new_password_modal" disabled>
-               Validation field if any data
-               are exempt! hidden by default.
-         </textarea
+                Validation field if any data
+                are exempt! hidden by default.
+          </textarea
         >
-        <button type="send" id="save_button_new_password_modal">To save</button>
+        <br />
+        <button
+          type="submit"
+          id="save_button_new_password_modal"
+          aria-label="Save new password button"
+        >
+          save
+        </button>
       </form>
       <form id="register_type_modal">
         <h2>Would you like to register as:</h2>
-        <button id="establishment_button_register_type_modal">
+        <br />
+        <button
+          id="establishment_button_register_type_modal"
+          aria-label="Button register an establishment . "
+        >
           establishment
         </button>
-        <button id="user_register_button_type_modal">User</button>
+        <button
+          id="user_register_button_type_modal"
+          aria-label="Button register as a user. "
+        >
+          User
+        </button>
       </form>
       <form id="modal_establishment">
-        <img id="establishment_photo" src="" alt="Establishment photo" />
+        <img
+          id="establishment_photo"
+          src="../imgs/icons/establishment.png"
+          alt="Establishment photo"
+          width="70"
+          height="70"
+        />
+        <br />
         <label for="name_input_establishment_modal">Name</label>
         <input
+          required
           id="name_input_establishment_modal"
           type="text"
           placeholder="Enter the name of the establishment..."
+          aria-label="Enter the name of the establishment."
         />
+        <br />
         <label for="owner_input_establishment_modal">owner</label>
         <input
+          required
           id="owner_input_establishment_modal"
           type="text"
           placeholder="Enter the name of the owner..."
+          aria-label="Enter the name of the owner."
         />
-        <label for="email_input_establishment_modal">Email</label>
-        <input
-          id="email_input_establishment_modal"
-          type="text"
-          placeholder="Enter the establishment's email.."
-        />
+        <br />
         <label for="username_input_establishment_modal">Username</label>
         <input
+          required
           id="username_input_establishment_modal"
           type="text"
           placeholder="Enter your username..."
+          aria-label="Enter your username."
         />
+        <br />
+        <label for="email_input_establishment_modal">Email</label>
+        <input
+          required
+          id="email_input_establishment_modal"
+          type="text"
+          placeholder="Enter the establishment's email.."
+          aria-label="Enter the establishment's e-mail."
+        />
+        <br />
         <label for="password_input_establishment_modal">password</label>
         <input
+          required
           id="password_input_establishment_modal"
           type="text"
-          placeholder="Enter your password.."
+          placeholder="Enter your password..."
+          aria-label="Enter your password."
         />
+        <br />
         <label for="retype_password_input_establishment_modal">
           Check Password
         </label>
         <input
+          required
           id="retype_password_input_establishment_modal"
           type="text"
           placeholder="Retype your password..."
+          aria-label="Retype your password."
         />
-
+        <br />
         <label for="telephone_input_establishment_modal">Telephone</label>
         <input
+          required
           id="telephone_input_establishment_modal"
           type="number"
           placeholder="Enter your company phone number..."
+          aria-label="Enter your company phone number."
         />
+        <br />
         <label
           for="cnpj_input_establishment_modal"
           title="Needed to register your property as unique on the site."
@@ -129,61 +215,192 @@
           CNPJ
         </label>
         <input
-          id="cnpj_input_modal_establishment"
-          type="text"
+          required
+          id="cnpj_input_establishment_modal"
+          type="number"
           placeholder="Type the CNPJ of the establishment..."
+          aria-label="Type the CNPJ of the establishment."
         />
+        <br />
         <span>
+          <label for="inauguration_input_establishment_modal">
+            Inauguration date:
+          </label>
           <input
+            required
             type="date"
             name=""
             id="inauguration_input_establishment_modal"
+            aria-label="Type the establishment inauguration date."
           />
         </span>
+        <br />
+        <label for="error_field_establishment_modal">Error output:</label>
+        <br />
+        <textarea id="error_field_establishment_modal" disabled>
+                Validation field if any data
+                are exempt! hidden by default.
+          </textarea
+        ><br />
+        <button type="submit" aria-label="Button to register the establishment">
+          Register
+        </button>
+      </form>
+      <form id="user_modal">
+        <img
+          id="user_photo"
+          src="../imgs/icons/user.png"
+          alt="User photo"
+          width="70"
+          height="70"
+        />
+        <br />
+        <label for="name_input_user_modal">Name</label>
+        <input
+          required
+          id="name_input_user_modal"
+          type="text"
+          placeholder="Enter the name of the user..."
+          aria-label="Enter the name of the user."
+        />
+        <br />
+        <label for="surname_input_user_modal">Surname</label>
+        <input
+          required
+          id="surname_input_user_modal"
+          type="text"
+          placeholder="Enter your surname..."
+          aria-label="Enter your surname."
+        />
+        <br />
+        <label for="username_input_user_modal">Username</label>
+        <input
+          required
+          id="username_input_user_modal"
+          type="text"
+          placeholder="Enter your username..."
+          aria-label="Enter your username."
+        />
+        <br />
+        <label for="email_input_user_modal">Email</label>
+        <input
+          required
+          id="email_input_user_modal"
+          type="text"
+          placeholder="Enter the user's email.."
+          aria-label="Enter the user's email."
+        />
+        <br />
+        <label for="password_input_user_modal">password</label>
+        <input
+          required
+          id="password_input_user_modal"
+          type="text"
+          placeholder="Enter your password..."
+          aria-label="Enter your password."
+        />
+        <br />
+        <label for="retype_password_input_user_modal">Check Password </label>
+        <input
+          required
+          id="retype_password_input_user_modal"
+          type="text"
+          placeholder="Retype your password..."
+          aria-label="Retype your password."
+        />
+        <br />
+        <span>
+          <label for="disability_select_user_modal">
+            Do you want to declare your disability?
+          </label>
+          <br />
+          <select name="" id="disability_select_user_modal">
+            <option value="">Not declared</option>
+          </select>
+        </span>
+        <br />
+        <label for="error_field_user_modal">Error output:</label>
+        <br />
+        <textarea id="error_field_user_modal" disabled>
+                Validation field if any data
+                are exempt! hidden by defaultlt.
+          </textarea
+        >
+        <br />
+        <button type="submit" aria-label="Button to register the user.">
+          Register
+        </button>
       </form>
       <section>
         <article>
-          <header><img src="" alt="" /> <button>Ver mais fotos</button></header>
+          <header>
+            <img src="" alt="" /> <button>See more photos</button>
+          </header>
           <main>
-            <h2>Cafeteria Feliz</h2>
+            <h2>Happy Cafeteria</h2>
             <p>
-              Um lugar confortável para você e toda a sua família. <br />Nossas
-              instalações contam com rampas, uma sala para cães guias
-              cardapios... <strong>Saiba Mais</strong>
+              A comfortable place for you and your whole family. <br />Our
+              facilities have ramps, a room for guide dogs menus...
+              <strong>Learn More</strong>
             </p>
           </main>
           <footer>
             Ranking: <i class="ri-star-line"></i><i class="ri-star-line"></i
             ><i class="ri-star-line"></i><i class="ri-star-line"></i
-            ><i class="ri-star-line"></i> Suporte: Localização:<button>
-              Ver no maps<i class="ri-arrow-right-line"></i></button
-            >Data de Inauguração: 10/10/1990
+            ><i class="ri-star-line"></i> Support:
+            <img
+              src="../imgs/accessibility_icons/deficiência visual.svg"
+              alt="Icone de Deficiência Visual"
+              width="40"
+              height="40"
+            />
+            <img
+              src="../imgs/accessibility_icons/D Auditiva.svg"
+              alt="Icone de Deficiencia Auditiva"
+              width="40"
+              height="40"
+            />
+            <img
+              src="../imgs/accessibility_icons/espectro autista.svg"
+              alt="Icone de Espectro Autista"
+              width="40"
+              height="40"
+            />
+            <img
+              src="../imgs/accessibility_icons/cão guia.svg"
+              alt="Icone de Cão Guia"
+              width="40"
+              height="40"
+            />Location:<button>
+              View on maps<i class="ri-arrow-right-line"></i></button
+            >Inauguration date: 10/10/1990
           </footer>
         </article>
       </section>
       <section>
-        <label for="comentarios_section"> Comentários</label>
-        <div id="comentarios_section">
+        <label for="comments_section">Comments</label>
+        <div id="comment_section">
           <form>
-            <img id="perfil_img" alt="" />
-            <label for="perfil_img"><strong>Eu</strong></label>
+            <img id="profile_img" alt="" />
+            <label for="profile_img"><strong>I</strong></label>
             <input
-              placeholder="Após ter ido ao estabelecimento digite suas considerações..."
+              placeholder="After going to the establishment enter your considerations..."
             />
-            <span
-              >Dê nota ao estabelecimento:<i class="ri-star-line"></i
+            <span>
+              Rate this property:<i class="ri-star-line"></i
               ><i class="ri-star-line"></i><i class="ri-star-line"></i
-              ><i class="ri-star-line"></i><i class="ri-star-line"></i
-            ></span>
+              ><i class="ri-star-line"></i><i class="ri-star-line"></i>
+            </span>
           </form>
         </div>
         <div>
           <img src="" alt="" />
-          <label for="">Fulano1</label>
-          <textarea readonly id="">
-            Atendimento Excelente e Bem localizado
-          </textarea>
-          <span> Nota do estabelecimento:</span>
+          <label for="commentary_textarea_commentary_section">Fulano1</label>
+          <textarea readonly id="commentary_textarea_commentary_section">
+             Excellent service and well located
+           </textarea
+          >
+          <span> Note from the establishment:</span>
         </div>
       </section>
     </main>
