@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/modal.css" />
     <link
       rel="shortcut icon"
       href="../imgs/favicon/favicon.ico"
@@ -15,24 +18,34 @@
     />
   </head>
   <body>
-    <header>
+    <header class="c-site-header">
       <img
         src="../imgs/site-icon.png"
         alt="website icon"
-        width="180"
-        height="180"
+        width="30"
+        height="30"
+        class="c-site-header__logo"
       />
-      <input
-        type="text"
-        placeholder="Search establishments..."
-        class="ri-search-line"
-      />
-      <button id="header_search_button" aria-label="Search button.">
-        <i class="ri-search-line"></i>
-      </button>
+      <span class="c-site-header__search-container">
+        <input
+          type="text"
+          placeholder="Search establishments..."
+          class="ri-search-line c-site-header__search-input"
+        /><button
+          id="header_search_button"
+          aria-label="Search button."
+          class="c-site-header_search-button"
+        >
+          <i class="ri-search-line"></i>
+        </button>
+      </span>
+      <span class="c-site-header__buttons-container">
+        <button class="c-site-header__register-button">Register</button>
+        <button class="c-site-header__login-button">Login</button>
+      </span>
     </header>
     <main>
-      <form id="login_modal">
+      <form class="c-modal" id="login_modal">
         <label for="user_input_login_modal">User</label>
         <input
           required
@@ -57,7 +70,7 @@
         <br />
         <a href="">forgot your password?</a>
       </form>
-      <form id="recover_password_modal">
+      <form class="c-modal" id="recover_password_modal">
         <h2>
           In order for us to recover your password, we will send a recovery link
           to your email.
@@ -79,7 +92,7 @@
           send email
         </button>
       </form>
-      <form id="new_password_modal">
+      <form class="c-modal" id="new_password_modal">
         <h2>Email confirmed, enter your new password!</h2>
         <br />
         <label for="password_input_new_password_modal">password</label>
@@ -118,7 +131,7 @@
           save
         </button>
       </form>
-      <form id="register_type_modal">
+      <form class="c-modal" id="register_type_modal">
         <h2>Would you like to register as:</h2>
         <br />
         <button
@@ -134,7 +147,7 @@
           User
         </button>
       </form>
-      <form id="modal_establishment">
+      <form class="c-modal" id="modal_establishment">
         <img
           id="establishment_photo"
           src="../imgs/icons/establishment.png"
@@ -246,7 +259,7 @@
           Register
         </button>
       </form>
-      <form id="user_modal">
+      <form class="c-modal" id="user_modal">
         <img
           id="user_photo"
           src="../imgs/icons/user.png"
