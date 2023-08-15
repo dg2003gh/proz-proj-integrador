@@ -1,0 +1,17 @@
+#container-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    width: 400px;
+    background-color: rgb(255, 0, 0);
+    
+}
+
+label{
+    display: block;
+    background-color: white;
+    color: black;
+    
+} 
