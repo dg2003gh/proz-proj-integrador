@@ -1,19 +1,26 @@
-#container-container{
+#main-container{
     display: flex;
-    justify-content: space-between;
-}
-
-.container{
-    width: 400px;
-    background-color: rgb(255, 0, 0);
-    
     justify-content: space-around;
-    
 }
 
 label{
-    display: block;
     background-color: white;
     color: black;
     
 } 
+
+.container{
+    display: flex;
+    height: 200px;
+    background-color: rgb(255, 0, 0);
+}
+
+.container span{
+    background-color: white;
+    color: black;
+    padding: 15px;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
