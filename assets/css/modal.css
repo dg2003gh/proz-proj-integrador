@@ -1,17 +1,42 @@
 .c-modal {
+  z-index: 3;
+
   position: absolute;
-  display: flex;
   flex-direction: column;
   justify-content: center;
 
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: scale(0);
   background-color: red;
   padding: 50px;
   border-radius: 8px;
+
+  transition: transform 500ms ease-in-out;
 }
 
-.u-hide {
-  display: none;
+.c-modal.u-visible {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+#overlay {
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff50;
+  opacity: 0;
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+
+  transition: all 500ms ease-in-out;
+}
+
+#overlay.u-visible {
+  opacity: 1;
+  pointer-events: all;
 }
