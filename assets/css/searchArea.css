@@ -1,14 +1,19 @@
 section{
     display: flex;
     flex-direction: column;
+
 }
 
 #label-div-searching_result_container{
+    display:flex;
+    text-align: center;
     background-color: black;
     height: 1000px;
-    width: 500px;
+    width: 1200px;
     align-self: center;
+    flex-direction: column;
 }
 #searching_result_container{
     background-color: green;
+    height: 1000px;
 }
