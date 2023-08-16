@@ -1,0 +1,14 @@
+section{
+    display: flex;
+    flex-direction: column;
+}
+
+#label-div-searching_result_container{
+    background-color: black;
+    height: 1000px;
+    width: 500px;
+    align-self: center;
+}
+#searching_result_container{
+    background-color: green;
+}
