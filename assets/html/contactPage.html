@@ -40,8 +40,18 @@
         </button>
       </span>
       <span class="c-site-header__buttons-container">
-        <button class="c-site-header__register-button">Register</button>
-        <button class="c-site-header__login-button">Login</button>
+        <button
+          class="c-site-header__register-button"
+          data-modal-target="#register_type_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button"
+          data-modal-target="#login_modal"
+        >
+          Login
+        </button>
       </span>
     </header>
     <main>
@@ -344,6 +354,7 @@
           Register
         </button>
       </form>
+      <div id="overlay" data-modal-target=""></div>
       <section>
         <span><label for="developers-container">Developers:</label></span>
         <div id="developers-container">
@@ -490,5 +501,6 @@
         </div>
       </section>
     </main>
+    <script src="../js/main.js"></script>
   </body>
 </html>
