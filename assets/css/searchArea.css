@@ -1,19 +1,35 @@
 section{
     display: flex;
+    align-items: center;
     flex-direction: column;
-
 }
 
-#label-div-searching_result_container{
+#c-searching-container{
     display:flex;
-    text-align: center;
+    flex-direction: column;
     background-color: black;
     height: 1000px;
     width: 1200px;
-    align-self: center;
-    flex-direction: column;
+    
 }
+
 #searching_result_container{
     background-color: green;
     height: 1000px;
+}
+
+#c-searching-container_label{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    margin-bottom: 2px;
+    padding: 6px;
+}
+
+
+#teste{
+    background-color: white;
+    color: black;
+    width: 20vw;
+    height: 20vw;
 }
