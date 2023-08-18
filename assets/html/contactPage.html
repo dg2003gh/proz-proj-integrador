@@ -56,29 +56,40 @@
     </header>
     <main>
       <form class="c-modal" id="login_modal">
-        <label for="user_input_login_modal">User</label>
+        <label for="user_input_login_modal" class="c-modal__label">User</label>
         <input
           required
           id="user_input_login_modal"
           type="text"
+          class="c-modal__input"
           placeholder="Enter your username..."
           aria-label="Enter your username."
         />
         <br />
-        <label for="password_input_login_modal">Password</label>
+        <label for="password_input_login_modal" class="c-modal__label"
+          >Password</label
+        >
         <input
           required
           id="password_input_login_modal"
-          type="text"
+          class="c-modal__input"
+          type="password"
           placeholder="Enter your password..."
           aria-label="Enter your password."
         />
         <br />
-        <button id="submit_login_modal" type="submit" aria-label="Login button">
+        <button
+          id="submit_login_modal"
+          class="c-modal__button"
+          type="submit"
+          aria-label="Login button"
+        >
           Login
         </button>
         <br />
-        <a href="">forgot your password?</a>
+        <a data-modal-target="#recover_password_modal" class="c-modal__link">
+          forgot your password ?
+        </a>
       </form>
       <form class="c-modal" id="recover_password_modal">
         <h2>

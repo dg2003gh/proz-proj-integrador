@@ -12,6 +12,13 @@ html {
   color: #fff;
 }
 
+input {
+  background-color: #fff;
+  padding: 10px 20px;
+  border: transparent;
+  border-radius: 5px;
+}
+
 button {
   color: #fff;
   padding: 8px 15px;
