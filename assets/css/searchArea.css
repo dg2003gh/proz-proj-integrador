@@ -3,21 +3,13 @@ section{
     align-items: center;
     flex-direction: column;
 }
-
 #c-searching-container{
     display:flex;
+    align-items: center;
     flex-direction: column;
-    background-color: black;
-    height: 1000px;
-    width: 1200px;
-    
+    width: 80vw;
+    height: 100vw;
 }
-
-#searching_result_container{
-    background-color: green;
-    height: 1000px;
-}
-
 #c-searching-container_label{
     background-color: white;
     color: black;
@@ -25,11 +17,10 @@ section{
     margin-bottom: 2px;
     padding: 6px;
 }
-
-
-#teste{
-    background-color: white;
-    color: black;
-    width: 20vw;
-    height: 20vw;
+#c-searching-container___result{
+    text-align: center;
+    background-color: #134592;
+    width: 80vw;
+    height: 100vw;
+    border-radius: 10px;
 }

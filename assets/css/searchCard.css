@@ -1,18 +1,23 @@
-article{
+.c-searching__card{
     display: flex;
     background-color: white;
     color: black;
+    margin: 8px;
+    border-radius: 10px;
 }
-
-article main{
+.c-searching-container__image{
+    border-radius: 10px;
+    border: 2px solid black;   
+}
+.c-searching-container__card-information{
     display: flex;
     flex-direction: column;
 }
-article footer{
+.c-searching-container__footer{
     display: flex;
     justify-content: space-around;
 }
-article footer img{
+.c-searching-container__icon{
     width: 40px;
     height: 40px;
 }
