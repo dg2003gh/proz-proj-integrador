@@ -13,6 +13,7 @@
 
 .c-site-header__search-input {
   padding: 8px;
+  min-width: 25vw;
   border: transparent;
   border-radius: 0;
   border-top-left-radius: 5px;
