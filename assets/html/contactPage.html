@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
-    <link rel="stylesheet" href="../css/reset.css" />
-    <link rel="stylesheet" href="../css/header.css" />
-    <link rel="stylesheet" href="../css/modal.css" />
-    <link rel="stylesheet" href="../css/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/reset.css" />
+    <link rel="stylesheet" href="../css/components/header.css" />
+    <link rel="stylesheet" href="../css/components/modal.css" />
+    <link rel="stylesheet" href="../css/components/label.css" />
+    <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link
       rel="shortcut icon"
       href="../imgs/favicon/favicon.ico"
@@ -60,9 +61,7 @@
     <main>
       <section>
         <form class="c-modal" id="login_modal">
-          <label for="user_input_login_modal" class="c-modal__label">
-            User
-          </label>
+          <label for="user_input_login_modal" class="c-label"> User </label>
           <input
             required
             id="user_input_login_modal"
@@ -72,7 +71,7 @@
             aria-label="Enter your username."
           />
           <br />
-          <label for="password_input_login_modal" class="c-modal__label">
+          <label for="password_input_login_modal" class="c-label">
             Password
           </label>
           <input
@@ -108,10 +107,7 @@
           </h3>
           <hr />
           <br />
-          <label
-            class="c-modal__label"
-            for="email_input_recover_password_modal"
-          >
+          <label class="c-label" for="email_input_recover_password_modal">
             E-mail
           </label>
           <input
@@ -134,7 +130,7 @@
         <form class="c-modal" id="new_password_modal">
           <h2>Email confirmed, enter your new password!</h2>
           <br />
-          <label class="c-modal__label" for="password_input_new_password_modal">
+          <label class="c-label" for="password_input_new_password_modal">
             password
           </label>
           <input
@@ -146,10 +142,7 @@
             aria-label="Enter your password."
           />
           <br />
-          <label
-            class="c-modal__label"
-            for="retype_password_input_new_password_modal"
-          >
+          <label class="c-label" for="retype_password_input_new_password_modal">
             check password
           </label>
           <input
@@ -161,7 +154,7 @@
             aria-label="Retype your password."
           />
           <br />
-          <label class="c-modal__label" for="error_field_new_password_modal">
+          <label class="c-label" for="error_field_new_password_modal">
             Error output
           </label>
           <br />
@@ -219,10 +212,7 @@
           <br />
           <span class="u-row-container u-margin">
             <span class="u-column-container u-margin">
-              <label
-                class="c-modal__label"
-                for="name_input_establishment_modal"
-              >
+              <label class="c-label" for="name_input_establishment_modal">
                 Name
               </label>
               <input
@@ -234,10 +224,7 @@
                 aria-label="Enter the name of the establishment."
               />
               <br />
-              <label
-                class="c-modal__label"
-                for="username_input_establishment_modal"
-              >
+              <label class="c-label" for="username_input_establishment_modal">
                 Username
               </label>
               <input
@@ -249,10 +236,7 @@
                 aria-label="Enter your username."
               />
               <br />
-              <label
-                class="c-modal__label"
-                for="password_input_establishment_modal"
-              >
+              <label class="c-label" for="password_input_establishment_modal">
                 password
               </label>
               <input
@@ -264,10 +248,7 @@
                 aria-label="Enter your password."
               />
               <br />
-              <label
-                class="c-modal__label"
-                for="telephone_input_establishment_modal"
-              >
+              <label class="c-label" for="telephone_input_establishment_modal">
                 Telephone
               </label>
               <input
@@ -282,10 +263,7 @@
             </span>
             <br />
             <span class="u-column-container u-margin">
-              <label
-                class="c-modal__label"
-                for="owner_input_establishment_modal"
-              >
+              <label class="c-label" for="owner_input_establishment_modal">
                 owner
               </label>
               <input
@@ -297,10 +275,7 @@
                 aria-label="Enter the name of the owner."
               />
               <br />
-              <label
-                class="c-modal__label"
-                for="email_input_establishment_modal"
-              >
+              <label class="c-label" for="email_input_establishment_modal">
                 E-mail
               </label>
               <input
@@ -313,7 +288,7 @@
               />
               <br />
               <label
-                class="c-modal__label"
+                class="c-label"
                 for="retype_password_input_establishment_modal"
               >
                 Check Password
@@ -328,7 +303,7 @@
               />
               <br />
               <label
-                class="c-modal__label"
+                class="c-label"
                 for="cnpj_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
               >
@@ -347,7 +322,7 @@
           <br />
           <span class="u-column-container c-modal__container">
             <label
-              class="c-modal__label u-center"
+              class="c-label u-center"
               for="inauguration_input_establishment_modal"
             >
               Inauguration date:
@@ -362,10 +337,7 @@
             />
           </span>
           <br />
-          <label
-            class="c-modal__label u-center"
-            for="error_field_establishment_modal"
-          >
+          <label class="c-label u-center" for="error_field_establishment_modal">
             Error output
           </label>
           <br />
@@ -398,9 +370,7 @@
           <br />
           <span class="u-row-container">
             <span class="u-column-container u-margin">
-              <label class="c-modal__label" for="name_input_user_modal">
-                Name
-              </label>
+              <label class="c-label" for="name_input_user_modal"> Name </label>
               <input
                 required
                 class="c-modal__input"
@@ -410,7 +380,7 @@
                 aria-label="Enter the name of the user."
               />
               <br />
-              <label class="c-modal__label" for="username_input_user_modal">
+              <label class="c-label" for="username_input_user_modal">
                 Username
               </label>
               <input
@@ -422,7 +392,7 @@
                 aria-label="Enter your username."
               />
               <br />
-              <label class="c-modal__label" for="password_input_user_modal">
+              <label class="c-label" for="password_input_user_modal">
                 password
               </label>
               <input
@@ -436,7 +406,7 @@
             </span>
             <br />
             <span class="u-column-container u-margin">
-              <label class="c-modal__label" for="surname_input_user_modal">
+              <label class="c-label" for="surname_input_user_modal">
                 Surname
               </label>
               <input
@@ -448,7 +418,7 @@
                 aria-label="Enter your surname."
               />
               <br />
-              <label class="c-modal__label" for="email_input_user_modal">
+              <label class="c-label" for="email_input_user_modal">
                 Email
               </label>
               <input
@@ -460,10 +430,7 @@
                 aria-label="Enter the user's email."
               />
               <br />
-              <label
-                class="c-modal__label"
-                for="retype_password_input_user_modal"
-              >
+              <label class="c-label" for="retype_password_input_user_modal">
                 Check Password
               </label>
               <input
@@ -478,7 +445,7 @@
           </span>
           <br />
           <span class="c-modal__container">
-            <label class="c-modal__label" for="disability_select_user_modal">
+            <label class="c-label" for="disability_select_user_modal">
               <strong>Do you want to declare your disability?</strong>
             </label>
             <br />
@@ -491,7 +458,7 @@
             </select>
           </span>
           <br />
-          <label class="c-modal__label u-center" for="error_field_user_modal">
+          <label class="c-label u-center" for="error_field_user_modal">
             Error output:
           </label>
           <br />
