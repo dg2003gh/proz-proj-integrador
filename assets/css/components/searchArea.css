@@ -1,0 +1,26 @@
+section{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#c-searching-container{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width: 80vw;
+    height: 100vw;
+}
+#c-searching-container_label{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    margin-bottom: 2px;
+    padding: 6px;
+}
+#c-searching-container___result{
+    text-align: center;
+    background-color: #134592;
+    width: 80vw;
+    height: 100vw;
+    border-radius: 10px;
+}
