@@ -4,13 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
-    <link rel="stylesheet" href="../css/utilities/reset.css"/>
-    <link rel="stylesheet" href="../css/utilities/utilities.css"/>
+    <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
-    <link rel="stylesheet" href="../css/components/tags.css" />
-    <link rel="stylesheet" href="../css/components/searchArea.css">
-    <link rel="stylesheet" href="../css/components/searchCard.css">
+    <link rel="stylesheet" href="../css/components/label.css" />
+    <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link
       rel="shortcut icon"
       href="../imgs/favicon/favicon.ico"
@@ -23,13 +21,15 @@
   </head>
   <body>
     <header class="c-site-header">
-      <img
-        src="../imgs/site-icon.png"
-        alt="website icon"
-        width="30"
-        height="30"
-        class="c-site-header__logo"
-      />
+      <a href="./index.html">
+        <img
+          src="../imgs/site-icon.png"
+          alt="website icon"
+          width="30"
+          height="30"
+          class="c-site-header__logo"
+        />
+      </a>
       <span class="c-site-header__search-container">
         <input
           type="text"
@@ -44,8 +44,18 @@
         </button>
       </span>
       <span class="c-site-header__buttons-container">
-        <button class="c-site-header__register-button">Register</button>
-        <button class="c-site-header__login-button">Login</button>
+        <button
+          class="c-site-header__register-button"
+          data-modal-target="#register_type_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button"
+          data-modal-target="#login_modal"
+        >
+          Login
+        </button>
       </span>
     </header>
     <main>
