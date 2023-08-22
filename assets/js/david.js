@@ -1,40 +1,29 @@
-function alerta(){
-    alert("testando")
-}
-
-function carregar(){
+function loadCards(){
   for (i=0; i<3; i++){
     addCard()
   }
-  window.addEventListener("scroll", scrooling)
+  window.addEventListener("scroll", scrollMove)
 }
 
-function scrooling(){
-  body = document.querySelector("body")
-
+function scrollMove(){
   // print "false" if direction is down and "true" if up
   scrUp = this.oldScroll > this.scrollY;
   this.oldScroll = this.scrollY;
   
+  // Check if scroll is moving down
   if (!scrUp){
     addCard()
   }
+  // Else, scroll is movin up
   else{
     remCard()
   }
-  
-
-  // if (body.scrollDown <=0){
-  //   addCard()
-  // }
-  // else{
-  //   alert("Subindo!")
-  // }
 }
 
 function addCard(){
-    // Obtem search container result
+    // Get search container result
     searchContainer = document.querySelector("div#c-searching-container___result")
+    // Add card
     searchContainer.innerHTML += `
     <article class="c-searching__card">
               <aside>
@@ -93,9 +82,9 @@ function addCard(){
 }
 
 function remCard(){
-    // Obtem search container result
+    // Get search container result
     searchContainer = document.querySelector("div#c-searching-container___result")
     cardList = searchContainer.querySelectorAll("article")
-    cardRemove = cardList[cardList.length -1]
-    searchContainer.removeChild(cardRemove)
+    // Remove the last card
+    searchContainer.removeChild(cardList[cardList.length -1])
 }
