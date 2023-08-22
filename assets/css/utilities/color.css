@@ -1,0 +1,13 @@
+:root {
+  --clr-primary: #165dca;
+  --clr-secondary: #134694;
+  --clr-default-hover: #2c69c5;
+  --clr-text: #000;
+  --clr-secondary-text: #fff;
+  --clr-accept: #2bcb3b;
+  --clr-accept-hover: #58ce64;
+  --clr-denied: #ff0000;
+  --clr-denied-hover: #fa4f4f;
+  --clr-highlight: #ffe500;
+  --clr-disabled: #ffffff50;
+}
