@@ -19,3 +19,8 @@
     height: 100vw;
     border-radius: 10px;
 }
+
+/* teste */
+input:hover{
+  background-color: gray;
+}
