@@ -6,3 +6,10 @@
   padding: 3px;
   border-radius: 5px;
 }
+
+.c-tag-label {
+  background-color: white;
+  color: black;
+  padding: 8px;
+  border-radius: 10px;
+}
