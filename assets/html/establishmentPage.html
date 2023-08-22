@@ -20,6 +20,7 @@
     />
   </head>
   <body>
+<<<<<<< HEAD
     <header class="c-site-header">
       <a href="./index.html">
         <img
@@ -208,6 +209,136 @@
             alt="Establishment photo"
             width="120"
             height="120"
+=======
+    <header>
+      <img src="" alt="website icon" />
+      <input requeride type="text" placeholder="Search establishments..." />
+      <button id="header_search_button"><i class="ri-search-line"></i></button>
+    </header>
+    <main>
+      <form id="login_modal">
+        <label for="user_input_login_modal">User</label>
+        <input requeride
+          id="user_input_login_modal"
+          type="text"
+          placeholder="Enter your username..."
+        />
+        <label for="password_input_login_modal">Password</label>
+        <input requeride
+          id="password_input_login_modal"
+          type="text"
+          placeholder="Enter your password..."
+        />
+        <button id="submit_login_modal" type="submit">Login</button>
+        <a href="">forgot your password?</a>
+      </form>
+      <form id="recover_password_modal">
+        <h2>
+          In order for us to recover your password, we will send a recovery link
+          to your email.
+        </h2>
+        <label for="email_input_recover_password_modal">Email</label>
+        <input requeride
+          id="email_input_recover_password_modal"
+          type="text"
+          placeholder="Enter your email..."
+        />
+        <button id="submit_recover_password_modal">send email</button>
+      </form>
+      <form id="new_password_modal">
+        <h2>Email confirmed, enter your new password!</h2>
+        <label for="password_input_new_password_modal">password</label>
+        <input requeride
+          id="password_input_new_password_modal"
+          type="text"
+          placeholder="Enter your password.."
+        />
+        <label for="retype_password_input_new_password_modal">
+          check password
+        </label>
+        <input requeride
+          id="retype_password_input_new_password_modal"
+          type="text"
+          placeholder="Retype your password..."
+        />
+        <textarea id="error_field_new_password_modal" disabled>
+               Validation field if any data
+               are exempt! hidden by default.
+         </textarea
+        >
+        <button type="send" id="save_button_new_password_modal">To save</button>
+      </form>
+      <form id="register_type_modal">
+        <h2>Would you like to register as:</h2>
+        <button id="establishment_button_register_type_modal">
+          establishment
+        </button>
+        <button id="user_register_button_type_modal">User</button>
+      </form>
+      <form id="modal_establishment">
+        <img id="establishment_photo" src="" alt="Establishment photo" />
+        <label for="name_input_establishment_modal">Name</label>
+        <input requeride
+          id="name_input_establishment_modal"
+          type="text"
+          placeholder="Enter the name of the establishment..."
+        />
+        <label for="owner_input_establishment_modal">owner</label>
+        <input requeride
+          id="owner_input_establishment_modal"
+          type="text"
+          placeholder="Enter the name of the owner..."
+        />
+        <label for="email_input_establishment_modal">Email</label>
+        <input requeride
+          id="email_input_establishment_modal"
+          type="text"
+          placeholder="Enter the establishment's email.."
+        />
+        <label for="username_input_establishment_modal">Username</label>
+        <input requeride
+          id="username_input_establishment_modal"
+          type="text"
+          placeholder="Enter your username..."
+        />
+        <label for="password_input_establishment_modal">password</label>
+        <input requeride
+          id="password_input_establishment_modal"
+          type="text"
+          placeholder="Enter your password.."
+        />
+        <label for="retype_password_input_establishment_modal">
+          Check Password
+        </label>
+        <input requeride
+          id="retype_password_input_establishment_modal"
+          type="text"
+          placeholder="Retype your password..."
+        />
+
+        <label for="telephone_input_establishment_modal">Telephone</label>
+        <input requeride
+          id="telephone_input_establishment_modal"
+          type="number"
+          placeholder="Enter your company phone number..."
+        />
+        <label
+          for="cnpj_input_establishment_modal"
+          title="Needed to register your property as unique on the site."
+        >
+          CNPJ
+        </label>
+        <input requeride
+          id="cnpj_input_modal_establishment"
+          type="text"
+          placeholder="Type the CNPJ of the establishment..."
+        />
+        <span>
+          <input requeride
+            type="date"
+            name=""
+            id="inauguration_input_establishment_modal"
+>>>>>>> f075a02bc23e743260056b913f802e609e2df719
           />
           <br />
           <span class="u-row-container u-margin">
