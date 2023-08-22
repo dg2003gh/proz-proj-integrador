@@ -19,9 +19,7 @@
   align-self: center;
 }
 
-.u-column-center-child {
-  display: flex;
-  flex-direction: column;
+.u-center-child {
   align-items: center;
 }
 
