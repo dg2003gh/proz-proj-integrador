@@ -1,7 +1,8 @@
 .c-label {
-  background-color: #fff;
-  color: #000;
+  color: var(--clr-text);
   align-self: flex-start;
+  text-align: center;
+  text-transform: uppercase;
   margin-bottom: 5px;
   padding: 3px;
   border-radius: 5px;
