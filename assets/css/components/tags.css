@@ -11,12 +11,6 @@
     background-color: black;
     align-items: center;
 }
-.c-tags-container__label{
-    background-color: white;
-    color: black;
-    padding: 8px;
-    border-radius: 10px;
-}
 .c-tags-container__container{
     display: flex;
     background-color: rgb(255, 0, 0);
