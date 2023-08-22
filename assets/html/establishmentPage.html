@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
+    <link rel="stylesheet" href="../css/utilities/reset.css" />
+    <link rel="stylesheet" href="../css/components/header.css" />
+    <link rel="stylesheet" href="../css/components/modal.css" />
+    <link rel="stylesheet" href="../css/components/label.css" />
+    <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link
       rel="shortcut icon"
       href="../imgs/favicon/favicon.ico"
@@ -15,322 +20,468 @@
     />
   </head>
   <body>
-    <header>
-      <img
-        src="../imgs/site-icon.png"
-        alt="website icon"
-        width="180"
-        height="180"
-      />
-      <input
-        type="text"
-        placeholder="Search establishments..."
-        class="ri-search-line"
-      />
-      <button id="header_search_button" aria-label="Search button.">
-        <i class="ri-search-line"></i>
-      </button>
-    </header>
-    <main>
-      <form id="login_modal">
-        <label for="user_input_login_modal">User</label>
-        <input
-          required
-          id="user_input_login_modal"
-          type="text"
-          placeholder="Enter your username..."
-          aria-label="Enter your username."
+    <header class="c-site-header">
+      <a href="./index.html">
+        <img
+          src="../imgs/site-icon.png"
+          alt="website icon"
+          width="30"
+          height="30"
+          class="c-site-header__logo"
         />
-        <br />
-        <label for="password_input_login_modal">Password</label>
+      </a>
+      <span class="c-site-header__search-container">
         <input
-          required
-          id="password_input_login_modal"
           type="text"
-          placeholder="Enter your password..."
-          aria-label="Enter your password."
-        />
-        <br />
-        <button id="submit_login_modal" type="submit" aria-label="Login button">
+          placeholder="Search establishments..."
+          class="ri-search-line c-site-header__search-input"
+        /><button
+          id="header_search_button"
+          aria-label="Search button."
+          class="c-site-header_search-button"
+        >
+          <i class="ri-search-line"></i>
+        </button>
+      </span>
+      <span class="c-site-header__buttons-container">
+        <button
+          class="c-site-header__register-button"
+          data-modal-target="#register_type_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button"
+          data-modal-target="#login_modal"
+        >
           Login
         </button>
-        <br />
-        <a href="">forgot your password?</a>
-      </form>
-      <form id="recover_password_modal">
-        <h2>
-          In order for us to recover your password, we will send a recovery link
-          to your email.
-        </h2>
-        <br />
-        <label for="email_input_recover_password_modal">Email</label>
-        <input
-          required
-          id="email_input_recover_password_modal"
-          type="text"
-          placeholder="Enter your email..."
-          aria-label="Enter your email"
-        />
-        <br />
-        <button
-          id="submit_recover_password_modal"
-          aria-label="Button to sen your email."
-        >
-          send email
-        </button>
-      </form>
-      <form id="new_password_modal">
-        <h2>Email confirmed, enter your new password!</h2>
-        <br />
-        <label for="password_input_new_password_modal">password</label>
-        <input
-          required
-          id="password_input_new_password_modal"
-          type="text"
-          placeholder="Enter your password.."
-          aria-label="Enter your password."
-        />
-        <br />
-        <label for="retype_password_input_new_password_modal">
-          check password
-        </label>
-        <input
-          required
-          id="retype_password_input_new_password_modal"
-          type="text"
-          placeholder="Retype your password..."
-          aria-label="Retype your password."
-        />
-        <br />
-        <label for="error_field_new_password_modal">Error output:</label>
-        <br />
-        <textarea id="error_field_new_password_modal" disabled>
-                Validation field if any data
-                are exempt! hidden by default.
-          </textarea
-        >
-        <br />
-        <button
-          type="submit"
-          id="save_button_new_password_modal"
-          aria-label="Save new password button"
-        >
-          save
-        </button>
-      </form>
-      <form id="register_type_modal">
-        <h2>Would you like to register as:</h2>
-        <br />
-        <button
-          id="establishment_button_register_type_modal"
-          aria-label="Button register an establishment . "
-        >
-          establishment
-        </button>
-        <button
-          id="user_register_button_type_modal"
-          aria-label="Button register as a user. "
-        >
-          User
-        </button>
-      </form>
-      <form id="modal_establishment">
-        <img
-          id="establishment_photo"
-          src="../imgs/icons/establishment.png"
-          alt="Establishment photo"
-          width="70"
-          height="70"
-        />
-        <br />
-        <label for="name_input_establishment_modal">Name</label>
-        <input
-          required
-          id="name_input_establishment_modal"
-          type="text"
-          placeholder="Enter the name of the establishment..."
-          aria-label="Enter the name of the establishment."
-        />
-        <br />
-        <label for="owner_input_establishment_modal">owner</label>
-        <input
-          required
-          id="owner_input_establishment_modal"
-          type="text"
-          placeholder="Enter the name of the owner..."
-          aria-label="Enter the name of the owner."
-        />
-        <br />
-        <label for="username_input_establishment_modal">Username</label>
-        <input
-          required
-          id="username_input_establishment_modal"
-          type="text"
-          placeholder="Enter your username..."
-          aria-label="Enter your username."
-        />
-        <br />
-        <label for="email_input_establishment_modal">Email</label>
-        <input
-          required
-          id="email_input_establishment_modal"
-          type="text"
-          placeholder="Enter the establishment's email.."
-          aria-label="Enter the establishment's e-mail."
-        />
-        <br />
-        <label for="password_input_establishment_modal">password</label>
-        <input
-          required
-          id="password_input_establishment_modal"
-          type="text"
-          placeholder="Enter your password..."
-          aria-label="Enter your password."
-        />
-        <br />
-        <label for="retype_password_input_establishment_modal">
-          Check Password
-        </label>
-        <input
-          required
-          id="retype_password_input_establishment_modal"
-          type="text"
-          placeholder="Retype your password..."
-          aria-label="Retype your password."
-        />
-        <br />
-        <label for="telephone_input_establishment_modal">Telephone</label>
-        <input
-          required
-          id="telephone_input_establishment_modal"
-          type="number"
-          placeholder="Enter your company phone number..."
-          aria-label="Enter your company phone number."
-        />
-        <br />
-        <label
-          for="cnpj_input_establishment_modal"
-          title="Needed to register your property as unique on the site."
-        >
-          CNPJ
-        </label>
-        <input
-          required
-          id="cnpj_input_establishment_modal"
-          type="number"
-          placeholder="Type the CNPJ of the establishment..."
-          aria-label="Type the CNPJ of the establishment."
-        />
-        <br />
-        <span>
-          <label for="inauguration_input_establishment_modal">
-            Inauguration date:
+      </span>
+    </header>
+    <main>
+      <section>
+        <form class="c-modal" id="login_modal">
+          <label for="user_input_login_modal" class="c-label"> User </label>
+          <input
+            required
+            id="user_input_login_modal"
+            type="text"
+            class="c-modal__input"
+            placeholder="Enter your username..."
+            aria-label="Enter your username."
+          />
+          <br />
+          <label for="password_input_login_modal" class="c-label">
+            Password
           </label>
           <input
             required
-            type="date"
-            name=""
-            id="inauguration_input_establishment_modal"
-            aria-label="Type the establishment inauguration date."
+            id="password_input_login_modal"
+            class="c-modal__input"
+            type="password"
+            placeholder="Enter your password..."
+            aria-label="Enter your password."
           />
-        </span>
-        <br />
-        <label for="error_field_establishment_modal">Error output:</label>
-        <br />
-        <textarea id="error_field_establishment_modal" disabled>
-                Validation field if any data
-                are exempt! hidden by default.
-          </textarea
-        ><br />
-        <button type="submit" aria-label="Button to register the establishment">
-          Register
-        </button>
-      </form>
-      <form id="user_modal">
-        <img
-          id="user_photo"
-          src="../imgs/icons/user.png"
-          alt="User photo"
-          width="70"
-          height="70"
-        />
-        <br />
-        <label for="name_input_user_modal">Name</label>
-        <input
-          required
-          id="name_input_user_modal"
-          type="text"
-          placeholder="Enter the name of the user..."
-          aria-label="Enter the name of the user."
-        />
-        <br />
-        <label for="surname_input_user_modal">Surname</label>
-        <input
-          required
-          id="surname_input_user_modal"
-          type="text"
-          placeholder="Enter your surname..."
-          aria-label="Enter your surname."
-        />
-        <br />
-        <label for="username_input_user_modal">Username</label>
-        <input
-          required
-          id="username_input_user_modal"
-          type="text"
-          placeholder="Enter your username..."
-          aria-label="Enter your username."
-        />
-        <br />
-        <label for="email_input_user_modal">Email</label>
-        <input
-          required
-          id="email_input_user_modal"
-          type="text"
-          placeholder="Enter the user's email.."
-          aria-label="Enter the user's email."
-        />
-        <br />
-        <label for="password_input_user_modal">password</label>
-        <input
-          required
-          id="password_input_user_modal"
-          type="text"
-          placeholder="Enter your password..."
-          aria-label="Enter your password."
-        />
-        <br />
-        <label for="retype_password_input_user_modal">Check Password </label>
-        <input
-          required
-          id="retype_password_input_user_modal"
-          type="text"
-          placeholder="Retype your password..."
-          aria-label="Retype your password."
-        />
-        <br />
-        <span>
-          <label for="disability_select_user_modal">
-            Do you want to declare your disability?
+          <br />
+          <button
+            id="submit_login_modal"
+            class="c-modal__button"
+            type="submit"
+            aria-label="Login button"
+          >
+            Login
+          </button>
+          <br />
+          <a data-modal-target="#recover_password_modal" class="c-modal__link">
+            Forgot your password ?
+          </a>
+        </form>
+        <form class="c-modal" id="recover_password_modal">
+          <h3 class="u-margin">
+            In order for us to recover
+            <br />
+            your <strong class="u-highlight-color">password</strong>, we will
+            send
+            <br />
+            a recovery link to your e-mail.
+          </h3>
+          <hr />
+          <br />
+          <label class="c-label" for="email_input_recover_password_modal">
+            E-mail
+          </label>
+          <input
+            required
+            class="c-modal__input"
+            id="email_input_recover_password_modal"
+            type="email"
+            placeholder="Enter your e-mail..."
+            aria-label="Enter your e-mail"
+          />
+          <br />
+          <button
+            class="c-modal__button"
+            id="submit_recover_password_modal"
+            aria-label="Button to send your e-mail."
+          >
+            send e-mail
+          </button>
+        </form>
+        <form class="c-modal" id="new_password_modal">
+          <h2>Email confirmed, enter your new password!</h2>
+          <br />
+          <label class="c-label" for="password_input_new_password_modal">
+            password
+          </label>
+          <input
+            required
+            class="c-modal__input"
+            id="password_input_new_password_modal"
+            type="password"
+            placeholder="Enter your password.."
+            aria-label="Enter your password."
+          />
+          <br />
+          <label class="c-label" for="retype_password_input_new_password_modal">
+            check password
+          </label>
+          <input
+            required
+            class="c-modal__input"
+            id="retype_password_input_new_password_modal"
+            type="password"
+            placeholder="Retype your password..."
+            aria-label="Retype your password."
+          />
+          <br />
+          <label class="c-label" for="error_field_new_password_modal">
+            Error output
           </label>
           <br />
-          <select name="" id="disability_select_user_modal">
-            <option value="">Not declared</option>
-          </select>
-        </span>
-        <br />
-        <label for="error_field_user_modal">Error output:</label>
-        <br />
-        <textarea id="error_field_user_modal" disabled>
-                Validation field if any data
-                are exempt! hidden by defaultlt.
-          </textarea
-        >
-        <br />
-        <button type="submit" aria-label="Button to register the user.">
-          Register
-        </button>
-      </form>
+          <textarea
+            class="c-modal__error-field"
+            id="error_field_new_password_modal"
+            disabled
+          >
+               Validation field if any data
+               are exempt! hidden by default.
+         </textarea
+          >
+          <br />
+          <button
+            class="c-modal__button"
+            type="submit"
+            id="save_button_new_password_modal"
+            aria-label="Save new password button"
+          >
+            save
+          </button>
+        </form>
+        <form class="c-modal" id="register_type_modal">
+          <h2>Would you like to register as:</h2>
+          <br />
+          <span class="u-row-container">
+            <button
+              class="c-modal__button"
+              type="button"
+              id="establishment_button_register_type_modal"
+              aria-label="Button register  a establishment . "
+              data-modal-target="#establishment_modal"
+            >
+              Establishment
+            </button>
+            <button
+              class="c-modal__button"
+              type="button"
+              id="user_register_button_type_modal"
+              aria-label="Button register  as a user. "
+              data-modal-target="#user_modal"
+            >
+              User
+            </button>
+          </span>
+        </form>
+        <form class="c-modal" id="establishment_modal">
+          <img
+            id="establishment_photo"
+            src="../imgs/icons/establishment.png"
+            alt="Establishment photo"
+            width="120"
+            height="120"
+          />
+          <br />
+          <span class="u-row-container u-margin">
+            <span class="u-column-container u-margin">
+              <label class="c-label" for="name_input_establishment_modal">
+                Name
+              </label>
+              <input
+                required
+                id="name_input_establishment_modal"
+                class="c-modal__input"
+                type="text"
+                placeholder="Enter the name of the establishment..."
+                aria-label="Enter the name of the establishment."
+              />
+              <br />
+              <label class="c-label" for="username_input_establishment_modal">
+                Username
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="username_input_establishment_modal"
+                type="text"
+                placeholder="Enter your username..."
+                aria-label="Enter your username."
+              />
+              <br />
+              <label class="c-label" for="password_input_establishment_modal">
+                password
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="password_input_establishment_modal"
+                type="password"
+                placeholder="Enter your password..."
+                aria-label="Enter your password."
+              />
+              <br />
+              <label class="c-label" for="telephone_input_establishment_modal">
+                Telephone
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="telephone_input_establishment_modal"
+                type="tel"
+                placeholder="Enter your company phone number..."
+                aria-label="Enter your company phone number."
+              />
+              <br />
+            </span>
+            <br />
+            <span class="u-column-container u-margin">
+              <label class="c-label" for="owner_input_establishment_modal">
+                owner
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="owner_input_establishment_modal"
+                type="text"
+                placeholder="Enter the name of the owner..."
+                aria-label="Enter the name of the owner."
+              />
+              <br />
+              <label class="c-label" for="email_input_establishment_modal">
+                E-mail
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="email_input_establishment_modal"
+                type="text"
+                placeholder="Enter the establishment's e-mail.."
+                aria-label="Enter the establishment's e-mail."
+              />
+              <br />
+              <label
+                class="c-label"
+                for="retype_password_input_establishment_modal"
+              >
+                Check Password
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="retype_password_input_establishment_modal"
+                type="password"
+                placeholder="Retype your password..."
+                aria-label="Retype your password."
+              />
+              <br />
+              <label
+                class="c-label"
+                for="cnpj_input_establishment_modal"
+                title="Needed to register your property as unique on the site."
+              >
+                CNPJ
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="cnpj_input_establishment_modal"
+                type="number"
+                placeholder="Type the CNPJ of the establishment..."
+                aria-label="Type the CNPJ of the establishment."
+              />
+            </span>
+          </span>
+          <br />
+          <span class="u-column-container c-modal__container">
+            <label
+              class="c-label u-center"
+              for="inauguration_input_establishment_modal"
+            >
+              Inauguration date:
+            </label>
+            <input
+              required
+              class="c-modal__date"
+              type="date"
+              name=""
+              id="inauguration_input_establishment_modal"
+              aria-label="Type the establishment inauguration date."
+            />
+          </span>
+          <br />
+          <label class="c-label u-center" for="error_field_establishment_modal">
+            Error output
+          </label>
+          <br />
+          <textarea
+            class="c-modal__error-field"
+            id="error_field_establishment_modal"
+            disabled
+          >
+          Validation field if any data
+          are exempt! hidden by default.    
+       </textarea
+          >
+          <br />
+          <button
+            class="c-modal__button"
+            type="submit"
+            aria-label="Button to register the establishment"
+          >
+            Register
+          </button>
+        </form>
+        <form class="c-modal" id="user_modal">
+          <img
+            id="user_photo"
+            src="../imgs/icons/user.png"
+            alt="User photo"
+            width="120"
+            height="120"
+          />
+          <br />
+          <span class="u-row-container">
+            <span class="u-column-container u-margin">
+              <label class="c-label" for="name_input_user_modal"> Name </label>
+              <input
+                required
+                class="c-modal__input"
+                id="name_input_user_modal"
+                type="text"
+                placeholder="Enter the name of the user..."
+                aria-label="Enter the name of the user."
+              />
+              <br />
+              <label class="c-label" for="username_input_user_modal">
+                Username
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="username_input_user_modal"
+                type="text"
+                placeholder="Enter your username..."
+                aria-label="Enter your username."
+              />
+              <br />
+              <label class="c-label" for="password_input_user_modal">
+                password
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="password_input_user_modal"
+                type="password"
+                placeholder="Enter your password..."
+                aria-label="Enter your password."
+              />
+            </span>
+            <br />
+            <span class="u-column-container u-margin">
+              <label class="c-label" for="surname_input_user_modal">
+                Surname
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="surname_input_user_modal"
+                type="text"
+                placeholder="Enter your surname..."
+                aria-label="Enter your surname."
+              />
+              <br />
+              <label class="c-label" for="email_input_user_modal">
+                Email
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="email_input_user_modal"
+                type="text"
+                placeholder="Enter the user's email.."
+                aria-label="Enter the user's email."
+              />
+              <br />
+              <label class="c-label" for="retype_password_input_user_modal">
+                Check Password
+              </label>
+              <input
+                required
+                class="c-modal__input"
+                id="retype_password_input_user_modal"
+                type="password"
+                placeholder="Retype your password..."
+                aria-label="Retype your password."
+              />
+            </span>
+          </span>
+          <br />
+          <span class="c-modal__container">
+            <label class="c-label" for="disability_select_user_modal">
+              <strong>Do you want to declare your disability?</strong>
+            </label>
+            <br />
+            <select
+              class="c-modal__select"
+              name=""
+              id="disability_select_user_modal"
+            >
+              <option value="">Not declared</option>
+            </select>
+          </span>
+          <br />
+          <label class="c-label u-center" for="error_field_user_modal">
+            Error output:
+          </label>
+          <br />
+          <textarea
+            class="c-modal__error-field"
+            id="error_field_user_modal"
+            disabled
+          >
+               Validation field if any data
+               are exempt! hidden by default.
+         </textarea
+          >
+          <br />
+          <button
+            class="c-modal__button"
+            type="submit"
+            aria-label="Button to register the user."
+          >
+            Register
+          </button>
+        </form>
+        <div id="overlay" data-modal-target=""></div>
+      </section>
       <section>
         <article>
           <header>
@@ -404,5 +555,6 @@
         </div>
       </section>
     </main>
+    <script src="../js/main.js" defer></script>
   </body>
 </html>
