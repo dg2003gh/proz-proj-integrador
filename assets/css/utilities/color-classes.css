@@ -23,7 +23,7 @@
 
 .u-accept-color {
   background-color: var(--clr-accept);
-  color: var(--clr-secondary-text);
+  color: var(--clr-text);
 }
 
 .u-accept-color:hover {
