@@ -5,6 +5,10 @@
   border-radius: 15px;
 }
 
+.c-slider__content-container {
+  overflow-y: hidden;
+}
+
 .c-slider__button {
   font-size: 4rem;
   cursor: pointer;
