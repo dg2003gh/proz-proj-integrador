@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="2500"
+   height="1000"
+   viewBox="0 0 62.5 25"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="linkedin-button.svg"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.2329033"
+     inkscape:cx="1258.0329"
+     inkscape:cy="105.19387"
+     inkscape:window-width="1366"
+     inkscape:window-height="724"
+     inkscape:window-x="0"
+     inkscape:window-y="44"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" />
+  <title
+     id="title1">github [#142]</title>
+  <desc
+     id="desc1">Created with Sketch.</desc>
+  <defs
+     id="defs1">
+    <rect
+       x="901.6618"
+       y="1223.6838"
+       width="1069.1133"
+       height="506.64804"
+       id="rect2" />
+  </defs>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>github [#142]</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     style="fill:#0a66c2;fill-opacity:1;stroke:#0a66c2;stroke-width:0.0996674;stroke-linejoin:round;stroke-opacity:1"
+     id="rect1"
+     width="56.026661"
+     height="21.140936"
+     x="3.4374917"
+     y="1.9295321"
+     rx="2.0931427"
+     ry="2.0931427" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.33333px;font-family:Ubuntu;-inkscape-font-specification:Ubuntu;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0944882;stroke-linejoin:round"
+     x="21.897499"
+     y="15.391665"
+     id="text3"><tspan
+       sodipodi:role="line"
+       id="tspan3"
+       style="font-size:8.33333px;fill:#ffffff;stroke-width:0.0944882;stroke:none"
+       x="21.897499"
+       y="15.391665">LINKEDIN</tspan></text>
+  <g
+     id="SVGRepo_bgCarrier"
+     stroke-width="0"
+     transform="matrix(1.3399234,0,0,1.2951935,2.2032653,1.7720951)" />
+  <g
+     id="SVGRepo_tracerCarrier"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     transform="matrix(1.3399234,0,0,1.2951935,2.2032653,1.7720951)" />
+  <g
+     id="SVGRepo_iconCarrier"
+     transform="matrix(1.3399234,0,0,1.2951935,2.2032653,2.1384429)"
+     style="fill:#ffffff">
+    <path
+       fill="#0a66c2"
+       d="M 12.225,12.225 H 10.447 V 9.44 c 0,-0.664 -0.012,-1.519 -0.925,-1.519 -0.926,0 -1.068,0.724 -1.068,1.47 v 2.834 H 6.676 V 6.498 h 1.707 v 0.783 h 0.024 c 0.348,-0.594 0.996,-0.95 1.684,-0.925 1.802,0 2.135,1.185 2.135,2.728 l -0.001,3.14 z M 4.67,5.715 A 1.037,1.037 0 0 1 3.638,4.684 c 0,-0.566 0.466,-1.032 1.032,-1.032 0.566,0 1.031,0.466 1.032,1.032 0,0.566 -0.466,1.032 -1.032,1.032 z m 0.889,6.51 H 3.779 V 6.498 h 1.78 z M 13.11,2 H 2.885 A 0.88,0.88 0 0 0 2,2.866 V 13.134 A 0.88,0.88 0 0 0 2.885,14 H 13.111 A 0.882,0.882 0 0 0 14,13.134 V 2.865 A 0.88,0.88 0 0 0 13.111,2.001 Z"
+       id="path1"
+       style="fill:#ffffff" />
+  </g>
+</svg>
