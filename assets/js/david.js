@@ -1,3 +1,7 @@
+body = document.querySelector("body")
+body.addEventListener("load", loadCards())
+
+
 function loadCards(){
   for (i=0; i<3; i++){
     addCard()
