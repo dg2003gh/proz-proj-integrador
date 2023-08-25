@@ -1,0 +1,19 @@
+.c-card {
+  display: flex;
+  color: #000;
+}
+
+.c-card__aside {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.c-card__img {
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.c-card__main-content {
+  display: block;
+  margin: 10px auto;
+}

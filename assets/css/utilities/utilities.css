@@ -12,11 +12,20 @@
 }
 
 .u-flex-start {
+  display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.u-self-center {
+  display: flex;
+  align-self: center;
 }
 
 .u-center {
-  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .u-center-child {
@@ -27,8 +36,12 @@
   margin: 10px;
 }
 
-.u-highlight-color {
-  color: #e2b82e;
+.u-border-radius {
+  border-radius: 15px;
+}
+
+.u-padding {
+  padding: 10px;
 }
 
 .u-overflow-hidden {

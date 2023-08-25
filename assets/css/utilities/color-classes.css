@@ -1,0 +1,39 @@
+.u-highlight-color {
+  color: var(--clr-highlight);
+}
+
+.u-primary-bg-color {
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary-text);
+}
+
+.u-secondary-bg-color {
+  background-color: var(--clr-secondary);
+  color: var(--clr-secondary-text);
+}
+
+.u-tertiary-bg-color {
+  background-color: var(--clr-secondary-text);
+  color: var(--clr-text);
+}
+
+.u-primary-bg-color:hover {
+  background-color: var(--clr-default-hover);
+}
+
+.u-accept-color {
+  background-color: var(--clr-accept);
+  color: var(--clr-secondary-text);
+}
+
+.u-accept-color:hover {
+  background-color: var(--clr-accept-hover);
+}
+
+.u-denied {
+  color: var(--clr-denied);
+}
+
+.u-disabled {
+  background-color: var(--clr-disabled);
+}

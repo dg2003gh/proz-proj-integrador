@@ -10,7 +10,6 @@
   left: 50%;
 
   transform: scale(0);
-  background-color: #165dca;
   max-height: 80%;
   overflow-y: scroll;
   overflow-x: auto;
@@ -32,7 +31,6 @@
 }
 
 .c-modal__button {
-  background-color: #fff;
   cursor: pointer;
   color: #000;
   width: 150px;
@@ -42,14 +40,12 @@
 }
 
 .c-modal__link {
-  color: #ffe500;
   cursor: pointer;
 }
 
 .c-modal__container {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
@@ -58,8 +54,6 @@
 
 .c-modal__select,
 .c-modal__date {
-  background-color: #165dca;
-  color: #fff;
   align-self: center;
   padding: 8px 15px;
   border: transparent;
@@ -68,8 +62,6 @@
 }
 
 .c-modal__error-field {
-  background-color: #fff;
-  color: #ff0000;
   min-width: 30vw;
   resize: none;
   padding: 50px 0;
@@ -80,6 +72,7 @@
 
 #overlay {
   z-index: 2;
+  background-color: #ffffff5f;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -87,7 +80,6 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ffffff50;
   opacity: 0;
   backdrop-filter: blur(10px);
   pointer-events: none;
