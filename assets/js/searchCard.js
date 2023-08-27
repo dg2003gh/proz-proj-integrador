@@ -1,3 +1,11 @@
+let arrayCard = [
+  {
+    "image": "",
+    "title": "Happyness Coffee Shop",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
+  }
+]
+
 body = document.querySelector("body")
 body.addEventListener("load", loadCards())
 
@@ -27,62 +35,57 @@ function scrollMove(){
 function addCard(){
     // Get search container result
     searchContainer = document.querySelector("div#c-searching-container___result")
-    // Add card
-    searchContainer.innerHTML += `
-    <article class="c-searching__card">
-              <aside>
-                <img class="c-searching-container__image" src="" alt="Establishment image" />
-              </aside>
-              <main class="c-searching-container__card-information">
-                <header>
-                  <h2>Happyness Coffee Shop</h2>
-                </header>
-                <main>
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Exercitationem assumenda accusantium suscipit veritatis ex,
-                  ducimus, totam quas quidem inventore similique at, cumque vel
-                  sunt! Nobis repellendus laborum eius et fugiat?
-                  </p>
-                </main>
-                <footer class="c-searching-container__footer">
-                  <div id="rank">
-                    <span>Rank: </span>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                    <i class="ri-star-line"></i>
-                  </div>
-                  <div id="suport">
-                    <span>Suport</span>
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/Braile.svg"
-                      alt="Braille icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/cão guia.svg"
-                      alt="Guide dog icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                      alt="Low vision icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                      alt="Pound interpreter icon"
-                    />
-                  </div>
-                  <div id="locality">
-                    <span span>Locality: </span><span>...</span>
-                  </div>
-                </footer>
-              </main>
-      </article>`
+    card = document.createElement("article")
+    card.setAttribute("class", "c-searching__card")
+    card.innerHTML += `
+      <aside><img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image"></aside>
+      <main class="c-searching-container__card-information">
+        <header>
+          <h2>${arrayCard[0].title}</h2>
+        </header>
+        <main>
+          <p>${arrayCard[0].description}</p>
+        </main>
+        <footer class="c-searching-container__footer">
+          <div id="rank">
+            <div id="rank">
+              <span>Rank: </span>
+              <i class="ri-star-line"></i>
+              <i class="ri-star-line"></i>
+              <i class="ri-star-line"></i>
+              <i class="ri-star-line"></i>
+              <i class="ri-star-line"></i>
+            </div>
+            <div id="suport">
+              <span>Suport</span>
+              <img
+                class="acessIcon c-searching-container__icon"
+                src="/assets/imgs/accessibility_icons/Braile.svg"
+                alt="Braille icon"
+              />
+              <img
+                class="acessIcon c-searching-container__icon"
+                src="/assets/imgs/accessibility_icons/cão guia.svg"
+                alt="Guide dog icon"
+              />
+              <img
+                class="acessIcon c-searching-container__icon"
+                src="/assets/imgs/accessibility_icons/baixa visão.svg"
+                alt="Low vision icon"
+              />
+              <img
+                class="acessIcon c-searching-container__icon"
+                src="/assets/imgs/accessibility_icons/interprete libras.svg"
+                alt="Pound interpreter icon"
+              />
+            </div>
+            <div id="locality">
+              <span span>Locality: </span><span>...</span>
+            </div>
+        </footer>
+      </main>
+    `
+    searchContainer.appendChild(card)
 }
 
 function remCard(){
