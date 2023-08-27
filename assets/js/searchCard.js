@@ -1,117 +1,109 @@
 let arrayCard = [
   {
-    "image": "/assets/imgs/stablishments/default.png",
-    "title": "Happyness Coffee Shop",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?"
-  }
-]
+    image: "/assets/imgs/stablishments/default.png",
+    title: "Happyness Coffee Shop",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
+  },
+];
 
-let scrollOld = window.scrollY
+let scrollOld = window.scrollY;
 
-body = document.querySelector("body")
-body.addEventListener("load", loadCards())
+body = document.querySelector("body");
+body.addEventListener("load", loadCards());
 // Adiciona o evento clearCards em todas as tags de pesquisa
 // Na lista há uma função entries() que não sei o que é...
-tags = document.querySelectorAll("span.tag")
-for (let pos=0; pos < tags.length; pos++){
-  tags[pos].addEventListener("click", clearCards)
+tags = document.querySelectorAll("span.tag");
+for (let pos = 0; pos < tags.length; pos++) {
+  tags[pos].addEventListener("click", clearCards);
 }
 
 // Adicionar evendo search no botão de pesquisa do header
-searchButt = document.querySelector("button#header_search_button")
-searchButt.addEventListener("click", search)
+searchButt = document.querySelector("button#header_search_button");
+searchButt.addEventListener("click", search);
 
-
-window.addEventListener("touchmove", function() {
-
-  scrollDirec = getScrollDirection()
-  // Verifica se scroll está 
+window.addEventListener("touchmove", function () {
+  scrollDirec = getScrollDirection();
+  // Verifica se scroll está
   // se movimentando para baixo ou para cima
   if (scrollDirec == "down") {
     if (ultCardDentroVP()) {
-      addCard()
+      addCard();
     }
-  }
-  else if (scrollDirec == "up") {
+  } else if (scrollDirec == "up") {
     if (ultCardForaVP()) {
-      remCard()
+      remCard();
     }
   }
   // Atualiza a última posição do scroll
-  scrollOld = window.scrollY
-})
+  scrollOld = window.scrollY;
+});
 
 // Carrega os cards ao carregar a página
-function loadCards(){
-  for (i=0; i<3; i++){
-    addCard()
+function loadCards() {
+  for (i = 0; i < 3; i++) {
+    addCard();
   }
- }
+}
 
 // Retorna a direção do scroll
-function getScrollDirection(){
-  let scrollDown = ""
+function getScrollDirection() {
+  let scrollDown = "";
   // Verifica a direção do scroll
-  if (scrollOld > window.scrollY){
-    return "up"
-  }
-  else{
-    return "down" 
+  if (scrollOld > window.scrollY) {
+    return "up";
+  } else {
+    return "down";
   }
 }
 
-function ultCardDentroVP(){
+function ultCardDentroVP() {
   /* Verifica se a base do último card está dentro da view port */
 
   // Container de pesquisa
-  searchContainer = document.querySelector("div#c-searching-container__result")
+  searchContainer = document.querySelector("div#c-searching-container__result");
   // Lista de cards
-  cards = searchContainer.querySelectorAll("article")
+  cards = searchContainer.querySelectorAll("article");
   // Ultimo card
-  ultCard = cards[cards.length-1]
+  ultCard = cards[cards.length - 1];
 
   // Posição y da base do último card
-  ultCardPBOTT = ultCard.getBoundingClientRect().bottom
+  ultCardPBOTT = ultCard.getBoundingClientRect().bottom;
   // Altura da viewport
-  alturaVP = window.innerHeight
+  alturaVP = window.innerHeight;
 
-  // Verifica se posição da base do 
+  // Verifica se posição da base do
   // último card é menor que a altura da viewport
-  if (ultCardPBOTT <= alturaVP)
-    return true
-  else
-    return false
+  if (ultCardPBOTT <= alturaVP) return true;
+  else return false;
 }
 
-function ultCardForaVP(){
+function ultCardForaVP() {
   /* Verifica se a base do último card está dentro da view port */
 
   // Container de pesquisa
-  searchContainer = document.querySelector("div#c-searching-container__result")
+  searchContainer = document.querySelector("div#c-searching-container__result");
   // Lista de cards
-  cards = searchContainer.querySelectorAll("article")
+  cards = searchContainer.querySelectorAll("article");
   // Ultimo card
-  ultCard = cards[cards.length-1]
+  ultCard = cards[cards.length - 1];
   // Posição y da base do último card
-  ultCardPTOP = ultCard.getBoundingClientRect().top
+  ultCardPTOP = ultCard.getBoundingClientRect().top;
   // Altura da viewport
-  alturaVP = window.innerHeight
+  alturaVP = window.innerHeight;
 
-  // Verifica se posição da base do 
+  // Verifica se posição da base do
   // último card é menor que a altura da viewport
-  if (ultCardPTOP >= alturaVP * 0.85)
-    return true
-  else
-    return false
+  if (ultCardPTOP >= alturaVP * 0.85) return true;
+  else return false;
 }
 
-
-function addCard(){
-    // Get search container result
-    searchContainer = document.querySelector("div#c-searching-container__result")
-    card = document.createElement("article")
-    card.setAttribute("class", "c-searching__card")
-    card.innerHTML += `
+function addCard() {
+  // Get search container result
+  searchContainer = document.querySelector("div#c-searching-container__result");
+  card = document.createElement("article");
+  card.setAttribute("class", "c-searching__card");
+  card.innerHTML += `
       <aside>
         <img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image">
       </aside>
@@ -159,32 +151,34 @@ function addCard(){
           </div>
         </footer>
       </main>
-    `
-    arrayCard[0].idvaga ++
-    searchContainer.appendChild(card)
+    `;
+  arrayCard[0].idvaga++;
+  searchContainer.appendChild(card);
 }
 
-function remCard(){
-    // Get search container result
-    searchContainer = document.querySelector("div#c-searching-container__result")
-    cardList = searchContainer.querySelectorAll("article")
-    // Remove the last card
-    searchContainer.removeChild(cardList[cardList.length -1])
+function remCard() {
+  // Get search container result
+  searchContainer = document.querySelector("div#c-searching-container__result");
+  cardList = searchContainer.querySelectorAll("article");
+  // Remove the last card
+  searchContainer.removeChild(cardList[cardList.length - 1]);
 }
 
-function clearCards(){
+function clearCards() {
   /* 
     Limpa os cards do container de pesquisa
   */
-  searchResult = document.querySelector("#c-searching-container__result")
+  searchResult = document.querySelector("#c-searching-container__result");
   searchResult.innerHTML = `
     <div style="margin: 5px; padding: 2px;">
       <h1>No stablishments found</h1>
     </div>
-  `
+  `;
 }
 
-function search(){
-  const searchInput = document.querySelector("input.c-site-header__search-input")
-  searchInput.value = "Ola"
+function search() {
+  const searchInput = document.querySelector(
+    "input.c-site-header__search-input"
+  );
+  searchInput.value = "Ola";
 }
