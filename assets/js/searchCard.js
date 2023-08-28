@@ -59,7 +59,7 @@ function ultCardDentroVP(){
   /* Verifica se a base do último card está dentro da view port */
 
   // Container de pesquisa
-  searchContainer = document.querySelector("div#c-searching-container___result")
+  searchContainer = document.querySelector("div#c-searching-container__result")
   // Lista de cards
   cards = searchContainer.querySelectorAll("article")
   // Ultimo card
@@ -82,7 +82,7 @@ function ultCardForaVP(){
   /* Verifica se a base do último card está dentro da view port */
 
   // Container de pesquisa
-  searchContainer = document.querySelector("div#c-searching-container___result")
+  searchContainer = document.querySelector("div#c-searching-container__result")
   // Lista de cards
   cards = searchContainer.querySelectorAll("article")
   // Ultimo card
@@ -103,7 +103,7 @@ function ultCardForaVP(){
 
 function addCard(){
     // Get search container result
-    searchContainer = document.querySelector("div#c-searching-container___result")
+    searchContainer = document.querySelector("div#c-searching-container__result")
     card = document.createElement("article")
     card.setAttribute("class", "c-searching__card")
     card.innerHTML += `
@@ -125,8 +125,8 @@ function addCard(){
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
           </div>
-          <div id="suport">
-            <span>Suport</span>
+          <div id="support">
+            <span>Support</span>
             <img
               class="acessIcon c-searching-container__icon"
               src="/assets/imgs/accessibility_icons/Braile.svg"
@@ -160,7 +160,7 @@ function addCard(){
 
 function remCard(){
     // Get search container result
-    searchContainer = document.querySelector("div#c-searching-container___result")
+    searchContainer = document.querySelector("div#c-searching-container__result")
     cardList = searchContainer.querySelectorAll("article")
     // Remove the last card
     searchContainer.removeChild(cardList[cardList.length -1])
@@ -170,7 +170,7 @@ function clearCards(){
   /* 
     Limpa os cards do container de pesquisa
   */
-  searchResult = document.querySelector("#c-searching-container___result")
+  searchResult = document.querySelector("#c-searching-container__result")
   searchResult.innerHTML = `
     <div style="margin: 5px; padding: 2px;">
       <h1>No stablishments found</h1>
