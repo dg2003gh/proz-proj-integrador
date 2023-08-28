@@ -21,15 +21,38 @@ function scrollMove(){
   // print "false" if direction is down and "true" if up
   scrUp = this.oldScroll > this.scrollY;
   this.oldScroll = this.scrollY;
+
+
   
   // Check if scroll is moving down
   if (!scrUp){
-    addCard()
+    if (temCard()){
+      addCard()
+    }
   }
   // Else, scroll is movin up
   else{
-    remCard()
+    if(!temCard()){
+      remCard()
+    }
   }
+}
+
+function temCard (){
+  searchContainer = document.querySelector("div#c-searching-container___result")
+  cards = searchContainer.querySelectorAll("article")
+  ultCard = cards[cards.length-1]
+  ultCardPTOP = ultCard.getBoundingClientRect().top
+  ultCardPBOTT = ultCard.getBoundingClientRect().bottom
+  alturaVP = window.innerHeight
+
+  if (ultCardPBOTT < alturaVP)
+    result = true
+  else
+    result = false
+
+  console.log(result)
+  return result
 }
 
 function addCard(){
@@ -48,40 +71,39 @@ function addCard(){
         </main>
         <footer class="c-searching-container__footer">
           <div id="rank">
-            <div id="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
-            </div>
-            <div id="suport">
-              <span>Suport</span>
-              <img
-                class="acessIcon c-searching-container__icon"
-                src="/assets/imgs/accessibility_icons/Braile.svg"
-                alt="Braille icon"
-              />
-              <img
-                class="acessIcon c-searching-container__icon"
-                src="/assets/imgs/accessibility_icons/cão guia.svg"
-                alt="Guide dog icon"
-              />
-              <img
-                class="acessIcon c-searching-container__icon"
-                src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                alt="Low vision icon"
-              />
-              <img
-                class="acessIcon c-searching-container__icon"
-                src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                alt="Pound interpreter icon"
-              />
-            </div>
-            <div id="locality">
-              <span span>Locality: </span><span>...</span>
-            </div>
+          </div>
+          <div id="suport">
+            <span>Suport</span>
+            <img
+              class="acessIcon c-searching-container__icon"
+              src="/assets/imgs/accessibility_icons/Braile.svg"
+              alt="Braille icon"
+            />
+            <img
+              class="acessIcon c-searching-container__icon"
+              src="/assets/imgs/accessibility_icons/cão guia.svg"
+              alt="Guide dog icon"
+            />
+            <img
+              class="acessIcon c-searching-container__icon"
+              src="/assets/imgs/accessibility_icons/baixa visão.svg"
+              alt="Low vision icon"
+            />
+            <img
+              class="acessIcon c-searching-container__icon"
+              src="/assets/imgs/accessibility_icons/interprete libras.svg"
+              alt="Pound interpreter icon"
+            />
+          </div>
+          <div id="locality">
+            <span>Locality: </span><span>...</span>
+          </div>
         </footer>
       </main>
     `
@@ -94,4 +116,18 @@ function remCard(){
     cardList = searchContainer.querySelectorAll("article")
     // Remove the last card
     searchContainer.removeChild(cardList[cardList.length -1])
+}
+
+function ultCartAbaixo(){
+    elementos = searchContainer.querySelectorAll("article")
+    ultCard = elementos[elementos.length-1]
+    ultCardPTOP = ultCard.getBoundingClientRect().top
+    ultCardPBOTT = ultCard.getBoundingClientRect().bottom
+    alturaVP = window.innerHeight
+
+    alert(alturaVP)
+    alert(ultCardPTOP)
+    alert(ultCardPBOTT)
+
+    alert(ultCardPBOTT > alturaVP)
 }
