@@ -11,8 +11,9 @@ let scrollOld = window.scrollY
 body = document.querySelector("body")
 body.addEventListener("load", loadCards())
 // Adiciona o evento clearCards em todas as tags de pesquisa
+// Na lista há uma função entries() que não sei o que é...
 tags = document.querySelectorAll("span.tag")
-for (pos in tags){
+for (let pos=0; pos < tags.length; pos++){
   tags[pos].addEventListener("click", clearCards)
 }
 
