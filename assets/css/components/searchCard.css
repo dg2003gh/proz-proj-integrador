@@ -13,6 +13,7 @@
 .c-searching-container__card-information{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 .c-searching-container__footer{
     display: flex;
