@@ -113,8 +113,8 @@ function addCard() {
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
           </div>
-          <div id="suport">
-            <span>Suport</span>
+          <div id="support">
+            <span>Support</span>
             <img
               class="acessIcon c-searching-container__icon"
               src="/assets/imgs/accessibility_icons/Braile.svg"

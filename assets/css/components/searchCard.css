@@ -23,32 +23,18 @@
     width: 40px;
     height: 40px;
 }
-.c-searching-container__footer #rank, #support, #locality{
+
+article footer #rank{
     display: flex;
     align-items: center;
 }
 
-@media (max-width: 500px){
-  .c-searching__card {
+article footer #suport{
     display: flex;
-    flex-direction: column;
-  
-    background-color: white;
-    color: black;
-    margin: 8px;
-    border-radius: 10px;
-  }
-  .c-searching-container__card-information{
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .c-searching-container__image{
-    border-radius: 10px;
-    border: 2px solid black;
-    width: 200px;  
-    margin: 10px;
-  }
-  .c-searching-container__footer{
+    align-items: center;
+}
+
+article footer #locality{
     display: flex;
     flex-direction: column;
     align-items: center;
