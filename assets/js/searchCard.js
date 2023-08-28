@@ -1,8 +1,9 @@
 let arrayCard = [
   {
+    "idvaga": 0,
     "image": "/assets/imgs/stablishments/default.png",
     "title": "Happyness Coffee Shop",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?"
   }
 ]
 
@@ -17,6 +18,11 @@ for (let pos=0; pos < tags.length; pos++){
   tags[pos].addEventListener("click", clearCards)
 }
 
+// Adicionar evendo search no botão de pesquisa do header
+searchButt = document.querySelector("button#header_search_button")
+searchButt.addEventListener("click", search)
+
+// Carrega os cards ao carregar a página
 function loadCards(){
   for (i=0; i<3; i++){
     addCard()
@@ -94,6 +100,7 @@ function ultCardForaVP(){
     return false
 }
 
+
 function addCard(){
     // Get search container result
     searchContainer = document.querySelector("div#c-searching-container___result")
@@ -104,6 +111,7 @@ function addCard(){
       <main class="c-searching-container__card-information">
         <header>
           <h2>${arrayCard[0].title}</h2>
+          <span class="idvaga">#${arrayCard[0].idvaga}</span>
         </header>
         <main>
           <p>${arrayCard[0].description}</p>
@@ -146,6 +154,7 @@ function addCard(){
         </footer>
       </main>
     `
+    arrayCard[0].idvaga ++
     searchContainer.appendChild(card)
 }
 
@@ -167,4 +176,9 @@ function clearCards(){
       <h1>No stablishments found</h1>
     </div>
   `
+}
+
+function search(){
+  const searchInput = document.querySelector("input.c-site-header__search-input")
+  searchInput.value = "Ola"
 }
