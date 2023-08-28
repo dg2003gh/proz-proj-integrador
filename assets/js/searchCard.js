@@ -10,7 +10,11 @@ let scrollOld = window.scrollY
 
 body = document.querySelector("body")
 body.addEventListener("load", loadCards())
-
+// Adiciona o evento clearCards em todas as tags de pesquisa
+tags = document.querySelectorAll("span.tag")
+for (pos in tags){
+  tags[pos].addEventListener("click", clearCards)
+}
 
 function loadCards(){
   for (i=0; i<3; i++){
@@ -150,4 +154,16 @@ function remCard(){
     cardList = searchContainer.querySelectorAll("article")
     // Remove the last card
     searchContainer.removeChild(cardList[cardList.length -1])
+}
+
+function clearCards(){
+  /* 
+    Limpa os cards do container de pesquisa
+  */
+  searchResult = document.querySelector("#c-searching-container___result")
+  searchResult.innerHTML = `
+    <div style="margin: 5px; padding: 2px;">
+      <h1>No stablishments found</h1>
+    </div>
+  `
 }
