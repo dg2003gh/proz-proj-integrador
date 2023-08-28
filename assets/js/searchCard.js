@@ -6,6 +6,8 @@ let arrayCard = [
   }
 ]
 
+let scrollOld = window.scrollY
+
 body = document.querySelector("body")
 body.addEventListener("load", loadCards())
 
@@ -14,45 +16,77 @@ function loadCards(){
   for (i=0; i<3; i++){
     addCard()
   }
-  window.addEventListener("scroll", scrollMove)
+
+  window.addEventListener("scroll", function(){
+    let scrollDown = false
+    // Verifica a direção do scroll
+    if (scrollOld > window.scrollY){
+        scrollDown = false
+      }
+    else{
+      scrollDown = true 
+    }
+
+    // Verifica se scroll está 
+    // se movimentando para cima
+    if (scrollDown){
+      if (ultCardDentroVP()){
+          addCard()
+      }
+    }
+    else {
+      if (ultCardForaVP()){
+          remCard()
+      }
+    }
+    // Atualiza a última posição do scroll
+    scrollOld = window.scrollY
+  })
 }
 
-function scrollMove(){
-  // print "false" if direction is down and "true" if up
-  scrUp = this.oldScroll > this.scrollY;
-  this.oldScroll = this.scrollY;
+function ultCardDentroVP(){
+  /* Verifica se a base do último card está dentro da view port */
 
-
-  
-  // Check if scroll is moving down
-  if (!scrUp){
-    if (temCard()){
-      addCard()
-    }
-  }
-  // Else, scroll is movin up
-  else{
-    if(!temCard()){
-      remCard()
-    }
-  }
-}
-
-function temCard (){
+  // Container de pesquisa
   searchContainer = document.querySelector("div#c-searching-container___result")
+  // Lista de cards
   cards = searchContainer.querySelectorAll("article")
+  // Ultimo card
   ultCard = cards[cards.length-1]
-  ultCardPTOP = ultCard.getBoundingClientRect().top
+
+  // Posição y da base do último card
   ultCardPBOTT = ultCard.getBoundingClientRect().bottom
+  // Altura da viewport
   alturaVP = window.innerHeight
 
-  if (ultCardPBOTT < alturaVP)
-    result = true
+  // Verifica se posição da base do 
+  // último card é menor que a altura da viewport
+  if (ultCardPBOTT <= alturaVP)
+    return true
   else
-    result = false
+    return false
+}
 
-  console.log(result)
-  return result
+function ultCardForaVP(){
+  /* Verifica se a base do último card está dentro da view port */
+
+  // Container de pesquisa
+  searchContainer = document.querySelector("div#c-searching-container___result")
+  // Lista de cards
+  cards = searchContainer.querySelectorAll("article")
+  // Ultimo card
+  ultCard = cards[cards.length-1]
+  // Posição y da base do último card
+  ultCardPTOP = ultCard.getBoundingClientRect().top
+  // Altura da viewport
+  alturaVP = window.innerHeight
+
+  // Verifica se posição da base do 
+  // último card é menor que a altura da viewport
+  if (ultCardPTOP >= alturaVP * 0.85)
+    return true
+  else
+    return false
 }
 
 function addCard(){
@@ -116,18 +150,4 @@ function remCard(){
     cardList = searchContainer.querySelectorAll("article")
     // Remove the last card
     searchContainer.removeChild(cardList[cardList.length -1])
-}
-
-function ultCartAbaixo(){
-    elementos = searchContainer.querySelectorAll("article")
-    ultCard = elementos[elementos.length-1]
-    ultCardPTOP = ultCard.getBoundingClientRect().top
-    ultCardPBOTT = ultCard.getBoundingClientRect().bottom
-    alturaVP = window.innerHeight
-
-    alert(alturaVP)
-    alert(ultCardPTOP)
-    alert(ultCardPBOTT)
-
-    alert(ultCardPBOTT > alturaVP)
 }
