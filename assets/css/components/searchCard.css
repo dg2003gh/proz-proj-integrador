@@ -7,7 +7,8 @@
 }
 .c-searching-container__image{
     border-radius: 10px;
-    border: 2px solid black;   
+    border: 2px solid black;
+    width: 150px;  
 }
 .c-searching-container__card-information{
     display: flex;
