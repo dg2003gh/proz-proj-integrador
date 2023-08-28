@@ -1,6 +1,6 @@
 let arrayCard = [
   {
-    "image": "",
+    "image": "/assets/imgs/stablishments/default.png",
     "title": "Happyness Coffee Shop",
     "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
   }
