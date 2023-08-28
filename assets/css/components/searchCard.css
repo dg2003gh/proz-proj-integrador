@@ -23,18 +23,7 @@
     width: 40px;
     height: 40px;
 }
-
-article footer #rank{
-    display: flex;
-    align-items: center;
-}
-
-article footer #suport{
-    display: flex;
-    align-items: center;
-}
-
-article footer #locality{
+.c-searching-container__footer #rank, #support, #locality{
     display: flex;
     align-items: center;
 }
