@@ -22,37 +22,43 @@ for (let pos=0; pos < tags.length; pos++){
 searchButt = document.querySelector("button#header_search_button")
 searchButt.addEventListener("click", search)
 
+
+window.addEventListener("touchmove", function() {
+
+  scrollDirec = getScrollDirection()
+  // Verifica se scroll está 
+  // se movimentando para baixo ou para cima
+  if (scrollDirec == "down") {
+    if (ultCardDentroVP()) {
+      addCard()
+    }
+  }
+  else if (scrollDirec == "up") {
+    if (ultCardForaVP()) {
+      remCard()
+    }
+  }
+  // Atualiza a última posição do scroll
+  scrollOld = window.scrollY
+})
+
 // Carrega os cards ao carregar a página
 function loadCards(){
   for (i=0; i<3; i++){
     addCard()
   }
+ }
 
-  window.addEventListener("scroll", function(){
-    let scrollDown = false
-    // Verifica a direção do scroll
-    if (scrollOld > window.scrollY){
-        scrollDown = false
-      }
-    else{
-      scrollDown = true 
-    }
-
-    // Verifica se scroll está 
-    // se movimentando para cima
-    if (scrollDown){
-      if (ultCardDentroVP()){
-          addCard()
-      }
-    }
-    else {
-      if (ultCardForaVP()){
-          remCard()
-      }
-    }
-    // Atualiza a última posição do scroll
-    scrollOld = window.scrollY
-  })
+// Retorna a direção do scroll
+function getScrollDirection(){
+  let scrollDown = ""
+  // Verifica a direção do scroll
+  if (scrollOld > window.scrollY){
+    return "up"
+  }
+  else{
+    return "down" 
+  }
 }
 
 function ultCardDentroVP(){
