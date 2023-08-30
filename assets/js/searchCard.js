@@ -12,34 +12,42 @@ let scrollOld = window.scrollY;
 body = document.querySelector("body");
 body.addEventListener("load", loadCards());
 
-function loadCards() {
-  for (i = 0; i < 3; i++) {
-    addCard();
-  }
+// Adicionar evendo search no botão de pesquisa do header
+searchButt = document.querySelector("button#header_search_button")
+searchButt.addEventListener("click", search)
 
-  window.addEventListener("scroll", function () {
-    let scrollDown = false;
+// Carrega os cards ao carregar a página
+function loadCards(){
+  for (i=0; i<3; i++){
+    addCard()
+  }
+ }
+
+  window.addEventListener("scroll", function(){
+    let scrollDown = false
     // Verifica a direção do scroll
-    if (scrollOld > window.scrollY) {
-      scrollDown = false;
-    } else {
-      scrollDown = true;
+    if (scrollOld > window.scrollY){
+        scrollDown = false
+      }
+    else{
+      scrollDown = true 
     }
 
-    // Verifica se scroll está
+    // Verifica se scroll está 
     // se movimentando para cima
-    if (scrollDown) {
-      if (ultCardDentroVP()) {
-        addCard();
+    if (scrollDown){
+      if (ultCardDentroVP()){
+          addCard()
       }
-    } else {
-      if (ultCardForaVP()) {
-        remCard();
+    }
+    else {
+      if (ultCardForaVP()){
+          remCard()
       }
     }
     // Atualiza a última posição do scroll
-    scrollOld = window.scrollY;
-  });
+    scrollOld = window.scrollY
+  })
 }
 
 function ultCardDentroVP() {
