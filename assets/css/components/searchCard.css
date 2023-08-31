@@ -43,6 +43,7 @@
     width: 200px;  
     margin: 10px;
   }
+  /**/
   .c-searching-container__footer{
     display: flex;
     flex-direction: column;
