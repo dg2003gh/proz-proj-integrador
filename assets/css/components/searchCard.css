@@ -1,43 +1,35 @@
-.c-searching__card{
-    display: flex;
-    background-color: white;
-    color: black;
-    margin: 8px;
-    border-radius: 10px;
+.c-searching__card {
+  display: flex;
+  background-color: white;
+  color: black;
+  margin: 8px;
+  border-radius: 10px;
 }
-.c-searching-container__image{
-    border-radius: 10px;
-    border: 2px solid black;
-    width: 150px;  
+.c-searching-container__image {
+  border-radius: 10px;
+  border: 2px solid black;
+  width: 150px;
 }
-.c-searching-container__card-information{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.c-searching-container__card-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.c-searching-container__footer{
-    display: flex;
-    justify-content: space-around;
+.c-searching-container__footer {
+  display: flex;
+  justify-content: space-around;
 }
-.c-searching-container__icon{
-    width: 40px;
-    height: 40px;
-}
-
-article footer #rank{
-    display: flex;
-    align-items: center;
+.c-searching-container__icon {
+  width: 40px;
+  height: 40px;
 }
 
-article footer #suport{
-    display: flex;
-    align-items: center;
+article footer #rank {
+  display: flex;
+  align-items: center;
 }
 
-article footer #locality{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
-  }
+article footer #suport {
+  display: flex;
+  align-items: center;
 }
