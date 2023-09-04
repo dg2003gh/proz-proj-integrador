@@ -38,7 +38,10 @@
     margin: 8px;
     border-radius: 10px;
   }
-  .c-searching-container__card-information{margin-top: 2px}
+  .c-searching-container__card-information{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .c-searching-container__image{
     border-radius: 10px;
     border: 2px solid black;
@@ -49,5 +52,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
   }
 }
