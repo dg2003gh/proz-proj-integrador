@@ -1,11 +1,12 @@
 let arrayCard = [
   {
-    "idvaga": 0,
-    "image": "/assets/imgs/stablishments/default.png",
-    "title": "Happyness Coffee Shop",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?"
-  }
-]
+    idvaga: 0,
+    image: "/assets/imgs/stablishments/default.png",
+    title: "Happyness Coffee Shop",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
+  },
+];
 
 let scrollOld = window.scrollY;
 
@@ -13,41 +14,42 @@ body = document.querySelector("body");
 body.addEventListener("load", loadCards());
 
 // Adicionar evendo search no botão de pesquisa do header
-searchButt = document.querySelector("button#header_search_button")
-searchButt.addEventListener("click", search)
+searchButt = document.querySelector("button#header_search_button");
+searchButt.addEventListener("click", search);
+
+window.addEventListener("touchmove", function () {
+  scrollDirec = getScrollDirection();
+  // Verifica se scroll está
+  // se movimentando para baixo ou para cima
+  if (scrollDirec == "down") {
+    if (ultCardDentroVP()) {
+      addCard();
+    }
+  } else if (scrollDirec == "up") {
+    if (ultCardForaVP()) {
+      remCard();
+    }
+  }
+  // Atualiza a última posição do scroll
+  scrollOld = window.scrollY;
+});
 
 // Carrega os cards ao carregar a página
-function loadCards(){
-  for (i=0; i<3; i++){
-    addCard()
+function loadCards() {
+  for (i = 0; i < 3; i++) {
+    addCard();
   }
- }
+}
 
-  window.addEventListener("scroll", function(){
-    let scrollDown = false
-    // Verifica a direção do scroll
-    if (scrollOld > window.scrollY){
-        scrollDown = false
-      }
-    else{
-      scrollDown = true 
-    }
-
-    // Verifica se scroll está 
-    // se movimentando para cima
-    if (scrollDown){
-      if (ultCardDentroVP()){
-          addCard()
-      }
-    }
-    else {
-      if (ultCardForaVP()){
-          remCard()
-      }
-    }
-    // Atualiza a última posição do scroll
-    scrollOld = window.scrollY
-  })
+// Retorna a direção do scroll
+function getScrollDirection() {
+  let scrollDown = "";
+  // Verifica a direção do scroll
+  if (scrollOld > window.scrollY) {
+    return "up";
+  } else {
+    return "down";
+  }
 }
 
 function ultCardDentroVP() {
@@ -95,13 +97,12 @@ function ultCardForaVP() {
   else return false;
 }
 
-
-function addCard(){
-    // Get search container result
-    searchContainer = document.querySelector("div#c-searching-container__result")
-    card = document.createElement("article")
-    card.setAttribute("class", "c-searching__card")
-    card.innerHTML += `
+function addCard() {
+  // Get search container result
+  searchContainer = document.querySelector("div#c-searching-container__result");
+  card = document.createElement("article");
+  card.setAttribute("class", "c-searching__card");
+  card.innerHTML += `
       <aside>
         <img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image">
       </aside>
@@ -113,7 +114,7 @@ function addCard(){
           <p>${arrayCard[0].description}</p>
         </div>
         <footer class="c-searching-container__footer u-space-around-container">
-          <div id="rank">
+          <div class="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
@@ -121,7 +122,7 @@ function addCard(){
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
           </div>
-          <div id="support">
+          <div class="support">
             <span>Support</span>
             <img
               class="acessIcon c-searching-container__icon"
@@ -144,14 +145,14 @@ function addCard(){
               alt="Pound interpreter icon"
             />
           </div>
-          <div id="locality">
+          <div class="locality">
             <span>Locality: </span><span>...</span>
           </div>
         </footer>
       </main>
-    `
-    arrayCard[0].idvaga ++
-    searchContainer.appendChild(card)
+    `;
+  arrayCard[0].idvaga++;
+  searchContainer.appendChild(card);
 }
 
 function remCard() {
