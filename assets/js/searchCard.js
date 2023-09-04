@@ -22,7 +22,7 @@ searchButt = document.querySelector("button#header_search_button")
 searchButt.addEventListener("click", search)
 
 
-window.addEventListener("touchmove", function() {
+window.addEventListener("scroll", function() {
 
   scrollDirec = getScrollDirection()
   // Verifica se scroll está 
@@ -50,7 +50,6 @@ function loadCards(){
 
 // Retorna a direção do scroll
 function getScrollDirection(){
-  let scrollDown = ""
   // Verifica a direção do scroll
   if (scrollOld > window.scrollY){
     return "up"
@@ -123,7 +122,7 @@ function addCard(){
           <p>${arrayCard[0].description}</p>
         </div>
         <footer class="c-searching-container__footer u-space-around-container">
-          <div id="rank">
+          <div class="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
@@ -131,7 +130,7 @@ function addCard(){
               <i class="ri-star-line"></i>
               <i class="ri-star-line"></i>
           </div>
-          <div id="support">
+          <div class="support">
             <span>Support</span>
             <img
               class="acessIcon c-searching-container__icon"
@@ -154,7 +153,7 @@ function addCard(){
               alt="Pound interpreter icon"
             />
           </div>
-          <div id="locality">
+          <div class="locality">
             <span>Locality: </span><span>...</span>
           </div>
         </footer>

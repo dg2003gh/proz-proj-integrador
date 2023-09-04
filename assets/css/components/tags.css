@@ -1,21 +1,21 @@
-#c-main-tags-container{
+.c-tags-container{
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     width: 80vw;
     margin: 10px;
     padding: 6px;
 }
-.c-main-tags-container__label-container{
+.c-tags-container__label-container{
     max-width: 350px;
     align-items: center;
 }
-.c-main-tags-container__tags-container{
-    background-color: #0d336d;
-    margin: 5px;
-    padding-bottom: 20px;
+.c-tags-container__tags-div{
+    /* background-color: #0d336d; */
+    /* padding: 10px; */
     max-width: 270px;
     border-radius: 5px;
-}
+    
+} 
 .tag{
     background-color: white;
     color: black;
@@ -25,19 +25,16 @@
     margin-left: 20px;
 }
 
-@media (max-width: 500px){
-    #c-main-tags-container{
-
+@media (max-width: 600px){
+    .c-tags-container{
         width: 80vw;
         margin: 10px;
         padding: 6px;
     }
-    .c-main-tags-container__tags-container{
-        background-color: #0d336d;
-        margin: 5px;
-        padding-bottom: 20px;
-        max-width: 170px;
+    .c-tags-container__tags-div{
+        max-width: 120px;
         border-radius: 5px;
+
     }
 
 }
