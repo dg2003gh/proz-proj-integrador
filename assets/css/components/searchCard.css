@@ -10,15 +10,15 @@
     border: 2px solid black;
     width: 150px;  
 }
-.c-searching-container__card-information{
+/* .c-searching-container__card-information{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-.c-searching-container__footer{
+} */
+/* .c-searching-container__footer{
     display: flex;
     justify-content: space-around;
-}
+} */
 .c-searching-container__icon{
     width: 40px;
     height: 40px;

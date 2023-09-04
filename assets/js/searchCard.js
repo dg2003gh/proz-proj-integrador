@@ -115,14 +115,14 @@ function addCard(){
       <aside>
         <img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image">
       </aside>
-      <main class="c-searching-container__card-information">
+      <div class="c-searching-container__card-information u-column-container u-space-between-container">
         <header>
           <h2>${arrayCard[0].title}</h2>
         </header>
-        <main>
+        <div>
           <p>${arrayCard[0].description}</p>
-        </main>
-        <footer class="c-searching-container__footer">
+        </div>
+        <footer class="c-searching-container__footer u-space-around-container">
           <div id="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
@@ -158,7 +158,7 @@ function addCard(){
             <span>Locality: </span><span>...</span>
           </div>
         </footer>
-      </main>
+      </div>
     `
     arrayCard[0].idvaga ++
     searchContainer.appendChild(card)
