@@ -1,11 +1,11 @@
 let arrayCard = [
   {
-    image: "/assets/imgs/stablishments/default.png",
-    title: "Happyness Coffee Shop",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?",
-  },
-];
+    "idvaga": 0,
+    "image": "/assets/imgs/stablishments/default.png",
+    "title": "Happyness Coffee Shop",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem assumenda accusantium suscipit veritatis ex, ducimus, totam quas quidem inventore similique at, cumque vel sunt! Nobis repellendus laborum eius et fugiat?"
+  }
+]
 
 let scrollOld = window.scrollY;
 
@@ -95,19 +95,17 @@ function ultCardForaVP() {
   else return false;
 }
 
-function addCard() {
-  // Get search container result
-  searchContainer = document.querySelector(
-    "div#c-searching-container___result"
-  );
-  card = document.createElement("article");
-  card.setAttribute("class", "c-searching__card");
-  card.innerHTML += `
+
+function addCard(){
+    // Get search container result
+    searchContainer = document.querySelector("div#c-searching-container__result")
+    card = document.createElement("article")
+    card.setAttribute("class", "c-searching__card")
+    card.innerHTML += `
       <aside><img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image"></aside>
       <main class="c-searching-container__card-information">
         <header>
           <h2>${arrayCard[0].title}</h2>
-          <span class="idvaga">#${arrayCard[0].idvaga}</span>
         </header>
         <main>
           <p>${arrayCard[0].description}</p>
