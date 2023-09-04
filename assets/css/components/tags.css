@@ -6,21 +6,21 @@
   padding: 6px;
 }
 .c-main-tags-container__label-container {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+    flex-direction: column; */
   max-width: 350px;
   /* background-color: black; */
   align-items: center;
 }
 .c-main-tags-container__tags-container {
-  display: flex;
+  /* display: flex; */
+  /* align-items: flex-start; */
+  /* flex-wrap: wrap; */
   background-color: #0d336d;
   margin: 5px;
   padding-bottom: 20px;
   max-width: 270px;
   border-radius: 5px;
-  align-items: flex-start;
-  flex-wrap: wrap;
 }
 .tag {
   background-color: white;

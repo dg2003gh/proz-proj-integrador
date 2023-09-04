@@ -102,15 +102,17 @@ function addCard(){
     card = document.createElement("article")
     card.setAttribute("class", "c-searching__card")
     card.innerHTML += `
-      <aside><img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image"></aside>
+      <aside>
+        <img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image">
+      </aside>
       <main class="c-searching-container__card-information">
         <header>
           <h2>${arrayCard[0].title}</h2>
         </header>
-        <main>
+        <div>
           <p>${arrayCard[0].description}</p>
-        </main>
-        <footer class="c-searching-container__footer">
+        </div>
+        <footer class="c-searching-container__footer u-space-around-container">
           <div id="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
@@ -147,8 +149,9 @@ function addCard(){
           </div>
         </footer>
       </main>
-    `;
-  searchContainer.appendChild(card);
+    `
+    arrayCard[0].idvaga ++
+    searchContainer.appendChild(card)
 }
 
 function remCard() {
