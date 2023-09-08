@@ -12,12 +12,12 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.u-space-between-container {
+.u-space-between {
   display: flex;
   justify-content: space-between;
 }
 
-.u-space-around-container {
+.u-space-around {
   display: flex;
   justify-content: space-around;
 }
@@ -48,6 +48,11 @@
   justify-content: center;
 }
 
+.u-vertical-center{
+  display: flex;
+  align-items: center;
+}
+
 .u-margin {
   margin: 20px;
 }
@@ -67,3 +72,5 @@
 .u-overflow-hidden {
   overflow: hidden;
 }
+
+
