@@ -3,30 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="author"
-      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
-    />
-    <meta
-      name="description"
-      content="A site to search and discover establishments near you in a simple and fast way."
-    />
-    <meta
-      name="keywords"
-      content="accessible establishments, disability-friendly locations, inclusive businesses, wheelchair-accessible venues, mobility-friendly places, barrier-free facilities, ADA-compliant spaces, inclusive travel, handicapped-accessible services"
-    />
-    <meta name="rating" content="general" />
-    <meta name="robots" content="follow" />
-    <meta name="copyright" content="©2023 Accessuratio Group" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Accessuratio</title>
-    <link rel="stylesheet" href="../css/components/index.css" />
     <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/components/slider.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <link
@@ -248,10 +233,10 @@
         <form class="c-modal u-primary-bg-color" id="establishment_modal">
           <img
             id="establishment_photo"
-            src="../imgs/icons/establishment.png"
+            src="../imgs/icons/establishment.svg"
             alt="Establishment photo"
-            width="120"
-            height="120"
+            width="150"
+            height="150"
           />
           <br />
           <span class="u-row-container u-margin">
@@ -393,7 +378,7 @@
             </label>
             <input
               required
-              class="c-modal__date u-primary-bg-color"
+              class="c-modal__date u-primary-bg-color u-primary-bg-color"
               type="date"
               name=""
               id="inauguration_input_establishment_modal"
@@ -429,10 +414,10 @@
         <form class="c-modal u-primary-bg-color" id="user_modal">
           <img
             id="user_photo"
-            src="../imgs/icons/user.png"
+            src="../imgs/icons/user.svg"
             alt="User photo"
-            width="120"
-            height="120"
+            width="150"
+            height="150"
           />
           <br />
           <span class="u-row-container">
@@ -475,7 +460,7 @@
               </label>
               <input
                 required
-                class="c-modal__input u-tertiary-bg-color"
+                class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
                 id="password_input_user_modal"
                 type="password"
                 placeholder="Enter your password..."
@@ -577,32 +562,97 @@
         </form>
         <div id="overlay" data-modal-target=""></div>
       </section>
-      <section class="c-discover-container">
-        <h2>
-          <strong> DISCOVER </strong>
-          establishments that bring the comfort you need!
-        </h2>
+      <section class="u-row-container u-margin">
+        <h1 class="u-column-container u-margin u-title">
+          <strong class="u-highlight-color"> DISCOVER </strong>
+          establishments that <br />
+          bring the comfort you need!
+        </h1>
         <img
-          src="pexels-photo-6980167.jpeg"
-          alt="Woman in wheelchair at a restaurant"
-          width="100"
+          src=""
+          alt="Woman in wheelchair, along with her husband and daughter"
+          width="80"
           height="80"
-          class="c-discover-container__img"
         />
       </section>
-      <section>
-        <label>
-          <strong> premium establishments: </strong>
+      <section class="u-column-container">
+        <label class="c-label u-self-center u-padding u-tertiary-bg-color">
+          <strong class="u-highlight-color"> Highlights of the week</strong>
         </label>
-        <div>
-          <i class="ri-arrow-left-s-line"></i
-          ><i class="ri-arrow-right-s-line"></i>
+        <div class="c-slider u-secondary-bg-color u-margin u-padding">
+          <i class="ri-arrow-left-s-line c-slider__button"></i>
+          <span class="c-slider__content-container u-row-container">
+            <article
+              class="c-card u-margin u-border-radius u-tertiary-bg-color"
+            >
+              <aside class="c-card__aside">
+                <img
+                  class="c-card__img"
+                  src="../imgs/foto_Elis.png"
+                  width="200"
+                  alt=""
+                />
+              </aside>
+              <main
+                class="c-card__main-content u-column-container u-center u-text-center u-padding"
+              >
+                <p>
+                  Scientists 'robotize' paralyzed <br />
+                  children's wheelchair with low-cost device.
+                </p>
+                <h3>Font: G1</h3>
+              </main>
+            </article>
+            <article
+              class="c-card u-margin u-border-radius u-tertiary-bg-color"
+            >
+              <aside class="c-card__aside">
+                <img
+                  class="c-card__img"
+                  src="../imgs/foto_Elis.png"
+                  width="200"
+                  alt=""
+                />
+              </aside>
+              <main
+                class="c-card__main-content u-column-container u-center u-text-center u-padding"
+              >
+                <p>
+                  Scientists 'robotize' paralyzed <br />
+                  children's wheelchair with low-cost device.
+                </p>
+                <h3>Font: G1</h3>
+              </main>
+            </article>
+            <article
+              class="c-card u-margin u-border-radius u-tertiary-bg-color"
+            >
+              <aside class="c-card__aside">
+                <img
+                  class="c-card__img"
+                  src="../imgs/foto_Elis.png"
+                  width="200"
+                  alt=""
+                />
+              </aside>
+              <main
+                class="c-card__main-content u-column-container u-center u-text-center u-padding"
+              >
+                <p>
+                  Scientists 'robotize' paralyzed <br />
+                  children's wheelchair with low-cost device.
+                </p>
+                <h3>Font: G1</h3>
+              </main>
+            </article>
+          </span>
+          <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
-      <section>
-        <h2>
+      <section class="u-text-center u-margin">
+        <h2 class="u-margin u-title">
           Which is
-          <strong> PURPOSE </strong>
+          <strong class="u-highlight-color"> PURPOSE </strong>
           of our project?
         </h2>
         <p>
@@ -614,21 +664,27 @@
           This project was developed during the Proz integrator project
           Technology and you can meet the developers through the button below:
         </p>
-        <button aria-label="button to meet the developers.">
+        <button
+          class="u-margin u-padding u-accept-color"
+          aria-label="button to meet the developers."
+        >
           MEET THE DEVELOPERS <i class="ri-arrow-right-fill"></i>
         </button>
       </section>
-      <section>
-        <h2>
+      <section class="u-text-center u-margin">
+        <h2 class="u-margin u-title">
           visit our
-          <strong> MURAL</strong>!
+          <strong class="u-highlight-color"> MURAL</strong>!
         </h2>
         <p>
           On our mural you have access to news, articles and much more. related
           to respect for people with disabilities. don't miss the opportunity to
           stay inside!
         </p>
-        <button aria-label="button to mural">
+        <button
+          class="u-margin u-padding u-accept-color"
+          aria-label="button to mural"
+        >
           MURAL <i class="ri-arrow-right-fill"></i>
         </button>
       </section>
