@@ -3,30 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="author"
-      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
-    />
-    <meta
-      name="description"
-      content="A site to search and discover establishments near you in a simple and fast way."
-    />
-    <meta
-      name="keywords"
-      content="accessible establishments, disability-friendly locations, inclusive businesses, wheelchair-accessible venues, mobility-friendly places, barrier-free facilities, ADA-compliant spaces, inclusive travel, handicapped-accessible services"
-    />
-    <meta name="rating" content="general" />
-    <meta name="robots" content="follow" />
-    <meta name="copyright" content="©2023 Accessuratio Group" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Accessuratio</title>
     <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
-    <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <link
@@ -43,10 +27,10 @@
     <header class="c-site-header u-secondary-bg-color">
       <a href="./index.html">
         <img
-          src="../imgs/site-logo.svg"
+          src="../imgs/site-icon.png"
           alt="website icon"
-          width="40"
-          height="35"
+          width="30"
+          height="30"
           class="c-site-header__logo"
         />
       </a>
@@ -248,10 +232,10 @@
         <form class="c-modal u-primary-bg-color" id="establishment_modal">
           <img
             id="establishment_photo"
-            src="../imgs/icons/establishment.png"
+            src="../imgs/icons/establishment.svg"
             alt="Establishment photo"
-            width="120"
-            height="120"
+            width="150"
+            height="150"
           />
           <br />
           <span class="u-row-container u-margin">
@@ -393,7 +377,7 @@
             </label>
             <input
               required
-              class="c-modal__date u-primary-bg-color"
+              class="c-modal__date u-primary-bg-color u-primary-bg-color"
               type="date"
               name=""
               id="inauguration_input_establishment_modal"
@@ -429,10 +413,10 @@
         <form class="c-modal u-primary-bg-color" id="user_modal">
           <img
             id="user_photo"
-            src="../imgs/icons/user.png"
+            src="../imgs/icons/user.svg"
             alt="User photo"
-            width="120"
-            height="120"
+            width="150"
+            height="150"
           />
           <br />
           <span class="u-row-container">
@@ -475,7 +459,7 @@
               </label>
               <input
                 required
-                class="c-modal__input u-tertiary-bg-color"
+                class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
                 id="password_input_user_modal"
                 type="password"
                 placeholder="Enter your password..."
@@ -672,5 +656,6 @@
         ></div>
       </section>
     </main>
+    <script defer src="../js/main.js"></script>
   </body>
 </html>

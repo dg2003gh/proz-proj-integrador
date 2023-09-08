@@ -7,7 +7,7 @@
 }
 
 .c-site-header__logo {
-  margin-left: 30px;
+  margin-right: 40px;
 }
 
 .c-site-header__search-input {
@@ -39,6 +39,5 @@
   margin-left: 10px;
   cursor: pointer;
 
-  text-align: center;
   transition: background-color 500ms ease-in-out;
 }
