@@ -10,4 +10,7 @@
   --clr-denied-hover: #fa4f4f;
   --clr-highlight: #b6a512;
   --clr-disabled: #ffffff50;
+  --clr-scrollbar: #ffffff80;
+  --clr-scrollbar-hover: #ffffffb0;
+  --clr-scrollbar-background: #000;
 }
