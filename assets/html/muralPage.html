@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
+    <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
@@ -70,7 +71,7 @@
             for="user_input_login_modal"
             class="c-label u-tertiary-bg-color"
           >
-            User
+            Username
           </label>
           <input
             required
@@ -143,17 +144,17 @@
             id="submit_recover_password_modal"
             aria-label="Button to send your e-mail."
           >
-            send e-mail
+            send E-mail
           </button>
         </form>
         <form class="c-modal u-primary-bg-color" id="new_password_modal">
-          <h2>Email confirmed, enter your new password!</h2>
+          <h2>E-mail confirmed, enter your new password!</h2>
           <br />
           <label
             class="c-label u-tertiary-bg-color"
             for="password_input_new_password_modal"
           >
-            password
+            Password
           </label>
           <input
             required
@@ -168,7 +169,7 @@
             class="c-label u-tertiary-bg-color"
             for="retype_password_input_new_password_modal"
           >
-            check password
+            Check password
           </label>
           <input
             required
@@ -202,7 +203,7 @@
             id="save_button_new_password_modal"
             aria-label="Save new password button"
           >
-            save
+            Save
           </button>
         </form>
         <form class="c-modal u-primary-bg-color" id="register_type_modal">
@@ -353,15 +354,16 @@
                 for="cnpj_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
               >
-                CNPJ
+                tax identifier
               </label>
               <input
                 required
                 class="c-modal__input u-tertiary-bg-color"
-                id="cnpj_input_establishment_modal"
+                id="register_input_establishment_modal"
                 type="number"
-                placeholder="Type the CNPJ of the establishment..."
-                aria-label="Type the CNPJ of the establishment."
+                placeholder="Type the tax identifier of the establishment..."
+                aria-label="Type the tax identifier of the establishment."
+                title="It is necessary for unique identification of the establishment on the website."
               />
             </span>
           </span>
@@ -455,7 +457,7 @@
                 class="c-label u-tertiary-bg-color"
                 for="password_input_user_modal"
               >
-                password
+                Password
               </label>
               <input
                 required
@@ -487,7 +489,7 @@
                 class="c-label u-tertiary-bg-color"
                 for="email_input_user_modal"
               >
-                Email
+                E-mail
               </label>
               <input
                 required
@@ -518,7 +520,11 @@
           <span
             class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
           >
-            <label class="c-label" for="disability_select_user_modal">
+            <label
+              class="c-label"
+              for="disability_select_user_modal"
+              title="Necessary for the website to recommend establishments that support your disability."
+            >
               <strong>
                 Do you want to declare<br />
                 your disability?
