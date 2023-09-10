@@ -1,3 +1,2 @@
 .prettierrc
-./assets/js/david.js
-./assets/js/searchCard.js
+assets/js/searchCard.js

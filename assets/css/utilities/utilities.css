@@ -12,12 +12,12 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-.u-space-between {
+.u-space-between-container {
   display: flex;
   justify-content: space-between;
 }
 
-.u-space-around {
+.u-space-around-container {
   display: flex;
   justify-content: space-around;
 }
@@ -46,11 +46,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.u-vertical-center{
-  display: flex;
-  align-items: center;
 }
 
 .u-margin {
