@@ -27,6 +27,18 @@
     <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
+    <!-- MEDIA QUERIES-->
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/header.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/modal.css"
+    />
+
     <!-- WEBSITE FAVICON-->
     <link
       rel="apple-touch-icon"
@@ -54,6 +66,7 @@
     <!-- JAVASCRIPT IMPORTS-->
     <script defer src="../js/main.js"></script>
     <script defer src="../js/togglePassword.js"></script>
+    <script defer src="../js/mobileButton.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -94,6 +107,10 @@
           Login
         </button>
       </span>
+      <i
+        class="ri-align-justify u-primary-bg-color"
+        id="c-site-header__mobile-button"
+      ></i>
     </header>
     <main>
       <section>
