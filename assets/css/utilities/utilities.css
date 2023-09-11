@@ -17,6 +17,10 @@
   justify-content: space-between;
 }
 
+.u-gap {
+  gap: 10px;
+}
+
 .u-space-around {
   display: flex;
   justify-content: space-around;
@@ -48,7 +52,7 @@
   justify-content: center;
 }
 
-.u-vertical-center{
+.u-vertical-center {
   display: flex;
   align-items: center;
 }
@@ -72,5 +76,3 @@
 .u-overflow-hidden {
   overflow: hidden;
 }
-
-
