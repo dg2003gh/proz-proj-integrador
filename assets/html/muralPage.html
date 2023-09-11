@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accessuratio</title>
+    <!-- CSS IMPORTS-->
     <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
@@ -14,15 +15,33 @@
     <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
+    <!-- WEBSITE FAVICON-->
     <link
-      rel="shortcut icon"
-      href="../imgs/favicon/favicon.ico"
-      type="image/x-icon"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../imgs/favicon/apple-touch-icon.png"
     />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../imgs/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../imgs/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../imgs/favicon/site.webmanifest" />
+    <!-- ICON LIBRARIES-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- JAVASCRIPT IMPORTS-->
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/togglePassword.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -30,8 +49,8 @@
         <img
           src="../imgs/site-icon.png"
           alt="website icon"
-          width="30"
-          height="30"
+          width="35"
+          height="35"
           class="c-site-header__logo"
         />
       </a>
@@ -88,14 +107,17 @@
           >
             Password
           </label>
-          <input
-            required
-            id="password_input_login_modal"
-            class="c-modal__input u-tertiary-bg-color"
-            type="password"
-            placeholder="Enter your password..."
-            aria-label="Enter your password."
-          />
+          <span class="c-modal__password-container">
+            <input
+              required
+              id="password_input_login_modal"
+              class="c-modal__input u-tertiary-bg-color"
+              type="password"
+              placeholder="Enter your password..."
+              aria-label="Enter your password."
+            />
+            <i class="ri-eye-line c-modal__toggle-password"></i>
+          </span>
           <br />
           <button
             id="submit_login_modal"
@@ -277,14 +299,17 @@
               >
                 password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="password_input_establishment_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="password_input_establishment_modal"
+                  type="password"
+                  placeholder="Enter your password..."
+                  aria-label="Enter your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
@@ -340,14 +365,17 @@
               >
                 Check Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_establishment_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="retype_password_input_establishment_modal"
+                  type="password"
+                  placeholder="Retype your password..."
+                  aria-label="Retype your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
@@ -459,14 +487,17 @@
               >
                 Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
-                id="password_input_user_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
+                  id="password_input_user_modal"
+                  type="password"
+                  placeholder="Enter your password..."
+                  aria-label="Enter your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
             </span>
             <br />
             <span class="u-column-container u-margin">
@@ -506,14 +537,17 @@
               >
                 Check Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_user_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="retype_password_input_user_modal"
+                  type="password"
+                  placeholder="Retype your password..."
+                  aria-label="Retype your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
             </span>
           </span>
           <br />
@@ -662,6 +696,5 @@
         ></div>
       </section>
     </main>
-    <script defer src="../js/main.js"></script>
   </body>
 </html>
