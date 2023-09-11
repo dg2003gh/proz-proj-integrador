@@ -4,35 +4,69 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="author"
-      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
-    />
-    <meta
       name="description"
-      content="A site to search and discover establishments near you in a simple and fast way."
+      content="website so that people with any type of disability can find establishments that offer support to them."
     />
     <meta
       name="keywords"
-      content="accessible establishments, disability-friendly locations, inclusive businesses, wheelchair-accessible venues, mobility-friendly places, barrier-free facilities, ADA-compliant spaces, inclusive travel, handicapped-accessible services"
+      content="Accessuratio, accessible establishments, accessibility, establishment "
     />
-    <meta name="rating" content="general" />
-    <meta name="robots" content="follow" />
-    <meta name="copyright" content="©2023 Accessuratio Group" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      name="author"
+      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
+    />
     <title>Accessuratio</title>
+    <!-- CSS IMPORTS-->
     <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
+    <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
+    <!-- MEDIA QUERIES-->
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/header.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/modal.css"
+    />
 
+    <!-- WEBSITE FAVICON-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../imgs/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../imgs/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../imgs/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../imgs/favicon/site.webmanifest" />
+    <!-- ICON LIBRARIES-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- JAVASCRIPT IMPORTS-->
+    <script defer src="../js/main.js"></script>
+    <script defer src="../js/togglePassword.js"></script>
+    <script defer src="../js/mobileButton.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -40,8 +74,8 @@
         <img
           src="../imgs/site-icon.png"
           alt="website icon"
-          width="30"
-          height="30"
+          width="35"
+          height="35"
           class="c-site-header__logo"
         />
       </a>
@@ -73,6 +107,10 @@
           Login
         </button>
       </span>
+      <i
+        class="ri-align-justify u-primary-bg-color"
+        id="c-site-header__mobile-button"
+      ></i>
     </header>
     <main>
       <section>
@@ -81,7 +119,7 @@
             for="user_input_login_modal"
             class="c-label u-tertiary-bg-color"
           >
-            User
+            Username
           </label>
           <input
             required
@@ -98,14 +136,17 @@
           >
             Password
           </label>
-          <input
-            required
-            id="password_input_login_modal"
-            class="c-modal__input u-tertiary-bg-color"
-            type="password"
-            placeholder="Enter your password..."
-            aria-label="Enter your password."
-          />
+          <span class="c-modal__password-container">
+            <input
+              required
+              id="password_input_login_modal"
+              class="c-modal__input u-tertiary-bg-color"
+              type="password"
+              placeholder="Enter your password..."
+              aria-label="Enter your password."
+            />
+            <i class="ri-eye-line c-modal__toggle-password"></i>
+          </span>
           <br />
           <button
             id="submit_login_modal"
@@ -154,17 +195,17 @@
             id="submit_recover_password_modal"
             aria-label="Button to send your e-mail."
           >
-            send e-mail
+            send E-mail
           </button>
         </form>
         <form class="c-modal u-primary-bg-color" id="new_password_modal">
-          <h2>Email confirmed, enter your new password!</h2>
+          <h2>E-mail confirmed, enter your new password!</h2>
           <br />
           <label
             class="c-label u-tertiary-bg-color"
             for="password_input_new_password_modal"
           >
-            password
+            Password
           </label>
           <input
             required
@@ -179,7 +220,7 @@
             class="c-label u-tertiary-bg-color"
             for="retype_password_input_new_password_modal"
           >
-            check password
+            Check password
           </label>
           <input
             required
@@ -213,7 +254,7 @@
             id="save_button_new_password_modal"
             aria-label="Save new password button"
           >
-            save
+            Save
           </button>
         </form>
         <form class="c-modal u-primary-bg-color" id="register_type_modal">
@@ -287,14 +328,17 @@
               >
                 password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="password_input_establishment_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="password_input_establishment_modal"
+                  type="password"
+                  placeholder="Enter your password..."
+                  aria-label="Enter your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
@@ -350,29 +394,33 @@
               >
                 Check Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_establishment_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="retype_password_input_establishment_modal"
+                  type="password"
+                  placeholder="Retype your password..."
+                  aria-label="Retype your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="cnpj_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
               >
-                CNPJ
+                tax identifier
               </label>
               <input
                 required
                 class="c-modal__input u-tertiary-bg-color"
-                id="cnpj_input_establishment_modal"
+                id="register_input_establishment_modal"
                 type="number"
-                placeholder="Type the CNPJ of the establishment..."
-                aria-label="Type the CNPJ of the establishment."
+                placeholder="Type the tax identifier of the establishment..."
+                aria-label="Type the tax identifier of the establishment."
+                title="It is necessary for unique identification of the establishment on the website."
               />
             </span>
           </span>
@@ -388,7 +436,7 @@
             </label>
             <input
               required
-              class="c-modal__date u-primary-bg-color"
+              class="c-modal__date u-primary-bg-color u-primary-bg-color"
               type="date"
               name=""
               id="inauguration_input_establishment_modal"
@@ -466,16 +514,19 @@
                 class="c-label u-tertiary-bg-color"
                 for="password_input_user_modal"
               >
-                password
+                Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="password_input_user_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
+                  id="password_input_user_modal"
+                  type="password"
+                  placeholder="Enter your password..."
+                  aria-label="Enter your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
             </span>
             <br />
             <span class="u-column-container u-margin">
@@ -498,7 +549,7 @@
                 class="c-label u-tertiary-bg-color"
                 for="email_input_user_modal"
               >
-                Email
+                E-mail
               </label>
               <input
                 required
@@ -515,21 +566,28 @@
               >
                 Check Password
               </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_user_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
+              <span class="c-modal__password-container">
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="retype_password_input_user_modal"
+                  type="password"
+                  placeholder="Retype your password..."
+                  aria-label="Retype your password."
+                />
+                <i class="ri-eye-line c-modal__toggle-password"></i>
+              </span>
             </span>
           </span>
           <br />
           <span
             class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
           >
-            <label class="c-label" for="disability_select_user_modal">
+            <label
+              class="c-label"
+              for="disability_select_user_modal"
+              title="Necessary for the website to recommend establishments that support your disability."
+            >
               <strong>
                 Do you want to declare<br />
                 your disability?
