@@ -114,14 +114,14 @@ function addCard(){
       <aside>
         <img class="c-searching-container__image" src="${arrayCard[0].image}" alt="Establishment image">
       </aside>
-      <div class="c-searching-container__card-information u-column-container u-space-between-container">
+      <div class="c-searching-container__card-information u-column-container u-space-between">
         <header>
           <h2>${arrayCard[0].title}</h2>
         </header>
         <div>
           <p>${arrayCard[0].description}</p>
         </div>
-        <footer class="c-searching-container__footer u-space-around-container">
+        <footer class="c-searching-container__footer u-space-around">
           <div class="rank">
               <span>Rank: </span>
               <i class="ri-star-line"></i>
