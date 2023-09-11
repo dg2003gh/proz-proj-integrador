@@ -1,10 +1,11 @@
 .c-tags-container{
-        width: 90vw;
-        margin: 10px;
-        padding: 6px;
+    width: 90vw;
+    margin: 10px;
+    padding: 6px;
 }
 .c-tags-container__tags-container{
-    max-width: 200px;
+    max-width: 250px;
+    max-height: 300px;
     border-radius: 5px;
     padding: 10px;
 }
@@ -12,4 +13,15 @@
 .mobile-container {
     display: flex;
     flex-direction: row;
+}
+
+.tag{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 5px;
 }
