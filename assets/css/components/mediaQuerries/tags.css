@@ -2,10 +2,14 @@
         width: 90vw;
         margin: 10px;
         padding: 6px;
-        background-color: red;
 }
 .c-tags-container__tags-container{
     max-width: 200px;
     border-radius: 5px;
-    padding: 10px 10px;
+    padding: 10px;
+}
+
+.mobile-container {
+    display: flex;
+    flex-direction: row;
 }
