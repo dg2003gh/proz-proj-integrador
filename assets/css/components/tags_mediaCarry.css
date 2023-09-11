@@ -1,0 +1,11 @@
+.c-tags-container{
+        width: 90vw;
+        margin: 10px;
+        padding: 6px;
+    }
+.c-tags-container__tags-div{
+    max-width: 250px;
+    border-radius: 5px;
+    padding: 10px 10px;
+
+}

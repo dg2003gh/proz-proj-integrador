@@ -76,3 +76,8 @@
 .u-overflow-hidden {
   overflow: hidden;
 }
+
+.u-justify-around{
+  display: flex;
+  justify-content: space-around;
+}
