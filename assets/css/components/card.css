@@ -1,6 +1,8 @@
 .c-card {
   display: flex;
+  position: relative;
   color: #000;
+  width: 98%;
 }
 
 .c-card__aside {
@@ -16,4 +18,10 @@
 .c-card__main-content {
   display: block;
   margin: 10px auto;
+}
+
+.c-card__rate-container {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
 }
