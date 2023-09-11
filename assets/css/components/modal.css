@@ -48,6 +48,18 @@
   margin-bottom: 20px;
 }
 
+.cmodal__password-container {
+  position: relative;
+}
+
+.c-modal__toggle-password {
+  position: absolute;
+  right: 5px;
+  bottom: 30px;
+  color: var(--clr-text);
+  cursor: pointer;
+}
+
 .c-modal__button {
   cursor: pointer;
   color: #000;
