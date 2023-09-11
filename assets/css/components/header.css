@@ -30,6 +30,10 @@
   transition: background-color 500ms ease-in-out;
 }
 
+.c-site-header__buttons-container {
+  transform: scale(1);
+}
+
 .c-site-header__register-button {
   cursor: pointer;
   transition: background-color 500ms ease-in-out;
@@ -40,4 +44,11 @@
   cursor: pointer;
 
   transition: background-color 500ms ease-in-out;
+}
+
+#c-site-header__mobile-button {
+  display: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
 }
