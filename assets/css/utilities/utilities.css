@@ -35,6 +35,11 @@
   text-align: center;
 }
 
+.u-text-justify {
+  display: block;
+  text-align: justify;
+}
+
 .u-flex-start {
   display: flex;
   align-items: flex-start;
@@ -77,7 +82,11 @@
   overflow: hidden;
 }
 
-.u-justify-around{
+.u-justify-around {
   display: flex;
   justify-content: space-around;
+}
+
+.u-mouse-over {
+  cursor: pointer;
 }
