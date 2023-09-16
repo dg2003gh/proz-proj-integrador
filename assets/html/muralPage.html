@@ -64,9 +64,13 @@
       rel="stylesheet"
     />
     <!-- JAVASCRIPT IMPORTS-->
-    <script defer src="../js/main.js"></script>
+    <script defer src="../js/modal.js"></script>
     <script defer src="../js/togglePassword.js"></script>
     <script defer src="../js/mobileButton.js"></script>
+    <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="../js/vlibras.js"></script>
+    <script defer src="../js/muralCards.js"></script>
+    <script src="../js/classes/NewsCard.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -84,6 +88,7 @@
           type="text"
           placeholder="Search establishments..."
           class="ri-search-line c-site-header__search-input"
+          id="search_input"
         />
         <button
           id="header_search_button"
@@ -110,9 +115,32 @@
       <i
         class="ri-align-justify u-primary-bg-color"
         id="c-site-header__mobile-button"
+        onclick="toggleMobileMenu()"
       ></i>
+      <span id="c-site-header__mobile-menu">
+        <button
+          class="c-site-header__register-button u-accept-color"
+          data-modal-target="#register_type_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button u-primary-bg-color"
+          data-modal-target="#login_modal"
+        >
+          Login
+        </button>
+      </span>
     </header>
     <main>
+      <section>
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+      </section>
       <section>
         <form class="c-modal u-primary-bg-color" id="login_modal">
           <label
@@ -408,7 +436,7 @@
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
-                for="cnpj_input_establishment_modal"
+                for="tax_indentifier_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
               >
                 tax identifier
@@ -416,7 +444,7 @@
               <input
                 required
                 class="c-modal__input u-tertiary-bg-color"
-                id="register_input_establishment_modal"
+                id="tax_indentifier_input_establishment_modal"
                 type="number"
                 placeholder="Type the tax identifier of the establishment..."
                 aria-label="Type the tax identifier of the establishment."
@@ -639,9 +667,9 @@
         </h1>
       </section>
       <section class="u-column-container">
-        <label class="c-label u-self-center u-padding u-tertiary-bg-color">
+        <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong class="u-highlight-color"> Highlights of the week</strong>
-        </label>
+        </h2>
         <div class="c-slider u-secondary-bg-color u-margin u-padding">
           <i class="ri-arrow-left-s-line c-slider__button"></i>
           <span class="c-slider__content-container u-row-container">
@@ -713,15 +741,12 @@
         </div>
       </section>
       <section class="u-column-container">
-        <label
-          for="mural_section"
-          class="c-label u-self-center u-padding u-tertiary-bg-color"
-        >
+        <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong>Mural</strong>
-        </label>
+        </h2>
         <div
-          id="mural_section"
-          class="u-grid-container u-secondary-bg-color u-margin u-border-radius"
+          id="js-mural_section"
+          class="u-grid-container u-secondary-bg-color u-margin u-gap u-padding u-border-radius"
         ></div>
       </section>
     </main>
