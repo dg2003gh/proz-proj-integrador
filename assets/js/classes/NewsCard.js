@@ -5,14 +5,6 @@ class NewsCard {
   }
 
   static async requestNews() {
-    const url = "https://google-news13.p.rapidapi.com/latest?lr=en-US";
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "926332b942msh856938af4493f73p16fa4ejsnc4f88765b80b",
-        "X-RapidAPI-Host": "google-news13.p.rapidapi.com",
-      },
-    };
     const request = new Request(url, options);
 
     const response = await fetch(request)
