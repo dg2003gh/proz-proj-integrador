@@ -22,9 +22,7 @@
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
-    <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
-    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <!-- MEDIA QUERIES-->
@@ -38,7 +36,11 @@
       media="screen and (max-width: 768px)"
       href="../css/components/mediaQueries/modal.css"
     />
-
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/card.css"
+    />
     <!-- WEBSITE FAVICON-->
     <link
       rel="apple-touch-icon"
@@ -64,9 +66,11 @@
       rel="stylesheet"
     />
     <!-- JAVASCRIPT IMPORTS-->
-    <script defer src="../js/main.js"></script>
+    <script defer src="../js/modal.js"></script>
     <script defer src="../js/togglePassword.js"></script>
     <script defer src="../js/mobileButton.js"></script>
+    <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="../js/vlibras.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -84,6 +88,7 @@
           type="text"
           placeholder="Search establishments..."
           class="ri-search-line c-site-header__search-input"
+          id="search_input"
         />
         <button
           id="header_search_button"
@@ -110,9 +115,32 @@
       <i
         class="ri-align-justify u-primary-bg-color"
         id="c-site-header__mobile-button"
+        onclick="toggleMobileMenu()"
       ></i>
+      <span id="c-site-header__mobile-menu">
+        <button
+          class="c-site-header__register-button u-accept-color"
+          data-modal-target="#register_type_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button u-primary-bg-color"
+          data-modal-target="#login_modal"
+        >
+          Login
+        </button>
+      </span>
     </header>
     <main>
+      <section>
+        <div vw class="enabled">
+          <div vw-access-button class="active"></div>
+          <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+          </div>
+        </div>
+      </section>
       <section>
         <form class="c-modal u-primary-bg-color" id="login_modal">
           <label
@@ -408,7 +436,7 @@
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
-                for="cnpj_input_establishment_modal"
+                for="tax_indentifier_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
               >
                 tax identifier
@@ -416,7 +444,7 @@
               <input
                 required
                 class="c-modal__input u-tertiary-bg-color"
-                id="register_input_establishment_modal"
+                id="tax_indentifier_input_establishment_modal"
                 type="number"
                 placeholder="Type the tax identifier of the establishment..."
                 aria-label="Type the tax identifier of the establishment."
@@ -631,14 +659,12 @@
         <div id="overlay" data-modal-target=""></div>
       </section>
       <section class="u-column-container">
-        <label
-          class="c-label u-self-center u-padding u-tertiary-bg-color"
-          for="developers-container"
-        >
-          <h1>Developers</h1>
-        </label>
+        <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
+          <strong>Developers</strong>
+        </h2>
         <div
-          class="developers-container u-border-radius u-padding u-margin u-secondary-bg-color"
+          class="u-border-radius u-padding u-margin u-secondary-bg-color"
+          id="developers-container"
         >
           <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
@@ -700,7 +726,7 @@
                 height="250px"
               />
             </aside>
-            <main class="c-card__main-content u-column-container u-center">
+            <div class="c-card__main-content u-column-container u-center">
               <h2>Douglas Guimarães</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -738,7 +764,7 @@
                   />
                 </a>
               </span>
-            </main>
+            </div>
           </article>
           <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
@@ -750,7 +776,7 @@
                 height="250px"
               />
             </aside>
-            <main class="c-card__main-content u-column-container u-center">
+            <div class="c-card__main-content u-column-container u-center">
               <h2>Elisângela Rosa</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -788,7 +814,7 @@
                   />
                 </a>
               </span>
-            </main>
+            </div>
           </article>
           <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
@@ -800,7 +826,7 @@
                 height="250px"
               />
             </aside>
-            <main class="c-card__main-content u-column-container u-center">
+            <div class="c-card__main-content u-column-container u-center">
               <h2>Isabella Flauzino</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -838,11 +864,10 @@
                   />
                 </a>
               </span>
-            </main>
+            </div>
           </article>
         </div>
       </section>
     </main>
-    <script defer src="../js/main.js"></script>
   </body>
 </html>
