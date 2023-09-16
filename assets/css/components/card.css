@@ -2,7 +2,10 @@
   display: flex;
   position: relative;
   color: #000;
-  width: 98%;
+  max-height: fit-content;
+  min-height: 200px;
+  min-width: 300px;
+  overflow-y: hidden;
 }
 
 .c-card__aside {
@@ -11,8 +14,11 @@
 }
 
 .c-card__img {
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
+  border-radius: 15px 0 0 15px;
+}
+
+.c-card__title {
+  font-size: clamp(0.5rem, 1rem, 1.5rem);
 }
 
 .c-card__main-content {
