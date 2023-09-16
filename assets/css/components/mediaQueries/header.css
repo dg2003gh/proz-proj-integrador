@@ -6,7 +6,15 @@
   display: block;
 }
 
+.c-site-header__search-input {
+  width: 53vw;
+}
+
 .c-site-header__buttons-container {
+  display: none;
+}
+
+#c-site-header__mobile-menu {
   z-index: 2;
   position: fixed;
   display: flex;
