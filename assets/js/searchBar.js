@@ -13,29 +13,36 @@ const searchResult = searchContainer.querySelector("div.c-searching-container__r
 const body = document.querySelector("body");
 
 // Array de filtro
-let filterArray = [];
+let filterArrayTags = [];
+let filterArrayTitle = [];
+let filterArrayDescription = [];
+let filterFinalArray = [];
 
 // Cards fictícios
 let arrayCard = [
   {
     "image": "/assets/imgs/stablishments/happiness_coffee_shop.png",
     "title": "Happiness Coffee Shop",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version..."
+    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+   "tags": ["#stab_coffee-shop", "#desa_visual", "#desa_physical-motor"]
   },
   {
     "image": "/assets/imgs/stablishments/zursky_tech.png",
     "title": "Zurski Tech",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version..."
+    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+   "tags": ["#stab_company", "#desa_visual", "#desa_hearing", "#desa_physical-motor"]
   },
   {
     "image": "/assets/imgs/stablishments/green_vegan_restaurant.png",
     "title": "Green Vegan Restaurant",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version..."
+    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+   "tags": ["#stab_restaurant", "#desa_visual", "#desa_hearing", "#desa_physical-motor"]
   },
   {
     "image": "/assets/imgs/stablishments/gold_hotel.png",
     "title": "Gold Hotel",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version..."
+    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+   "tags": ["#stab_hotel", "#desa_hearing", "#desa_physical-motor"]
   }
 ];
 
@@ -54,12 +61,22 @@ searchBar.onkeyup = (e)=>{
 
       clearSearchResult();
 
-      // Filtrando cards
-      filterArray = arrayCard.filter((card)=>{
-        return card.title.toLowerCase().startsWith(searchText.toLowerCase());
+      // Filtra cards pelo título
+      filterArrayTitle = arrayCard.filter((card)=>{
+        const re = new RegExp(searchText.toLowerCase());
+        return (re.test(card.title.toLowerCase()));
       })
-      console.log(filterArray)
-      for (i in filterArray){
+
+      // Filtra cards pela descrição, desconsiderando os cards que foram encontrados pelo título
+      filterArrayDescription = arrayCard.filter((card)=>{
+        const re = new RegExp(searchText.toLowerCase());
+        return re.test(card.description.toLowerCase()) && !re.test(card.title.toLowerCase());
+      })
+
+      filterFinalArray =  filterArrayTitle.concat(filterArrayDescription)
+
+      console.log(filterFinalArray)
+      for (i in filterFinalArray){
         addCard(i);
       }
     }
@@ -70,7 +87,7 @@ searchBar.onkeyup = (e)=>{
 // Na lista há uma função entries() que não sei o que é...
 tags = document.querySelectorAll("span.tag")
 for (let pos=0; pos < tags.length; pos++){
-  tags[pos].addEventListener("click", clearCards)
+  tags[pos].addEventListener("click", clearSearchResult)
 }
 
 function addCard(index){
@@ -79,14 +96,14 @@ function addCard(index){
     card.setAttribute("class", "c-searching__card")
     card.innerHTML += `
       <aside>
-        <img class="c-searching-container__image" src="${filterArray[index].image}" alt="Establishment image">
+        <img class="c-searching-container__image" src="${filterFinalArray[index].image}" alt="Establishment image">
       </aside>
       <div class="c-searching-container__card-information u-column-container u-space-between">
         <header>
-          <h2>${filterArray[index].title}</h2>
+          <h2>${filterFinalArray[index].title}</h2>
         </header>
         <div>
-          <p>${filterArray[index].description}</p>
+          <p>${filterFinalArray[index].description}</p>
         </div>
         <footer class="c-searching-container__footer u-space-around">
           <div class="rank">
@@ -126,7 +143,7 @@ function addCard(index){
         </footer>
       </div>
     `
-    filterArray[index].idvaga ++
+    filterFinalArray[index].idvaga ++
     searchResult.appendChild(card)
 }
 
