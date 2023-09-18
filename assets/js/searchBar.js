@@ -12,6 +12,28 @@ const searchResult = searchContainer.querySelector("div.c-searching-container__r
 // Body
 const body = document.querySelector("body");
 
+// Tags
+let stabTagList = document.querySelectorAll("span[data-stablishment-tag]");
+let desabTagList = document.querySelectorAll("span[data-desability-tag]");
+let localTagList = document.querySelectorAll("span[data-locality-tag]");
+
+console.log(stabTagList)
+
+// Muda a cor de cada tag que eu clicar
+stabTagList.forEach(element => {
+  element.onclick = ()=>{
+    if (element.getAttribute("selected") == "false"){
+      element.style.backgroundColor = "green"
+      element.setAttribute("selected", "true")
+    }
+    else{
+      element.style.backgroundColor = ""
+      element.setAttribute("selected", "false")
+    }
+  }
+});
+
+
 // Array de filtro
 let filterArrayTags = [];
 let filterArrayTitle = [];
@@ -61,6 +83,12 @@ searchBar.onkeyup = (e)=>{
 
       clearSearchResult();
 
+      // Filtra cards pelas tags
+      filterArrayTags = arrayCard.filter((card)=>{
+        const re = new RegExp(searchText.toLowerCase());
+        return (re.test(card.title.toLowerCase()));
+      })
+      
       // Filtra cards pelo título
       filterArrayTitle = arrayCard.filter((card)=>{
         const re = new RegExp(searchText.toLowerCase());
@@ -83,12 +111,12 @@ searchBar.onkeyup = (e)=>{
   }
 };
 
-// Adiciona o evento clearCards em todas as tags de pesquisa
-// Na lista há uma função entries() que não sei o que é...
-tags = document.querySelectorAll("span.tag")
-for (let pos=0; pos < tags.length; pos++){
-  tags[pos].addEventListener("click", clearSearchResult)
-}
+// // Adiciona o evento clearCards em todas as tags de pesquisa
+// // Na lista há uma função entries() que não sei o que é...
+// tags = document.querySelectorAll("span.tag")
+// for (let pos=0; pos < tags.length; pos++){
+//   tags[pos].addEventListener("click", clearSearchResult)
+// }
 
 function addCard(index){
     // Get search container result
