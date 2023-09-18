@@ -4,7 +4,7 @@ const searchBar = document.querySelector("input.ri-search-line");
 const searchButton = document.querySelector("button#header_search_button");
 
 // Container de pesquisa
-const searchContainer = document.querySelector("div.c-searching-container");
+const searchContainer = document.querySelector("section.c-searching-container");
 
 // Resultado da pesquisa
 const searchResult = searchContainer.querySelector("div.c-searching-container__result");
@@ -13,22 +13,20 @@ const searchResult = searchContainer.querySelector("div.c-searching-container__r
 const body = document.querySelector("body");
 
 // Tags
-let stabTagList = document.querySelectorAll("span[data-stablishment-tag]");
-let desabTagList = document.querySelectorAll("span[data-desability-tag]");
-let localTagList = document.querySelectorAll("span[data-locality-tag]");
+let tagList = document.querySelectorAll("clas.tag");
 
-console.log(stabTagList)
+console.log(tagList)
 
 // Muda a cor de cada tag que eu clicar
-stabTagList.forEach(element => {
+tagList.forEach(element => {
   element.onclick = ()=>{
-    if (element.getAttribute("selected") == "false"){
+    if (element.getAttribute("active") == "false"){
       element.style.backgroundColor = "green"
-      element.setAttribute("selected", "true")
+      element.setAttribute("active", "true")
     }
     else{
       element.style.backgroundColor = ""
-      element.setAttribute("selected", "false")
+      element.setAttribute("active", "false")
     }
   }
 });
@@ -81,7 +79,7 @@ searchBar.onkeyup = (e)=>{
         window.location.href = "./searchPage.html";
       }
 
-      clearSearchResult();
+      resetSearchResult();
 
       // Filtra cards pelas tags
       filterArrayTags = arrayCard.filter((card)=>{
@@ -110,13 +108,6 @@ searchBar.onkeyup = (e)=>{
     }
   }
 };
-
-// // Adiciona o evento clearCards em todas as tags de pesquisa
-// // Na lista há uma função entries() que não sei o que é...
-// tags = document.querySelectorAll("span.tag")
-// for (let pos=0; pos < tags.length; pos++){
-//   tags[pos].addEventListener("click", clearSearchResult)
-// }
 
 function addCard(index){
     // Get search container result
@@ -177,20 +168,9 @@ function addCard(index){
 
 
 function resetSearchResult(){
-  /* 
-    Limpa os cards do container de pesquisa
-  */
   searchResult.innerHTML = `
     <div style="margin: 5px; padding: 2px;">
       <h1>No stablishments found</h1>
     </div>
   `
-}
-
-function clearSearchResult(){
-  /* 
-    Limpa os cards do container de pesquisa
-  */
-  searchResult.innerHTML = ""
-  
 }
