@@ -1,35 +1,15 @@
-// Barra de pesquisa
-const searchBar = document.querySelector("input.ri-search-line");
-// Botão de pesquisa
-const searchButton = document.querySelector("button#header_search_button");
+import { SearchBar } from "./classes/SearchBar.js";
 
-// Container de pesquisa
-const searchContainer = document.querySelector("section.c-searching-container");
+// Barra de pesquisa
+const searchBarElement = document.querySelector("input.ri-search-line");
+// Botão de pesquisa
+const searchButtonElement = document.querySelector("button#header_search_button");
 
 // Resultado da pesquisa
-const searchResult = searchContainer.querySelector("div.c-searching-container__result");
-
-// Body
-const body = document.querySelector("body");
+const searchResultElement = document.querySelector("div.c-searching-container__result");
 
 // Tags
-let tagList = document.querySelectorAll("clas.tag");
-
-console.log(tagList)
-
-// Muda a cor de cada tag que eu clicar
-tagList.forEach(element => {
-  element.onclick = ()=>{
-    if (element.getAttribute("active") == "false"){
-      element.style.backgroundColor = "green"
-      element.setAttribute("active", "true")
-    }
-    else{
-      element.style.backgroundColor = ""
-      element.setAttribute("active", "false")
-    }
-  }
-});
+let tagList = document.querySelectorAll("span.tag");
 
 
 // Array de filtro
@@ -67,110 +47,12 @@ let arrayCard = [
 ];
 
 
-searchBar.onkeyup = (e)=>{
-  // Texto de pesquisa
-  let searchText = e.target.value;
-  
-  if(searchText){
-    searchButton.onclick = ()=>{
-      // Verifica se o usuário não está ja página de pesquisa
-      if (!(window.location.pathname === "/assets/html/searchPage.html")){
-        // Redireciona para página de pesquisa
-        window.location.href = "./searchPage.html";
-      }
+let searchbar = new SearchBar(searchBarElement, 
+  searchButtonElement, 
+  searchResultElement,
+  tagList,
+  arrayCard)
 
-      resetSearchResult();
-
-      // Filtra cards pelas tags
-      filterArrayTags = arrayCard.filter((card)=>{
-        const re = new RegExp(searchText.toLowerCase());
-        return (re.test(card.title.toLowerCase()));
-      })
-      
-      // Filtra cards pelo título
-      filterArrayTitle = arrayCard.filter((card)=>{
-        const re = new RegExp(searchText.toLowerCase());
-        return (re.test(card.title.toLowerCase()));
-      })
-
-      // Filtra cards pela descrição, desconsiderando os cards que foram encontrados pelo título
-      filterArrayDescription = arrayCard.filter((card)=>{
-        const re = new RegExp(searchText.toLowerCase());
-        return re.test(card.description.toLowerCase()) && !re.test(card.title.toLowerCase());
-      })
-
-      filterFinalArray =  filterArrayTitle.concat(filterArrayDescription)
-
-      console.log(filterFinalArray)
-      for (i in filterFinalArray){
-        addCard(i);
-      }
-    }
-  }
-};
-
-function addCard(index){
-    // Get search container result
-    card = document.createElement("article")
-    card.setAttribute("class", "c-searching__card")
-    card.innerHTML += `
-      <aside>
-        <img class="c-searching-container__image" src="${filterFinalArray[index].image}" alt="Establishment image">
-      </aside>
-      <div class="c-searching-container__card-information u-column-container u-space-between">
-        <header>
-          <h2>${filterFinalArray[index].title}</h2>
-        </header>
-        <div>
-          <p>${filterFinalArray[index].description}</p>
-        </div>
-        <footer class="c-searching-container__footer u-space-around">
-          <div class="rank">
-              <span>Rank: </span>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-          </div>
-          <div class="support">
-            <span>Support</span>
-            <img
-              class="acessIcon c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/Braile.svg"
-              alt="Braille icon"
-            />
-            <img
-              class="acessIcon c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/cão guia.svg"
-              alt="Guide dog icon"
-            />
-            <img
-              class="acessIcon c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/baixa visão.svg"
-              alt="Low vision icon"
-            />
-            <img
-              class="acessIcon c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/interprete libras.svg"
-              alt="Pound interpreter icon"
-            />
-          </div>
-          <div class="locality">
-            <span>Locality: </span><span>...</span>
-          </div>
-        </footer>
-      </div>
-    `
-    filterFinalArray[index].idvaga ++
-    searchResult.appendChild(card)
-}
-
-
-function resetSearchResult(){
-  searchResult.innerHTML = `
-    <div style="margin: 5px; padding: 2px;">
-      <h1>No stablishments found</h1>
-    </div>
-  `
+searchBarElement.onblur = ()=> {
+  searchbar.searchReturn();
 }

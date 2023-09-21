@@ -1,4 +1,4 @@
-class SearchBar {
+ export class SearchBar {
   constructor(
     searchBar,
     searchButton,
@@ -11,21 +11,15 @@ class SearchBar {
     this.searchResultContainer = searchResultContainer;
     this.tagsList = tagsList;
     this.dataBase = dataBase;
+    this.#activeTag()
   }
 
   #activeTag() {
     const tags = this.tagsList;
-
     tags.forEach((element) => {
-      element.addEventListener("click", () => {
-        if (element.getAttribute("selected") == "false") {
-          element.style.backgroundColor = "green";
-          element.setAttribute("selected", "true");
-        } else {
-          element.style.backgroundColor = "";
-          element.setAttribute("selected", "false");
-        }
-      });
+      element.onclick = ()=>{
+        element.classList.toggle("u-tag-active")
+      }
     });
   }
 
@@ -38,19 +32,23 @@ class SearchBar {
 
     if (!searchText) return;
 
-    searchButton.onclick = () => {
+    this.searchButton.onclick = () => {
       this.searchResultContainer.innerHTML = "";
 
       cardsFound = dataBase.filter((card) => {
         const regExp = new RegExp(searchText.toLowerCase());
         //regExp.test(card.tags.toLowerCase());card.description.toLowerCase()
-
         return regExp.test(card.title.toLowerCase());
       });
 
-      cardsFound.forEach((cardFound) => {
-        this.#addCard(cardFound);
-      });
+      if (cardsFound.length == 0){
+        this.#resetSearchResult(this.searchResultContainer);
+      }
+      else{
+        cardsFound.forEach((cardFound) => {
+          this.#addCard(cardFound);
+        });
+      }
     };
   }
 
@@ -108,4 +106,12 @@ class SearchBar {
     `;
     this.searchResultContainer.appendChild(card);
   }
+
+  #resetSearchResult(container){
+    container.innerHTML = `
+      <div class="u-padding">
+              <h1>No stablishments found</h1>
+      </div>
+    `
+  };
 }

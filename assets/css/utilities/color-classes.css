@@ -37,3 +37,7 @@
 .u-disabled {
   background-color: var(--clr-disabled);
 }
+
+.u-tag-active {
+  background-color: var(--clr-active-tag);
+}
