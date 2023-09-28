@@ -26,6 +26,9 @@
   searchReturn() {
     let searchText = this.searchBar.value;
     const dataBase = this.dataBase;
+    let cardsFoundForTitle = [];
+    let cardsFoundForDescription = [];
+    let cardsFoundForTags = [];
     let cardsFound = [];
 
     this.#activeTag();
@@ -35,11 +38,31 @@
     this.searchButton.onclick = () => {
       this.searchResultContainer.innerHTML = "";
 
-      cardsFound = dataBase.filter((card) => {
+      cardsFoundForTitle = dataBase.filter((card) => {
         const regExp = new RegExp(searchText.toLowerCase());
-        //regExp.test(card.tags.toLowerCase());card.description.toLowerCase()
         return regExp.test(card.title.toLowerCase());
       });
+
+      cardsFoundForDescription = dataBase.filter((card) => {
+        const regExp = new RegExp(searchText.toLowerCase());
+        return regExp.test(card.description.toLowerCase());
+      });
+
+      cardsFoundForTags = dataBase.filter((card) => {
+        const regExp = new RegExp(searchText.toLowerCase());
+
+        let arrayFilter = [];
+        for (let tag in card.tags){
+          if (regExp.test(card.tags[tag].toLowerCase())){
+            arrayFilter.push(card)
+          }
+        }
+        return arrayFilter.includes(card)
+      });
+      console.log('--')
+      console.log(cardsFoundForTags)
+      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
+      cardsFound = cardsFound.concat(cardsFoundForTags)
 
       if (cardsFound.length == 0){
         this.#resetSearchResult(this.searchResultContainer);
