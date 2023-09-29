@@ -1,4 +1,4 @@
 .prettierrc
 assets/js/searchCard.js
 assets/js/keys
-assets/js/beckupSearchBar.js
+assets/js/classes/testeRegex.js

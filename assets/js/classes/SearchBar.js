@@ -11,7 +11,17 @@
     this.searchResultContainer = searchResultContainer;
     this.tagsList = tagsList;
     this.dataBase = dataBase;
+    this.regExp = /#[a-z A-Z]+/g;
     this.#activeTag()
+  }
+
+  #renderTags(tagList, container){
+    for (let tag in tagList){
+      let newTag = document.createElement("span");
+      newTag.innerText = tagList[tag]
+      newTag.setAttribute("class", "tag-card");
+      container.appendChild(newTag);
+    }
   }
 
   #activeTag() {
@@ -25,6 +35,7 @@
 
   searchReturn() {
     let searchText = this.searchBar.value;
+    let arrayTagSearch = searchText.match(this.regExp)
     const dataBase = this.dataBase;
     let cardsFoundForTitle = [];
     let cardsFoundForDescription = [];
@@ -38,31 +49,53 @@
     this.searchButton.onclick = () => {
       this.searchResultContainer.innerHTML = "";
 
-      cardsFoundForTitle = dataBase.filter((card) => {
-        const regExp = new RegExp(searchText.toLowerCase());
-        return regExp.test(card.title.toLowerCase());
-      });
+      // cardsFoundForTitle = dataBase.filter((card) => {
+      //   const regExp = new RegExp(searchText.toLowerCase());
+      //   return regExp.test(card.title.toLowerCase());
+      // });
 
-      cardsFoundForDescription = dataBase.filter((card) => {
-        const regExp = new RegExp(searchText.toLowerCase());
-        return regExp.test(card.description.toLowerCase());
-      });
+      // cardsFoundForDescription = dataBase.filter((card) => {
+      //   const regExp = new RegExp(searchText.toLowerCase());
+      //   return regExp.test(card.description.toLowerCase());
+      // });
 
-      cardsFoundForTags = dataBase.filter((card) => {
-        const regExp = new RegExp(searchText.toLowerCase());
+      console.log('# encontradas:')
+      console.log(arrayTagSearch)
 
-        let arrayFilter = [];
-        for (let tag in card.tags){
-          if (regExp.test(card.tags[tag].toLowerCase())){
-            arrayFilter.push(card)
-          }
+      let tagsFilter = []
+      cardsFoundForTags = dataBase.filter((card) => {   
+        // Titulo do card   
+        console.log(card.title)
+
+        if (arrayTagSearch != null){
+          console.log("TEM #")
+
+          tagsFilter = card.tags.filter((tag)=>{
+            console.log(tag)
+            return arrayTagSearch.includes(tag)
+          });
+          console.log('# Filtradas:')
+          console.log(tagsFilter)
+
+          card.tags_occurrence = tagsFilter.length;
+          console.log('# Ocorrencias:')
+          console.log(card.tags_occurrence)
+
+          return (card.tags_occurrence > 0)
         }
-        return arrayFilter.includes(card)
-      });
-      console.log('--')
+        else{
+          console.log("NÃO TEM #")
+          return 0;
+        }
+    });
+
+      console.log('++')
       console.log(cardsFoundForTags)
+      
       cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
       cardsFound = cardsFound.concat(cardsFoundForTags)
+      console.log("00")
+      console.log(cardsFound)
 
       if (cardsFound.length == 0){
         this.#resetSearchResult(this.searchResultContainer);
@@ -78,6 +111,9 @@
   #addCard(cardInfo) {
     const card = document.createElement("article");
     card.setAttribute("class", "c-searching__card");
+
+    const renderedTags = document.createElement("div");
+    renderedTags.setAttribute("class", "u-row-container");
     card.innerHTML = `
       <aside>
         <img class="c-searching-container__image" src="${cardInfo.image}" alt="Establishment image">
@@ -127,6 +163,8 @@
         </footer>
       </div>
     `;
+    this.#renderTags(cardInfo.tags, renderedTags)
+    card.childNodes[3].appendChild(renderedTags)
     this.searchResultContainer.appendChild(card);
   }
 

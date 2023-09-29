@@ -24,27 +24,32 @@ let arrayCard = [
     "image": "/assets/imgs/stablishments/happiness_coffee_shop.png",
     "title": "Happiness Coffee Shop",
     "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#coffeeShop", "#visualDesability", "#physicalMotorDesability"]
+   "tags": ["#coffeeShop", "#visualDesability", "#physicalMotorDesability"],
+   "tags_ocurrence": 0
   },
   {
     "image": "/assets/imgs/stablishments/zursky_tech.png",
     "title": "Zurski Tech",
     "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#company", "#visualDesability", "#hearingDesability", "#physicalMotorDesability"]
+   "tags": ["#company", "#visualDesability", "#hearingDesability", "#physicalMotorDesability"],
+   "tags_ocurrence": 0
   },
   {
     "image": "/assets/imgs/stablishments/green_vegan_restaurant.png",
     "title": "Green Vegan Restaurant",
     "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#restaurant", , , "#physicalMotorDesability"]
+   "tags": ["#restaurant", "#physicalMotorDesability"],
+   "tags_ocurrence": 0
   },
   {
     "image": "/assets/imgs/stablishments/gold_hotel.png",
     "title": "Gold Hotel",
     "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#hotel", "#physicalMotorDesability"]
+   "tags": ["#hotel", "#physicalMotorDesability"],
+   "tags_ocurrence": 0
   }
 ];
+
 
 
 let searchbar = new SearchBar(searchBarElement, 
