@@ -11,7 +11,6 @@ const searchResultElement = document.querySelector("div.c-searching-container__r
 // Tags
 let tagList = document.querySelectorAll("span.tag");
 
-
 // Array de filtro
 let filterArrayTags = [];
 let filterArrayTitle = [];
@@ -30,14 +29,14 @@ let arrayCard = [
   {
     "image": "/assets/imgs/stablishments/zursky_tech.png",
     "title": "Zurski Tech",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+    "description": "If you want the best tecnology solutions, we can help you...",
    "tags": ["#company", "#visualDesability", "#hearingDesability", "#physicalMotorDesability"],
    "tags_ocurrence": 0
   },
   {
     "image": "/assets/imgs/stablishments/green_vegan_restaurant.png",
     "title": "Green Vegan Restaurant",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
+    "description": "Our food can help you to care your health...",
    "tags": ["#restaurant", "#physicalMotorDesability"],
    "tags_ocurrence": 0
   },
