@@ -17,7 +17,7 @@
   color: var(--clr-text);
 }
 
-.u-primary-bg-color:hover {
+.u-primary-bg-color-hovered {
   background-color: var(--clr-default-hover);
 }
 
