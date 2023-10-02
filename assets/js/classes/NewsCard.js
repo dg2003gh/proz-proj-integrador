@@ -1,23 +1,29 @@
 class NewsCard {
-  constructor(keyWord, container) {
+  constructor(keyWord, container, apiKey) {
     this.keyWord = keyWord;
     this.container = container;
+    this.apiKey = apiKey;
   }
 
-  static async requestNews() {
-    const request = new Request(url, options);
+  async #requestNews() {
+    const url =
+      "https://newsapi.org/v2/everything?" +
+      `q=${this.keyWord}&` +
+      "sortBy=popularity&" +
+      `apiKey=${this.apiKey}`;
+
+    const request = new Request(url);
 
     const response = await fetch(request)
       .then((response) => response.json())
-      .then(({ articles }) => console.log(articles));
+      .then(({ articles }) => articles);
 
     return response;
   }
 
-  showCard() {
-    const articles = this.constructor.requestNews();
-
-    articles.forEach((newContent, index) => {
+  async showCard() {
+    const articles = await this.#requestNews();
+    articles.forEach((newContent) => {
       const card = document.createElement("a");
       let contentTitle = String(newContent.title).slice(0, 60);
       let content = `
