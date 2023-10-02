@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
+    <link rel="stylesheet" href="../css/components/slider.css" />
+    <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
@@ -70,30 +72,43 @@
     <script defer src="../js/togglePassword.js"></script>
     <script defer src="../js/mobileButton.js"></script>
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="../js/toolsDropdown.js"></script>
+    <script defer src="../js/inputEvents.js"></script>
+    <script defer src="../js/classes/Slider.js"></script>
+    <script defer src="../js/slider.js"></script>
+    <script
+      defer
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script defer src="../js/translate.js"></script>
     <script defer src="../js/vlibras.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
-      <a href="./index.html">
+      <a href="./index.html" tabindex="0" class="c-site-header__logo">
         <img
           src="../imgs/site-icon.png"
           alt="website icon"
           width="35"
           height="35"
-          class="c-site-header__logo"
+          tabindex="-1"
         />
       </a>
       <span class="u-row-container">
         <input
           type="text"
-          placeholder="Search establishments..."
+          placeholder="Search establishments... "
           class="ri-search-line c-site-header__search-input"
-          id="search_input"
+          id="c-search_input"
+          title="Search input (Press 'p' to focus)"
+          aria-label="Search input (Press 'p' to focus)"
+          tabindex="0"
         />
         <button
-          id="header_search_button"
+          id="c-search_button"
           aria-label="Search button."
           class="c-site-header_search-button u-primary-bg-color u-primary-bg-color-hovered"
+          tabindex="0"
         >
           <i class="ri-search-line"></i>
         </button>
@@ -102,12 +117,14 @@
         <button
           class="c-site-header__register-button u-accept-color"
           data-modal-target="#register_type_modal"
+          tabindex="0"
         >
           Register
         </button>
         <button
           class="c-site-header__login-button u-primary-bg-color u-primary-bg-color-hovered"
           data-modal-target="#login_modal"
+          tabindex="0"
         >
           Login
         </button>
@@ -134,18 +151,37 @@
     </header>
     <main>
       <section>
-        <div vw class="enabled">
-          <div vw-access-button class="active"></div>
-          <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+        <i
+          class="ri-tools-line u-mouse-over u-accept-color u-center"
+          id="c-tools-dropdown"
+          title="Toolbox - Choose language and use Vlibras app. (Press 'b' to open)"
+          aria-label="Toolbox - Choose language and use Vlibras app."
+          tabindex="0"
+        ></i>
+        <div
+          id="c-tools-dropdown__menu"
+          class="u-column-container u-tertiary-bg-color u-border-radius u-center"
+          tabindex="-1"
+        >
+          <div vw id="c-vlibras" class="enabled" tabindex="-1">
+            <div vw-access-button class="active" tabindex="0"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
           </div>
+          <div
+            id="google_translate_element"
+            class="c-translator-button u-padding"
+            tabindex="0"
+          ></div>
         </div>
       </section>
       <section>
-        <form class="c-modal u-primary-bg-color" id="login_modal">
+        <form class="c-modal u-primary-bg-color" id="login_modal" tabindex="-1">
           <label
             for="user_input_login_modal"
             class="c-label u-tertiary-bg-color"
+            tabindex="-1"
           >
             Username
           </label>
@@ -156,15 +192,17 @@
             class="c-modal__input u-tertiary-bg-color"
             placeholder="Enter your username..."
             aria-label="Enter your username."
+            tabindex="-1"
           />
           <br />
           <label
             for="password_input_login_modal"
             class="c-label u-tertiary-bg-color"
+            tabindex="-1"
           >
             Password
           </label>
-          <span class="c-modal__password-container">
+          <span class="c-modal__password-container" tabindex="-1">
             <input
               required
               id="password_input_login_modal"
@@ -172,8 +210,9 @@
               type="password"
               placeholder="Enter your password..."
               aria-label="Enter your password."
+              tabindex="-1"
             />
-            <i class="ri-eye-line c-modal__toggle-password"></i>
+            <i class="ri-eye-line c-modal__toggle-password" tabindex="-1"></i>
           </span>
           <br />
           <button
@@ -181,6 +220,7 @@
             class="c-modal__button u-tertiary-bg-color"
             type="submit"
             aria-label="Login button"
+            tabindex="-1"
           >
             Login
           </button>
@@ -188,12 +228,17 @@
           <a
             data-modal-target="#recover_password_modal"
             class="c-modal__link u-highlight-color"
+            tabindex="-1"
           >
             Forgot your password ?
           </a>
         </form>
-        <form class="c-modal u-primary-bg-color" id="recover_password_modal">
-          <h3 class="u-margin">
+        <form
+          class="c-modal u-primary-bg-color"
+          id="recover_password_modal"
+          tabindex="-1"
+        >
+          <h3 class="u-margin" tabindex="-1">
             In order for us to recover
             <br />
             your <strong class="u-highlight-color">password</strong>, we will
@@ -206,8 +251,11 @@
           <label
             class="c-label u-tertiary-bg-color"
             for="email_input_recover_password_modal"
+            <h3
+            class="u-margin"
+            tabindex="-1"
           >
-            E-mail
+            > E-mail
           </label>
           <input
             required
@@ -216,22 +264,29 @@
             type="email"
             placeholder="Enter your e-mail..."
             aria-label="Enter your e-mail"
+            tabindex="-1"
           />
           <br />
           <button
             class="c-modal__button u-tertiary-bg-color"
             id="submit_recover_password_modal"
             aria-label="Button to send your e-mail."
+            tabindex="-1"
           >
             send E-mail
           </button>
         </form>
-        <form class="c-modal u-primary-bg-color" id="new_password_modal">
-          <h2>E-mail confirmed, enter your new password!</h2>
+        <form
+          class="c-modal u-primary-bg-color"
+          id="new_password_modal"
+          tabindex="-1"
+        >
+          <h2 tabindex="-1">E-mail confirmed, enter your new password!</h2>
           <br />
           <label
             class="c-label u-tertiary-bg-color"
             for="password_input_new_password_modal"
+            tabindex="-1"
           >
             Password
           </label>
@@ -242,11 +297,13 @@
             type="password"
             placeholder="Enter your password.."
             aria-label="Enter your password."
+            tabindex="-1"
           />
           <br />
           <label
             class="c-label u-tertiary-bg-color"
             for="retype_password_input_new_password_modal"
+            tabindex="-1"
           >
             Check password
           </label>
@@ -257,11 +314,13 @@
             type="password"
             placeholder="Retype your password..."
             aria-label="Retype your password."
+            tabindex="-1"
           />
           <br />
           <label
             class="c-label u-tertiary-bg-color"
             for="error_field_new_password_modal"
+            tabindex="-1"
           >
             Error output
           </label>
@@ -270,6 +329,7 @@
             class="c-modal__error-field u-tertiary-bg-color u-denied"
             id="error_field_new_password_modal"
             disabled
+            tabindex="-1"
           >
                Validation field if any data
                are exempt! hidden by default.
@@ -281,20 +341,26 @@
             type="submit"
             id="save_button_new_password_modal"
             aria-label="Save new password button"
+            tabindex="-1"
           >
             Save
           </button>
         </form>
-        <form class="c-modal u-primary-bg-color" id="register_type_modal">
-          <h2>Would you like to register as:</h2>
+        <form
+          class="c-modal u-primary-bg-color"
+          id="register_type_modal"
+          tabindex="-1"
+        >
+          <h2 tabindex="-1">Would you like to register as:</h2>
           <br />
-          <span class="u-row-container">
+          <span class="u-row-container" tabindex="-1">
             <button
               class="c-modal__button u-tertiary-bg-color"
               type="button"
               id="establishment_button_register_type_modal"
               aria-label="Button register  a establishment . "
               data-modal-target="#establishment_modal"
+              tabindex="-1"
             >
               Establishment
             </button>
@@ -304,25 +370,32 @@
               id="user_register_button_type_modal"
               aria-label="Button register  as a user. "
               data-modal-target="#user_modal"
+              tabindex="-1"
             >
               User
             </button>
           </span>
         </form>
-        <form class="c-modal u-primary-bg-color" id="establishment_modal">
+        <form
+          class="c-modal u-primary-bg-color"
+          id="establishment_modal"
+          tabindex="-1"
+        >
           <img
             id="establishment_photo"
             src="../imgs/icons/establishment.svg"
             alt="Establishment photo"
             width="150"
             height="150"
+            tabindex="-1"
           />
           <br />
-          <span class="u-row-container u-margin">
-            <span class="u-column-container u-margin">
+          <span class="u-row-container u-margin" tabindex="-1">
+            <span class="u-column-container u-margin" tabindex="-1">
               <label
                 class="c-label u-tertiary-bg-color"
                 for="name_input_establishment_modal"
+                tabindex="-1"
               >
                 Name
               </label>
@@ -333,11 +406,13 @@
                 type="text"
                 placeholder="Enter the name of the establishment..."
                 aria-label="Enter the name of the establishment."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="username_input_establishment_modal"
+                tabindex="-1"
               >
                 Username
               </label>
@@ -348,15 +423,17 @@
                 type="text"
                 placeholder="Enter your username..."
                 aria-label="Enter your username."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="password_input_establishment_modal"
+                tabindex="-1"
               >
                 password
               </label>
-              <span class="c-modal__password-container">
+              <span class="c-modal__password-container" tabindex="-1">
                 <input
                   required
                   class="c-modal__input u-tertiary-bg-color"
@@ -364,13 +441,18 @@
                   type="password"
                   placeholder="Enter your password..."
                   aria-label="Enter your password."
+                  tabindex="-1"
                 />
-                <i class="ri-eye-line c-modal__toggle-password"></i>
+                <i
+                  class="ri-eye-line c-modal__toggle-password"
+                  tabindex="-1"
+                ></i>
               </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="telephone_input_establishment_modal"
+                tabindex="-1"
               >
                 Telephone
               </label>
@@ -381,14 +463,16 @@
                 type="tel"
                 placeholder="Enter your company phone number..."
                 aria-label="Enter your company phone number."
+                tabindex="-1"
               />
               <br />
             </span>
             <br />
-            <span class="u-column-container u-margin">
+            <span class="u-column-container u-margin" tabindex="-1">
               <label
                 class="c-label u-tertiary-bg-color"
                 for="owner_input_establishment_modal"
+                tabindex="-1"
               >
                 owner
               </label>
@@ -399,11 +483,13 @@
                 type="text"
                 placeholder="Enter the name of the owner..."
                 aria-label="Enter the name of the owner."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="email_input_establishment_modal"
+                tabindex="-1"
               >
                 E-mail
               </label>
@@ -414,15 +500,17 @@
                 type="text"
                 placeholder="Enter the establishment's e-mail.."
                 aria-label="Enter the establishment's e-mail."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="retype_password_input_establishment_modal"
+                tabindex="-1"
               >
                 Check Password
               </label>
-              <span class="c-modal__password-container">
+              <span class="c-modal__password-container" tabindex="-1">
                 <input
                   required
                   class="c-modal__input u-tertiary-bg-color"
@@ -430,14 +518,19 @@
                   type="password"
                   placeholder="Retype your password..."
                   aria-label="Retype your password."
+                  tabindex="-1"
                 />
-                <i class="ri-eye-line c-modal__toggle-password"></i>
+                <i
+                  class="ri-eye-line c-modal__toggle-password"
+                  tabindex="-1"
+                ></i>
               </span>
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="tax_indentifier_input_establishment_modal"
                 title="Needed to register your property as unique on the site."
+                tabindex="-1"
               >
                 tax identifier
               </label>
@@ -449,16 +542,19 @@
                 placeholder="Type the tax identifier of the establishment..."
                 aria-label="Type the tax identifier of the establishment."
                 title="It is necessary for unique identification of the establishment on the website."
+                tabindex="-1"
               />
             </span>
           </span>
           <br />
           <span
             class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
+            tabindex="-1"
           >
             <label
               class="c-label u-self-center"
               for="inauguration_input_establishment_modal"
+              tabindex="-1"
             >
               Inauguration date
             </label>
@@ -469,10 +565,12 @@
               name=""
               id="inauguration_input_establishment_modal"
               aria-label="Type the establishment inauguration date."
+              tabindex="-1"
             />
           </span>
           <span
             class="c-modal__tags-container u-column-container u-border-radius u-tertiary-bg-color u-margin"
+            tabindex="-1"
           >
             <i
               id="c-modal__add-new-tag"
@@ -480,37 +578,48 @@
               data-modal-target="#add-new-tag-modal"
               title="Add new tag"
               aria-label="Add new tag button"
+              tabindex="-1"
             ></i>
-            <label class="c-label u-self-center u-padding" for="">
+            <label
+              class="c-label u-self-center u-padding"
+              for="c-modal__tags"
+              tabindex="-1"
+            >
               Establishment tags
             </label>
             <div
               class="u-column-container u-gap u-flex-wrap u-padding u-margin u-justify-around"
+              id="c-modal__tags"
+              tabindex="-1"
             >
-              <span class="u-row-container u-gap">
+              <span class="u-row-container u-gap" tabindex="-1">
                 <a
                   name="#restaurant"
                   class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                  tabindex="-1"
                 >
                   Restaurant
                 </a>
                 <a
                   name="#coffeeShop"
                   class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                  tabindex="-1"
                 >
                   Coffee Shop
                 </a>
               </span>
-              <span class="u-row-container u-gap">
+              <span class="u-row-container u-gap" tabindex="-1">
                 <a
                   name="#hotel"
                   class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                  tabindex="-1"
                 >
                   Hotel
                 </a>
                 <a
                   name="#company"
                   class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                  tabindex="-1"
                 >
                   Company
                 </a>
@@ -521,6 +630,7 @@
           <label
             class="c-label u-self-center u-tertiary-bg-color"
             for="error_field_establishment_modal"
+            tabindex="-1"
           >
             Error output
           </label>
@@ -529,6 +639,7 @@
             class="c-modal__error-field u-tertiary-bg-color u-denied"
             id="error_field_establishment_modal"
             disabled
+            tabindex="-1"
           >
           Validation field if any data
           are exempt! hidden by default.    
@@ -539,6 +650,7 @@
             class="c-modal__button u-accept-color"
             type="submit"
             aria-label="Button to register the establishment"
+            tabindex="-1"
           >
             Register
           </button>
@@ -546,10 +658,15 @@
         <form
           id="add-new-tag-modal"
           class="c-modal u-primary-bg-color u-border-radius"
+          tabindex="-1"
         >
-          <h2>New tag</h2>
+          <h2 tabindex="-1">New tag</h2>
           <hr />
-          <label class="c-label u-tertiary-bg-color" for="new-tag-input">
+          <label
+            class="c-label u-tertiary-bg-color"
+            for="new-tag-input"
+            tabindex="-1"
+          >
             New tag name
           </label>
           <input
@@ -557,28 +674,32 @@
             type="text"
             class="c-modal__input"
             placeholder="Type the new tag name..."
+            tabindex="-1"
           />
           <button
             type="submit"
             class="u-accept-color u-padding u-margin u-mouse-over"
+            tabindex="-1"
           >
             Add new tag
           </button>
         </form>
-        <form class="c-modal u-primary-bg-color" id="user_modal">
+        <form class="c-modal u-primary-bg-color" id="user_modal" tabindex="-1">
           <img
             id="user_photo"
             src="../imgs/icons/user.svg"
             alt="User photo"
             width="150"
             height="150"
+            tabindex="-1"
           />
           <br />
-          <span class="u-row-container">
-            <span class="u-column-container u-margin">
+          <span class="u-row-container" tabindex="-1">
+            <span class="u-column-container u-margin" tabindex="-1">
               <label
                 class="c-label u-tertiary-bg-color"
                 for="name_input_user_modal"
+                tabindex="-1"
               >
                 Name
               </label>
@@ -589,11 +710,13 @@
                 type="text"
                 placeholder="Enter the name of the user..."
                 aria-label="Enter the name of the user."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="username_input_user_modal"
+                tabindex="-1"
               >
                 Username
               </label>
@@ -604,15 +727,17 @@
                 type="text"
                 placeholder="Enter your username..."
                 aria-label="Enter your username."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="password_input_user_modal"
+                tabindex="-1"
               >
                 Password
               </label>
-              <span class="c-modal__password-container">
+              <span class="c-modal__password-container" tabindex="-1">
                 <input
                   required
                   class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
@@ -620,15 +745,20 @@
                   type="password"
                   placeholder="Enter your password..."
                   aria-label="Enter your password."
+                  tabindex="-1"
                 />
-                <i class="ri-eye-line c-modal__toggle-password"></i>
+                <i
+                  class="ri-eye-line c-modal__toggle-password"
+                  tabindex="-1"
+                ></i>
               </span>
             </span>
             <br />
-            <span class="u-column-container u-margin">
+            <span class="u-column-container u-margin" tabindex="-1">
               <label
                 class="c-label u-tertiary-bg-color"
                 for="surname_input_user_modal"
+                tabindex="-1"
               >
                 Surname
               </label>
@@ -639,11 +769,13 @@
                 type="text"
                 placeholder="Enter your surname..."
                 aria-label="Enter your surname."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="email_input_user_modal"
+                tabindex="-1"
               >
                 E-mail
               </label>
@@ -654,15 +786,17 @@
                 type="text"
                 placeholder="Enter the user's email.."
                 aria-label="Enter the user's email."
+                tabindex="-1"
               />
               <br />
               <label
                 class="c-label u-tertiary-bg-color"
                 for="retype_password_input_user_modal"
+                tabindex="-1"
               >
                 Check Password
               </label>
-              <span class="c-modal__password-container">
+              <span class="c-modal__password-container" tabindex="-1">
                 <input
                   required
                   class="c-modal__input u-tertiary-bg-color"
@@ -670,19 +804,25 @@
                   type="password"
                   placeholder="Retype your password..."
                   aria-label="Retype your password."
+                  tabindex="-1"
                 />
-                <i class="ri-eye-line c-modal__toggle-password"></i>
+                <i
+                  class="ri-eye-line c-modal__toggle-password"
+                  tabindex="-1"
+                ></i>
               </span>
             </span>
           </span>
           <br />
           <span
             class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
+            tabindex="-1"
           >
             <label
               class="c-label"
               for="disability_select_user_modal"
               title="Necessary for the website to recommend establishments that support your disability."
+              tabindex="-1"
             >
               <strong>
                 Do you want to declare<br />
@@ -694,14 +834,16 @@
               class="c-modal__select u-primary-bg-color"
               name=""
               id="disability_select_user_modal"
+              tabindex="-1"
             >
-              <option value="">Not declared</option>
+              <option tabindex="-1" value="">Not declared</option>
             </select>
           </span>
           <br />
           <label
             class="c-label u-self-center u-tertiary-bg-color"
             for="error_field_user_modal"
+            tabindex="-1"
           >
             Error output
           </label>
@@ -709,6 +851,7 @@
           <textarea
             class="c-modal__error-field u-tertiary-bg-color u-denied"
             id="error_field_user_modal"
+            tabindex="-1"
             disabled
           >
                Validation field if any data
@@ -720,11 +863,12 @@
             class="c-modal__button u-accept-color"
             type="submit"
             aria-label="Button to register the user."
+            tabindex="-1"
           >
             Register
           </button>
         </form>
-        <div id="overlay" data-modal-target=""></div>
+        <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
       <section class="u-margin u-row-container">
         <h1 class="u-column-container u-margin u-title">
@@ -740,71 +884,7 @@
         </h2>
         <div class="c-slider u-secondary-bg-color u-margin u-padding">
           <i class="ri-arrow-left-s-line c-slider__button"></i>
-          <span class="c-slider__content-container u-row-container">
-            <article
-              class="c-card u-margin u-border-radius u-tertiary-bg-color"
-            >
-              <aside class="c-card__aside">
-                <img
-                  class="c-card__img"
-                  src="../imgs/foto_Elis.png"
-                  width="200"
-                  alt=""
-                />
-              </aside>
-              <div
-                class="c-card__main-content u-column-container u-center u-text-center u-padding"
-              >
-                <p>
-                  Scientists 'robotize' paralyzed <br />
-                  children's wheelchair with low-cost device.
-                </p>
-                <h3>Font: G1</h3>
-              </div>
-            </article>
-            <article
-              class="c-card u-margin u-border-radius u-tertiary-bg-color"
-            >
-              <aside class="c-card__aside">
-                <img
-                  class="c-card__img"
-                  src="../imgs/foto_Elis.png"
-                  width="200"
-                  alt=""
-                />
-              </aside>
-              <div
-                class="c-card__main-content u-column-container u-center u-text-center u-padding"
-              >
-                <p>
-                  Scientists 'robotize' paralyzed <br />
-                  children's wheelchair with low-cost device.
-                </p>
-                <h3>Font: G1</h3>
-              </div>
-            </article>
-            <article
-              class="c-card u-margin u-border-radius u-tertiary-bg-color"
-            >
-              <aside class="c-card__aside">
-                <img
-                  class="c-card__img"
-                  src="../imgs/foto_Elis.png"
-                  width="200"
-                  alt=""
-                />
-              </aside>
-              <div
-                class="c-card__main-content u-column-container u-center u-text-center u-padding"
-              >
-                <p>
-                  Scientists 'robotize' paralyzed <br />
-                  children's wheelchair with low-cost device.
-                </p>
-                <h3>Font: G1</h3>
-              </div>
-            </article>
-          </span>
+          <span class="c-slider__content-container u-row-container"> </span>
           <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
