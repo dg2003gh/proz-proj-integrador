@@ -58,5 +58,7 @@ let searchbar = new SearchBar(searchBarElement,
   arrayCard)
 
 searchBarElement.onblur = ()=> {
-  searchbar.searchReturn();
+  if (!searchbar.searchReturn()){
+    window.location.assign("searchPage.html")
+  }
 }

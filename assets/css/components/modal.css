@@ -2,7 +2,7 @@
   z-index: 3;
 
   display: flex;
-  position: absolute;
+  position: fixed;
   flex-direction: column;
   align-items: center;
 
@@ -17,6 +17,10 @@
   border-radius: 8px;
 
   transition: transform 200ms ease-in-out;
+}
+
+.c-modal.u-visible {
+  transform: scale(1) translate(-50%, -50%);
 }
 
 .c-modal::-webkit-scrollbar {
@@ -35,10 +39,6 @@
 
 .c-modal::-webkit-scrollbar-thumb {
   background-color: var(--clr-scrollbar-hover);
-}
-
-.c-modal.u-visible {
-  transform: scale(1) translate(-50%, -50%);
 }
 
 .c-modal__input {

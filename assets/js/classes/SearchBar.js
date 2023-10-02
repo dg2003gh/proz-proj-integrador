@@ -13,7 +13,13 @@
     this.dataBase = dataBase;
     this.regExp = /#[a-z A-Z]+/g;
     this.#activeTag()
+    window.addEventListener("keydown", (event)=>{
+      if (event.code == "Enter"){
+        console.log("Enter Pressionada")
+      }
+    })
   }
+
 
   #renderTags(tagList, container){
     for (let tag in tagList){
@@ -48,8 +54,14 @@
 
     this.#activeTag();
 
-    if (!searchText) return;
+    // if (!searchText) return;
 
+    if(!window.location.href.endsWith("searchPage.html")){
+      return false
+    }
+
+    console.log('oiljfda')
+    setTimeout(()=>{this.searchBar.value = "aaa"}, 6000)
     this.searchButton.onclick = () => {
       this.searchResultContainer.innerHTML = "";
       tagsActiveList = tagsList.filter((tag)=>{
@@ -82,7 +94,7 @@
 
       cardsFoundForDescription = cardsFiltered.filter((card) => {
         const regExp = new RegExp(searchText.toLowerCase());
-        return regExp.test(card.description.toLowerCase());
+        return regExp.test(card.description.toLowerCase()) && !cardsFoundForTitle.includes(card);
       });
 
       cardsFoundForTags = cardsFiltered.filter((card) => {   
@@ -101,22 +113,22 @@
         else{
           return 0;
         }
-    });
-    console.log(cardsFoundForTags)
+      });
       
-      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
-      cardsFound = cardsFound.concat(cardsFoundForTags)
-      cardsFound.sort((a, b) => b.tags_ocurrence - a.tags_ocurrence);
+        cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
+        cardsFound = cardsFound.concat(cardsFoundForTags)
+        cardsFound.sort((a, b) => b.tags_ocurrence - a.tags_ocurrence);
 
-      if (cardsFound.length == 0){
-        this.#resetSearchResult(this.searchResultContainer);
-      }
-      else{
-        cardsFound.forEach((cardFound) => {
-          this.#addCard(cardFound);
-        });
-      }
+        if (cardsFound.length == 0){
+          this.#resetSearchResult(this.searchResultContainer);
+        }
+        else{
+          cardsFound.forEach((cardFound) => {
+            this.#addCard(cardFound);
+          });
+        }
     };
+    return true;
   }
 
   #addCard(cardInfo) {
