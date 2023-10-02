@@ -54,8 +54,14 @@
 
     this.#activeTag();
 
-    if (!searchText) return;
+    // if (!searchText) return;
 
+    if(!window.location.href.endsWith("searchPage.html")){
+      return false
+    }
+
+    console.log('oiljfda')
+    setTimeout(()=>{this.searchBar.value = "aaa"}, 6000)
     this.searchButton.onclick = () => {
       this.searchResultContainer.innerHTML = "";
       tagsActiveList = tagsList.filter((tag)=>{
@@ -122,6 +128,7 @@
           });
         }
     };
+    return true;
   }
 
   #addCard(cardInfo) {
