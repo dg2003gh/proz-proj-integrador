@@ -51,6 +51,11 @@
   align-self: center;
 }
 
+.u-all-parent {
+  height: 100%;
+  width: 100%;
+}
+
 .u-center {
   display: flex;
   align-items: center;
@@ -89,4 +94,8 @@
 
 .u-mouse-over {
   cursor: pointer;
+}
+
+.u-full-width {
+  width: 100%;
 }
