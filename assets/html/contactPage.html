@@ -93,7 +93,7 @@
         <button
           id="header_search_button"
           aria-label="Search button."
-          class="c-site-header_search-button u-primary-bg-color"
+          class="c-site-header_search-button u-primary-bg-color u-primary-bg-color-hovered"
         >
           <i class="ri-search-line"></i>
         </button>
@@ -106,14 +106,14 @@
           Register
         </button>
         <button
-          class="c-site-header__login-button u-primary-bg-color"
+          class="c-site-header__login-button u-primary-bg-color u-primary-bg-color-hovered"
           data-modal-target="#login_modal"
         >
           Login
         </button>
       </span>
       <i
-        class="ri-align-justify u-primary-bg-color"
+        class="ri-align-justify u-primary-bg-color u-primary-bg-color-hovered"
         id="c-site-header__mobile-button"
         onclick="toggleMobileMenu()"
       ></i>
@@ -125,7 +125,7 @@
           Register
         </button>
         <button
-          class="c-site-header__login-button u-primary-bg-color"
+          class="c-site-header__login-button u-primary-bg-color u-primary-bg-color-hovered"
           data-modal-target="#login_modal"
         >
           Login
@@ -471,6 +471,52 @@
               aria-label="Type the establishment inauguration date."
             />
           </span>
+          <span
+            class="c-modal__tags-container u-column-container u-border-radius u-tertiary-bg-color u-margin"
+          >
+            <i
+              id="c-modal__add-new-tag"
+              class="ri-add-line u-accept-color u-mouse-over"
+              data-modal-target="#add-new-tag-modal"
+              title="Add new tag"
+              aria-label="Add new tag button"
+            ></i>
+            <label class="c-label u-self-center u-padding" for="">
+              Establishment tags
+            </label>
+            <div
+              class="u-column-container u-gap u-flex-wrap u-padding u-margin u-justify-around"
+            >
+              <span class="u-row-container u-gap">
+                <a
+                  name="#restaurant"
+                  class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                >
+                  Restaurant
+                </a>
+                <a
+                  name="#coffeeShop"
+                  class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                >
+                  Coffee Shop
+                </a>
+              </span>
+              <span class="u-row-container u-gap">
+                <a
+                  name="#hotel"
+                  class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                >
+                  Hotel
+                </a>
+                <a
+                  name="#company"
+                  class="u-secondary-bg-color u-border-radius u-padding u-mouse-over"
+                >
+                  Company
+                </a>
+              </span>
+            </div>
+          </span>
           <br />
           <label
             class="c-label u-self-center u-tertiary-bg-color"
@@ -490,11 +536,33 @@
           >
           <br />
           <button
-            class="c-modal__button u-tertiary-bg-color"
+            class="c-modal__button u-accept-color"
             type="submit"
             aria-label="Button to register the establishment"
           >
             Register
+          </button>
+        </form>
+        <form
+          id="add-new-tag-modal"
+          class="c-modal u-primary-bg-color u-border-radius"
+        >
+          <h2>New tag</h2>
+          <hr />
+          <label class="c-label u-tertiary-bg-color" for="new-tag-input">
+            New tag name
+          </label>
+          <input
+            id="new-tag-input"
+            type="text"
+            class="c-modal__input"
+            placeholder="Type the new tag name..."
+          />
+          <button
+            type="submit"
+            class="u-accept-color u-padding u-margin u-mouse-over"
+          >
+            Add new tag
           </button>
         </form>
         <form class="c-modal u-primary-bg-color" id="user_modal">
@@ -649,7 +717,7 @@
           >
           <br />
           <button
-            class="c-modal__button u-tertiary-bg-color"
+            class="c-modal__button u-accept-color"
             type="submit"
             aria-label="Button to register the user."
           >
@@ -663,10 +731,10 @@
           <strong>Developers</strong>
         </h2>
         <div
-          class="u-border-radius u-padding u-margin u-secondary-bg-color"
+          class="u-column-container u-gap u-border-radius u-padding u-margin u-secondary-bg-color"
           id="developers-container"
         >
-          <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
+          <article class="c-card u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
               <img
                 class="c-card__img"
@@ -676,7 +744,9 @@
                 height="250px"
               />
             </aside>
-            <main class="c-card__main-content u-column-container u-center">
+            <main
+              class="c-card__main-content u-column-container u-center u-text-center u-padding"
+            >
               <h2>David Shelton</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -716,7 +786,7 @@
               </span>
             </main>
           </article>
-          <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
+          <article class="c-card u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
               <img
                 class="c-card__img"
@@ -726,7 +796,9 @@
                 height="250px"
               />
             </aside>
-            <div class="c-card__main-content u-column-container u-center">
+            <div
+              class="c-card__main-content u-column-container u-center u-text-center u-padding"
+            >
               <h2>Douglas Guimarães</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -766,7 +838,7 @@
               </span>
             </div>
           </article>
-          <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
+          <article class="c-card u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
               <img
                 class="c-card__img"
@@ -776,7 +848,9 @@
                 height="250px"
               />
             </aside>
-            <div class="c-card__main-content u-column-container u-center">
+            <div
+              class="c-card__main-content u-column-container u-center u-text-center u-padding"
+            >
               <h2>Elisângela Rosa</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
@@ -816,7 +890,7 @@
               </span>
             </div>
           </article>
-          <article class="c-card u-margin u-border-radius u-tertiary-bg-color">
+          <article class="c-card u-border-radius u-tertiary-bg-color">
             <aside class="c-card__aside">
               <img
                 class="c-card__img"
@@ -826,7 +900,9 @@
                 height="250px"
               />
             </aside>
-            <div class="c-card__main-content u-column-container u-center">
+            <div
+              class="c-card__main-content u-column-container u-center u-text-center u-padding"
+            >
               <h2>Isabella Flauzino</h2>
               <p>
                 Front-End Developer certified by the Introduction to Front-End
