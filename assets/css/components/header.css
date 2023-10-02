@@ -30,8 +30,8 @@
   transition: background-color 500ms ease-in-out;
 }
 
-.c-site-header__buttons-container {
-  transform: scale(1);
+#c-site-header__mobile-menu {
+  display: none;
 }
 
 .c-site-header__register-button {

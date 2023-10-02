@@ -17,7 +17,7 @@
   color: var(--clr-text);
 }
 
-.u-primary-bg-color:hover {
+.u-primary-bg-color-hovered:hover {
   background-color: var(--clr-default-hover);
 }
 
@@ -36,4 +36,8 @@
 
 .u-disabled {
   background-color: var(--clr-disabled);
+}
+
+.u-tag-active {
+  background-color: var(--clr-active-tag);
 }

@@ -35,6 +35,11 @@
   text-align: center;
 }
 
+.u-text-justify {
+  display: block;
+  text-align: justify;
+}
+
 .u-flex-start {
   display: flex;
   align-items: flex-start;
@@ -44,6 +49,11 @@
 .u-self-center {
   display: flex;
   align-self: center;
+}
+
+.u-all-parent {
+  height: 100%;
+  width: 100%;
 }
 
 .u-center {
@@ -77,7 +87,15 @@
   overflow: hidden;
 }
 
-.u-justify-around{
+.u-justify-around {
   display: flex;
   justify-content: space-around;
+}
+
+.u-mouse-over {
+  cursor: pointer;
+}
+
+.u-full-width {
+  width: 100%;
 }

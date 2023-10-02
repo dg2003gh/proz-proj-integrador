@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html> -->
+<!ATTLIST element-name attribute-name attribute-type attribute-value>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -45,6 +46,8 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script defer src="../js/searchBar.js" type="module"></script>
+    <script defer src="../js/classes/SearchBar.js" type="module"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -585,17 +588,17 @@
         <div id="overlay" data-modal-target=""></div>
       </section>
       <section class="u-column-container u-center">
-        <div class="c-tags-container u-center" class="u-flex-wrap">
+        <section class="c-tags-container u-center" class="u-flex-wrap">
           <div class="c-tags-container__label-container u-column-container">
             <label class="c-label u-tertiary-bg-color u-self-center"   for="c-tags-container__stablishments_container">Stablishments</label>
             <div id="c-tags-container__stablishments_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
               <span class="mobile-container" >
-                <span class="tag">Restaurants</span>
-                <span class="tag">Coffee Shop</span>
+                <span name="#restaurant" class="tag">Restaurant</span>
+                <span name="#coffeeShop" class="tag">Coffee Shop</span>
               </span>
               <span class="mobile-container" >
-                <span class="tag">Hotels</span>
-                <span class="tag">Public Stablishments
+                <span name="#hotel" class="tag">Hotel</span>
+                <span name="#company" class="tag">Company</span>
               </span>
             </div>
           </div>
@@ -605,12 +608,12 @@
             >
             <div id="c-tags-container__types_of_disability_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
               <span class="mobile-container" >
-                <span class="tag">Physical-motor</span>
-                <span class="tag">Visual</span>
+                <span name="#physicalMotorDesability" class="tag">Physical-motor</span>
+                <span name="#visualDesability" class="tag">Visual</span>
               </span>
-              <span class="mobile-container" >
-                <span class="tag">Neurodivergent</span>
-                <span class="tag">Hearing</span>
+              <span  class="mobile-container" >
+                <span name="#neuroDivergentDesability" class="tag">Neurodivergent</span>
+                <span name="#hearingDesability" class="tag">Hearing</span>
               </span>
             </div>
           </div>
@@ -618,20 +621,23 @@
             <label class="c-label u-tertiary-bg-color u-self-center" for="c-tags-container__locality_container">Locality</label>
             <div id="c-tags-container__locality_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
               <span class="mobile-container" >
-                <span class="tag">Up to 2km</span>
-              <span class="tag">Up to 4km</span>
+                <span name="upTo2km" class="tag">Up to 2km</span>
+              <span name="upTo4km" active="false" class="tag">Up to 4km</span>
               </span>
               <span class="mobile-container" >
-                <span class="tag">Up to 10km</span>
-                <span class="tag">Near to me</span>
+                <spa name="upTo10km" class="tag">Up to 10km</spa>
+                <span name="nearToMe" class="tag">Near to me</span>
               </span>
             </div>
           </div>
-        </div>
-        <div class="c-searching-container u-column-container u-center">
+        </section>
+        <section class="c-searching-container u-column-container u-center">
           <label class="c-label u-tertiary-bg-color u-padding u-self-center" for="c-searching-container__result">Searching Result</label>
-          <div id="c-searching-container__result" class="u-secondary-bg-color">
-            <article class="c-searching__card">
+          <div class="c-searching-container__result u-secondary-bg-color">
+            <div class="u-padding">
+              <h1>No stablishments found</h1>
+            </div>
+            <!-- <article class="c-searching__card">
               <aside>
                 <img class="c-searching-container__image" src="/assets/imgs/stablishments/default.png" alt="Establishment image">
               </aside>
@@ -826,12 +832,11 @@
                   </div>
                 </footer>
               </div>
-          </article>
+          </article> -->
           </div>
-        </div>
+        </section>
       </section>
     </main>
-    <script defer src="../js/main.js"></script>
-    <!-- <script defer src="../js/searchCard.js"></script> -->
+
   </body>
 </html>

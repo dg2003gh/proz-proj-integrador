@@ -1,0 +1,12 @@
+#js-card__user-rate-container i.active {
+  color: var(--clr-highlight);
+  cursor: pointer;
+  transition: 100ms ease-in-out;
+}
+
+#js-card__user-rate-container i,
+.c-card__rate-container i,
+#c-establishment-section__stars i {
+  color: transparent;
+  -webkit-text-stroke: 1px black;
+}

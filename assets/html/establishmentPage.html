@@ -22,12 +22,20 @@
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
+<<<<<<< HEAD
     <link rel="stylesheet" href="../css/components/slider.css" />
+=======
+    <link rel="stylesheet" href="../css/components/stars.css" />
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
+<<<<<<< HEAD
     <!-- MEDIA QUERIES-->
+=======
+    <link rel="stylesheet" href="../css/components/establishmentSection.css" />
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
     <link
       rel="stylesheet"
       media="screen and (max-width: 768px)"
@@ -67,10 +75,15 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+<<<<<<< HEAD
     <!-- JAVASCRIPT IMPORTS-->
     <script defer src="../js/main.js"></script>
     <script defer src="../js/togglePassword.js"></script>
     <script defer src="../js/mobileButton.js"></script>
+=======
+    <script defer src="../js/togglePassword.js"></script>
+    <script defer src="../js/userRateStars.js"></script>
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -87,14 +100,14 @@
         <input
           type="text"
           placeholder="Search establishments..."
-          class="ri-search-line c-site-header__search-input"
+          class="ri-search-fill c-site-header__search-input"
         />
         <button
           id="header_search_button"
           aria-label="Search button."
           class="c-site-header_search-button u-primary-bg-color"
         >
-          <i class="ri-search-line"></i>
+          <i class="ri-search-fill"></i>
         </button>
       </span>
       <span class="c-site-header__buttons-container">
@@ -149,7 +162,11 @@
               placeholder="Enter your password..."
               aria-label="Enter your password."
             />
+<<<<<<< HEAD
             <i class="ri-eye-line c-modal__toggle-password"></i>
+=======
+            <i class="ri-eye-fill c-modal_toggle-password"></i>
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
           </span>
           <br />
           <button
@@ -637,7 +654,9 @@
       <section class="u-column-container u-margin">
         <article class="u-tertiary-bg-color u-border-radius u-column-container">
           <header class="c-estabilishment-section__header">
-          <div class="c-estabilishment-section__photo-overlay">See more photos</div>
+            <div class="c-estabilishment-section__photo-overlay">
+              See more photos
+            </div>
           </header>
           <div class="u-text-center">
             <h2>Happy Cafeteria</h2>
@@ -647,11 +666,24 @@
               <strong class="u-highlight-color">See More</strong>
             </p>
           </div>
+<<<<<<< HEAD
           <div class="u-row-container u-center u-gap c-establishment-section__footer">
           <span class="u-row-container u-center u-margin">
             Ranking: <i class="ri-star-line"></i><i class="ri-star-line"></i
             ><i class="ri-star-line"></i><i class="ri-star-line"></i
             ><i class="ri-star-line"></i></span><span class="u-row-container u-center">Support:
+=======
+          <footer class="u-row-container u-center u-gap u-margin">
+            <span id="c-establishment-section__stars">
+              <small>Ranking:</small>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+              <i class="ri-star-fill"></i>
+            </span>
+            Support:
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
             <img
               src="../imgs/accessibility_icons/deficiência visual.svg"
               alt="Icone de Deficiência Visual"
@@ -675,6 +707,7 @@
               alt="Icone de Cão Guia"
               width="40"
               height="40"
+<<<<<<< HEAD
             /></span>
             <span>
             Location:<button class="u-accept-color">
@@ -682,14 +715,26 @@
             ></span>
             Inauguration date: 10/10/1990
           </div>
+=======
+            />Location:<button class="u-accept-color u-mouse-over">
+              View on maps<i class="ri-arrow-right-fill"></i></button
+            >Inauguration date: 10/10/1990
+          </footer>
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
         </article>
       </section>
       <section class="u-column-container u-margin">
-        <label for="comments_section" class="c-label u-tertiary-bg-color u-self-center u-padding"><strong>COMMENTS</strong></label>
+        <label
+          for="comments_section"
+          class="c-label u-tertiary-bg-color u-self-center u-padding"
+        >
+          <strong>COMMENTS</strong></label
+        >
         <div
           id="comment_section"
           class="u-secondary-bg-color u-border-radius u-margin u-center u-column-container u-padding u-gap"
         >
+<<<<<<< HEAD
           <form class="u-row-container c-card u-tertiary-bg-color u-border-radius u-padding c-gap u-vertical-center">
             <span class="u-column-container u-text-center">
             <img id="profile_img" alt="" src="../imgs/icons/user.svg" width="50px" height="50px"/>
@@ -713,15 +758,81 @@
           <div readonly id="commentary_textarea_commentary_section">
              Excellent service and well located
           </div
+=======
+          <form
+            class="u-column-container u-full-width c-card u-tertiary-bg-color u-border-radius u-padding u-gap u-vertical-center"
+>>>>>>> 28fd3ef83c846ba49515995e338fd6c0ab58e908
           >
-          <span class="u-row-container u-gap c-card__rate-container">
-            <small>Note from the establishment:</small><i class="ri-star-line"></i
-            ><i class="ri-star-line"></i><i class="ri-star-line"></i
-            ><i class="ri-star-line"></i><i class="ri-star-line"></i
-          ></span>
-        </article>
-        </section>
-      </div>
+            <div class="u-row-container u-full-width u-vertical-center">
+              <span class="u-column-container u-text-center">
+                <img
+                  id="profile_img"
+                  alt=""
+                  src="../imgs/icons/user.svg"
+                  width="50px"
+                  height="50px"
+                />
+                <label for="profile_img"
+                  ><strong class="u-highlight-color">Me</strong></label
+                >
+              </span>
+              <textarea
+                type="text"
+                cols="1"
+                class="c-card__text-input u-full-width u-margin"
+                title="User text Area"
+                aria-label="User text Area"
+                placeholder="After going to the establishment enter your considerations..."
+                aria-placeholder="After going to the establishment enter your considerations..."
+              ></textarea>
+            </div>
+            <footer>
+              <button
+                type="submit"
+                class="u-accept-color u-padding u-mouse-over"
+              >
+                Send review
+              </button>
+              <span
+                class="u-row-container u-gap c-card__rate-container"
+                id="js-card__user-rate-container"
+              >
+                <small> Rate this property:</small>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+                <i class="ri-star-fill"></i>
+              </span>
+            </footer>
+          </form>
+          <article
+            class="u-row-container u-full-width c-card u-tertiary-bg-color u-border-radius u-padding c-gap u-vertical-center"
+          >
+            <span class="u-column-container">
+              <img
+                alt=""
+                src="../imgs/icons/user.svg"
+                width="50px"
+                height="50px"
+              />
+              <label for="commentary_textarea_commentary_section">
+                Fulano1
+              </label>
+            </span>
+            <textarea
+              readonly
+              class="c-card__text-input u-full-width u-margin u-text-center"
+            >
+              Excellent service and well located
+            </textarea>
+            <span class="u-row-container u-gap c-card__rate-container">
+              <small>Rating:</small><i class="ri-star-fill"></i
+              ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+              ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
+            ></span>
+          </article>
+        </div>
       </section>
     </main>
   </body>
