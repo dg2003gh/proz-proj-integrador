@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
     <link rel="stylesheet" href="../css/components/card.css" />
+    <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
@@ -70,6 +71,12 @@
     <script defer src="../js/togglePassword.js"></script>
     <script defer src="../js/mobileButton.js"></script>
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="../js/toolsDropdown.js"></script>
+    <script
+      defer
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script defer src="../js/translate.js"></script>
     <script defer src="../js/vlibras.js"></script>
   </head>
   <body>
@@ -134,11 +141,26 @@
     </header>
     <main>
       <section>
-        <div vw class="enabled">
-          <div vw-access-button class="active"></div>
-          <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+        <i
+          class="ri-tools-line u-mouse-over u-accept-color u-center"
+          id="c-tools-dropdown"
+          title="Toolbox - Choose language and use Vlibras app."
+          aria-label="Toolbox - Choose language and use Vlibras app."
+        ></i>
+        <div
+          id="c-tools-dropdown__menu"
+          class="u-column-container u-tertiary-bg-color u-border-radius u-center"
+        >
+          <div vw id="c-vlibras" class="enabled">
+            <div vw-access-button class="active"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
           </div>
+          <div
+            id="google_translate_element"
+            class="c-translator-button u-border-radius u-tertiary-bg-color u-padding"
+          ></div>
         </div>
       </section>
       <section>
