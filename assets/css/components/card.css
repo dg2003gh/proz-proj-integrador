@@ -32,6 +32,10 @@
   margin: 10px auto;
 }
 
+.c-card__text {
+  overflow-wrap: break-word;
+}
+
 .c-card__rate-container {
   position: absolute;
   bottom: 8px;
