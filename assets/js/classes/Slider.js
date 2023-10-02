@@ -19,10 +19,39 @@ class Slider {
       this.#nextSlide();
     }, 5000);
 
-    document.onload = this.#changeCard();
+    document.onload = this.#setCard();
   }
 
-  #changeCard() {
+  #previousSlide() {
+    if (this.count < 0) return;
+    this.#setCard();
+    --this.count;
+  }
+
+  #nextSlide() {
+    if (this.count >= this.dataBase.length) {
+      this.count = 0;
+      return;
+    }
+    this.#setCard();
+    ++this.count;
+  }
+  /* 
+  #setStars() {
+    const starsContainer = document.createElement("span");
+    starsContainer.setAttribute("class", "u-row-container u-margin u-gap");
+
+    for (let stars = 0; stars < this.dataBase[this.count].stars; ++stars) {
+      let star = document.createElement("i");
+      star.classList.add("ri-star-fill");
+      if (stars < this.dataBase[this.count].stars) {
+        star.classList.add("active");
+      }
+      starsContainer.appendChild(star);
+    }
+  } */
+
+  #setCard() {
     this.slideCard.setAttribute(
       "class",
       "c-card u-margin u-border-radius u-tertiary-bg-color"
@@ -43,34 +72,11 @@ class Slider {
                 <p class="c-card__text">
                   ${this.dataBase[this.count].text}
                 </p>
-                <footer> 
-                <span
-                class="u-row-container u-margin u-gap"
-              >
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-                <i class="ri-star-fill"></i>
-              </span>
+                <footer class="c-card__footer"> 
               </footer> 
               </div>
 `;
+
     slideContainer.appendChild(this.slideCard);
-  }
-
-  #previousSlide() {
-    if (this.count < 0) return;
-    this.#changeCard();
-    --this.count;
-  }
-
-  #nextSlide() {
-    if (this.count >= this.dataBase.length) {
-      this.count = 0;
-      return;
-    }
-    this.#changeCard();
-    ++this.count;
   }
 }
