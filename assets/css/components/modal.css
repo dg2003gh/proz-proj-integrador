@@ -146,3 +146,13 @@
   cursor: pointer;
   pointer-events: all;
 }
+
+.c-modal__input.u-input-correct {
+  background-color: var(--clr-accept);
+  transition: background-color 500ms ease-in-out;
+}
+
+.c-modal__input.u-input-error {
+  background-color: var(--clr-denied);
+  transition: background-color 500ms ease-in-out;
+}

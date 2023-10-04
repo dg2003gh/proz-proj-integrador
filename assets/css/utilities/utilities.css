@@ -17,6 +17,11 @@
   justify-content: space-between;
 }
 
+.u-fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+
 .u-gap {
   gap: 10px;
 }
