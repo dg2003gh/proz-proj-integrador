@@ -51,7 +51,7 @@ let arrayCard = [
 
 
 
-let searchbar = new SearchBar(searchBarElement, 
+const searchbar = new SearchBar(searchBarElement, 
   searchButtonElement, 
   searchResultElement,
   tagList,
