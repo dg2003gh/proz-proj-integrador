@@ -60,9 +60,9 @@ let arrayCard = [
   },
 ];
 
-let searchbar = new SearchBar(
-  searchBarElement,
-  searchButtonElement,
+
+const searchbar = new SearchBar(searchBarElement, 
+  searchButtonElement, 
   searchResultElement,
   tagList,
   arrayCard
