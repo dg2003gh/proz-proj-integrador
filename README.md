@@ -1,5 +1,15 @@
 # Projeto Integrador - Website: Acessuratio || Integrator Project - Website: Acessuratio
 
+## FIGMA LINKS
+
+[DESIGN MODEL](https://www.figma.com/file/l5nNn1CoUGnIUG9i8UzvWm/Projeto-integrador---grupo-7---Layout?type=design&node-id=0-1&mode=design&t=vFvnx5kLU6AlB5xF-0)
+
+[DER ACCESSURATIO](https://www.figma.com/file/1eMynKRPDCKmS7omADsKK0/accessuratio---DER?type=whiteboard&t=vFvnx5kLU6AlB5xF-0)
+
+## SQL DUMP
+
+[ACCESSURATIO DUMP](./accessuratioBD.sql)
+
 ## PT-BR
 
 ## Objetivo
