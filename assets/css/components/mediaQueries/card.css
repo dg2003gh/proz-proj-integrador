@@ -1,6 +1,7 @@
 .c-card {
   display: flex;
   flex-direction: column;
+  width: 60vw;
 }
 
 .c-card__aside {
@@ -10,7 +11,7 @@
 
 .c-card__img {
   width: 100%;
-  min-height: 600px;
+  min-height: 300px;
   border-radius: 15px 15px 0 0;
 }
 
