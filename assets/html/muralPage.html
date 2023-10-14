@@ -76,7 +76,7 @@
     <script defer src="../js/inputEvents.js"></script>
     <script defer src="../js/classes/Slider.js"></script>
     <script defer src="../js/slider.js"></script>
-    <script defer src="../js/muralCards.js"></script>
+    <script defer type="module" src="../js/muralCards.js"></script>
     <script defer src="../js/classes/NewsCard.js"></script>
     <script
       defer
@@ -499,7 +499,7 @@
                 required
                 class="c-modal__input u-tertiary-bg-color"
                 id="email_input_establishment_modal"
-                type="text"
+                type="email"
                 placeholder="Enter the establishment's e-mail.."
                 aria-label="Enter the establishment's e-mail."
                 tabindex="-1"
@@ -785,7 +785,7 @@
                 required
                 class="c-modal__input u-tertiary-bg-color"
                 id="email_input_user_modal"
-                type="text"
+                type="email"
                 placeholder="Enter the user's email.."
                 aria-label="Enter the user's email."
                 tabindex="-1"
@@ -884,7 +884,9 @@
         <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong class="u-highlight-color"> Highlights of the week</strong>
         </h2>
-        <div class="c-slider u-secondary-bg-color u-margin u-padding">
+        <div
+          class="c-slider u-secondary-bg-color u-margin u-padding u-self-center"
+        >
           <i class="ri-arrow-left-s-line c-slider__button"></i>
           <span class="c-slider__content-container u-row-container"> </span>
           <i class="ri-arrow-right-s-line c-slider__button"></i>

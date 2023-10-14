@@ -22,3 +22,13 @@
   right: 0;
   bottom: 0;
 }
+
+#c-description-container {
+  height: 27px;
+  overflow-y: hidden;
+}
+
+#c-description-container.show {
+  height: 100px;
+  overflow-y: visible;
+}

@@ -24,7 +24,9 @@
     <link rel="stylesheet" href="../css/components/card.css" />
     <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
+
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <!-- MEDIA QUERIES-->
@@ -76,6 +78,9 @@
     <script defer src="../js/inputEvents.js"></script>
     <script defer src="../js/classes/Slider.js"></script>
     <script defer src="../js/slider.js"></script>
+    <script defer src="../js/classes/SearchBar.js"></script>
+    <script defer type="module" src="../js/searchBar.js"></script>
+    <script defer src="../js/establishmentInfo.js"></script>
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -888,9 +893,11 @@
         <label class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong class="u-highlight-color"> Highlights of the week</strong>
         </label>
-        <div class="c-slider u-secondary-bg-color u-margin u-padding">
+        <div
+          class="c-slider u-secondary-bg-color u-margin u-padding u-self-center"
+        >
           <i class="ri-arrow-left-s-line c-slider__button"></i>
-          <span class="c-slider__content-container u-row-container"> </span>
+          <span class="c-slider__content-container u-row-container"></span>
           <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
