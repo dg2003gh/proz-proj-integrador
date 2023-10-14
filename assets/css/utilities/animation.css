@@ -1,5 +1,5 @@
-@keyframes jumpy {
+@keyframes forward {
   100% {
-    transform: translateY(10px);
+    transform: translateX(10px);
   }
 }
