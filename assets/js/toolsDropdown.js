@@ -5,4 +5,3 @@ function toggleToolsDropdown() {
   toolsDropDownMenu.classList.toggle("visible");
 }
 toolsDropDown.onclick = toggleToolsDropdown;
-toolsDropDown.onfocus = toggleToolsDropdown;
