@@ -11,7 +11,7 @@ export class SearchBar {
     this.searchResultContainer = searchResultContainer;
     this.tagsList = tagsList;
     this.dataBase = dataBase;
-    this.regExp = /#[a-z A-Z]+/g;
+    this.regExp = /#[a-z A-Z 0-9]+/g;
     this.#activeTag();
     window.addEventListener("keydown", (event) => {
       if (event.code == "Enter") {
