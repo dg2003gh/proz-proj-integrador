@@ -1,4 +1,4 @@
-class NewsCard {
+export default class NewsCard {
   constructor(keyWord, container, apiKey) {
     this.keyWord = keyWord;
     this.container = container;
