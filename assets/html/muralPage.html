@@ -79,10 +79,9 @@
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script defer src="../js/toolsDropdown.js"></script>
     <script defer src="../js/inputEvents.js"></script>
-    <script defer src="../js/classes/Slider.js"></script>
     <script defer src="../js/slider.js"></script>
     <script defer type="module" src="../js/muralCards.js"></script>
-    <script defer src="../js/classes/NewsCard.js"></script>
+    <script defer type="module" src="../js/classes/NewsCard.js"></script>
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -157,7 +156,11 @@
       </span>
     </header>
     <main>
-      <section>
+      <section class="u-position-relative">
+        <i
+          class="ri-arrow-go-back-line u-margin u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+          onclick="window.history.back()"
+        ></i>
         <i
           class="ri-tools-line u-mouse-over u-accept-color u-center"
           id="c-tools-dropdown"
@@ -184,7 +187,77 @@
         </div>
       </section>
       <section>
+        <form class="c-modal u-primary-bg-color" id="login_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#login_modal"
+          ></i>
+          <fieldset class="u-column-container">
+            <label
+              for="user_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
+            >
+              Username
+            </label>
+            <input
+              required
+              id="user_input_login_modal"
+              type="text"
+              class="c-modal__input u-tertiary-bg-color"
+              placeholder="Enter your username..."
+              aria-label="Enter your username."
+              tabindex="-1"
+            />
+          </fieldset>
+          <br />
+          <fieldset class="u-column-container">
+            <label
+              for="password_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
+            >
+              Password
+            </label>
+            <span class="c-modal__password-container" tabindex="-1">
+              <input
+                required
+                id="password_input_login_modal"
+                class="c-modal__input u-tertiary-bg-color"
+                type="password"
+                placeholder="Enter your password..."
+                aria-label="Enter your password."
+                tabindex="-1"
+              />
+              <i class="ri-eye-line c-modal__toggle-password" tabindex="-1"></i>
+            </span>
+          </fieldset>
+          <br />
+          <fieldset>
+            <button
+              id="submit_login_modal"
+              class="c-modal__button u-tertiary-bg-color"
+              type="submit"
+              aria-label="Login button"
+              tabindex="-1"
+            >
+              Login
+            </button>
+            <br />
+            <a
+              data-modal-target="#recover_password_modal"
+              class="c-modal__link u-highlight-color"
+              tabindex="-1"
+            >
+              Forgot your password ?
+            </a>
+          </fieldset>
+        </form>
         <form class="c-modal u-primary-bg-color" id="user_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#user_modal"
+          ></i>
           <img
             id="user_photo"
             src="../imgs/icons/user.svg"
@@ -194,8 +267,11 @@
             tabindex="-1"
           />
           <br />
-          <fieldset class="u-column-container u-mobile-container" tabindex="-1">
-            <fieldset class="u-row-container u-mobile-container" tabindex="-1">
+          <fieldset
+            class="u-column-container u-mobile__container"
+            tabindex="-1"
+          >
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -234,7 +310,7 @@
                 />
               </span>
             </fieldset>
-            <fieldset class="u-row-container u-mobile-container">
+            <fieldset class="u-row-container u-mobile__container">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -274,7 +350,7 @@
               </span>
             </fieldset>
             <br />
-            <fieldset class="u-row-container u-mobile-container" tabindex="-1">
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -353,7 +429,7 @@
             </select>
           </fieldset>
           <br />
-          <fieldset class="u-column-container">
+          <fieldset class="u-column-container c-modal__error-field-container">
             <label
               class="c-label u-self-center u-tertiary-bg-color"
               for="error_field_user_modal"
@@ -373,7 +449,6 @@
          </textarea
             >
           </fieldset>
-
           <br />
           <button
             class="c-modal__button u-accept-color"
@@ -406,14 +481,22 @@
           <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
-      <section class="u-column-container">
+      <section class="u-column-container u-center">
         <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong>Mural</strong>
         </h2>
         <div
           id="js-mural_section"
           class="u-grid-container u-secondary-bg-color u-margin u-gap u-padding u-border-radius"
-        ></div>
+        >
+          <button
+            id="c-show-more-cards-button"
+            class="u-padding u-accept-color u-margin u-border-radius u-mouse-over"
+            onclick="displayMoreCards()"
+          >
+            Show more...
+          </button>
+        </div>
       </section>
     </main>
   </body>
