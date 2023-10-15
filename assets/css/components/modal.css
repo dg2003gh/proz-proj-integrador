@@ -44,7 +44,6 @@
 .c-modal__input {
   align-self: flex-start;
   min-width: 20vw;
-  max-width: 30vw;
   margin-bottom: 20px;
 }
 
@@ -116,7 +115,7 @@
 }
 
 .c-modal__error-field {
-  min-width: 30vw;
+  min-width: 50vw;
   resize: none;
   padding: 50px 0;
   overflow: hidden;
