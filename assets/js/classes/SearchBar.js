@@ -59,78 +59,70 @@ export class SearchBar {
       return false;
     }
 
-    console.log("oiljfda");
-    setTimeout(() => {
-      this.searchBar.value = "aaa";
-    }, 6000);
-    this.searchButton.onclick = () => {
-      this.searchResultContainer.innerHTML = "";
-      tagsActiveList = tagsList.filter((tag) => {
-        return tag.classList.contains("u-tag-active");
-      });
+    this.searchResultContainer.innerHTML = "";
+    tagsActiveList = tagsList.filter((tag)=>{
+      return tag.classList.contains("u-tag-active")
+    })
 
-      if (tagsActiveList.length > 0) {
-        cardsFiltered = dataBase.filter((card) => {
-          let namesTagsActive = tagsActiveList.map((tag) =>
-            tag.getAttribute("name")
-          );
-          tagsFilter = card.tags.filter((tag) => {
-            return namesTagsActive.includes(tag);
-          });
-
-          let tagsFound = tagsFilter.length;
-
-          card.tags_ocurrence += tagsFilter.length;
-
-          return tagsFound > 0;
+    if (tagsActiveList.length > 0){
+        cardsFiltered = dataBase.filter((card) =>{
+        let namesTagsActive = tagsActiveList.map((tag)=>tag.getAttribute('name'))
+        tagsFilter = card.tags.filter((tag) =>{
+          return namesTagsActive.includes(tag)
         });
-        console.log(cardsFiltered);
-      } else {
+    
+        let tagsFound = tagsFilter.length
+
+        card.tags_ocurrence += tagsFilter.length;
+
+        return tagsFound > 0;
+      })
+      console.log(cardsFiltered)
+    }
+    else{
         cardsFiltered = dataBase;
+    }
+
+    cardsFoundForTitle = cardsFiltered.filter((card) => {
+      const regExp = new RegExp(searchText.toLowerCase());
+      return regExp.test(card.title.toLowerCase());
+    });
+
+    cardsFoundForDescription = cardsFiltered.filter((card) => {
+      const regExp = new RegExp(searchText.toLowerCase());
+      return regExp.test(card.description.toLowerCase()) && !cardsFoundForTitle.includes(card);
+    });
+
+    cardsFoundForTags = cardsFiltered.filter((card) => {   
+      if (arrayTagSearch != null){
+        arrayTagSearch = arrayTagSearch.map((tag)=> tag.trim())
+
+        tagsFilter = card.tags.filter((tag)=>{
+          return arrayTagSearch.includes(tag)
+        });
+
+        let tagsFound = tagsFilter.length;
+        card.tags_ocurrence += tagsFound;
+
+        return (card.tags_ocurrence > 0)
       }
-
-      cardsFoundForTitle = cardsFiltered.filter((card) => {
-        const regExp = new RegExp(searchText.toLowerCase());
-        return regExp.test(card.title.toLowerCase());
-      });
-
-      cardsFoundForDescription = cardsFiltered.filter((card) => {
-        const regExp = new RegExp(searchText.toLowerCase());
-        return (
-          regExp.test(card.description.toLowerCase()) &&
-          !cardsFoundForTitle.includes(card)
-        );
-      });
-
-      cardsFoundForTags = cardsFiltered.filter((card) => {
-        if (arrayTagSearch != null) {
-          arrayTagSearch = arrayTagSearch.map((tag) => tag.trim());
-
-          tagsFilter = card.tags.filter((tag) => {
-            return arrayTagSearch.includes(tag);
-          });
-
-          let tagsFound = tagsFilter.length;
-          card.tags_ocurrence += tagsFound;
-
-          return card.tags_ocurrence > 0;
-        } else {
-          return 0;
-        }
-      });
-
-      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription);
-      cardsFound = cardsFound.concat(cardsFoundForTags);
+      else{
+        return 0;
+      }
+    });
+    
+      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
+      cardsFound = cardsFound.concat(cardsFoundForTags)
       cardsFound.sort((a, b) => b.tags_ocurrence - a.tags_ocurrence);
 
-      if (cardsFound.length == 0) {
+      if (cardsFound.length == 0){
         this.#resetSearchResult(this.searchResultContainer);
-      } else {
+      }
+      else{
         cardsFound.forEach((cardFound) => {
           this.#addCard(cardFound);
         });
       }
-    };
     return true;
   }
 
