@@ -12,6 +12,14 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
+.u-display-block {
+  display: block !important;
+}
+
+.u-position-relative {
+  position: relative;
+}
+
 .u-space-between {
   display: flex;
   justify-content: space-between;
@@ -103,4 +111,15 @@
 
 .u-full-width {
   width: 100%;
+}
+
+.u-rounded {
+  border-radius: 50%;
+}
+
+.u-mobile__back-button {
+  position: absolute;
+  display: none;
+  top: 10px;
+  left: 10px;
 }
