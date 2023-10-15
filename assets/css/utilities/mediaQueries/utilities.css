@@ -6,6 +6,9 @@
   text-align: center;
 }
 
-.u-mobile-container {
+.u-mobile__container {
   flex-direction: column;
+}
+.u-mobile__back-button {
+  display: block;
 }
