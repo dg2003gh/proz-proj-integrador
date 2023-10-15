@@ -5,3 +5,7 @@
 .u-title {
   text-align: center;
 }
+
+.u-mobile-container {
+  flex-direction: column;
+}

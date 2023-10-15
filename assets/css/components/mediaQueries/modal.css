@@ -1,4 +1,8 @@
 .c-modal {
-  width: 95%;
-  max-height: 95%;
+  width: 100%;
+  max-height: 100%;
+}
+
+.c-modal__input {
+  width: 70vw;
 }

@@ -24,9 +24,7 @@
     <link rel="stylesheet" href="../css/components/card.css" />
     <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
-
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
-    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <!-- MEDIA QUERIES-->
@@ -76,9 +74,10 @@
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script defer src="../js/toolsDropdown.js"></script>
     <script defer src="../js/inputEvents.js"></script>
+    <script defer src="../js/classes/Slider.js"></script>
     <script defer src="../js/slider.js"></script>
-    <script defer src="../js/classes/SearchBar.js"></script>
-    <script defer type="module" src="../js/searchBar.js"></script>
+    <script defer type="module" src="../js/muralCards.js"></script>
+    <script defer src="../js/classes/NewsCard.js"></script>
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -100,9 +99,11 @@
       <span class="u-row-container">
         <input
           type="text"
-          placeholder="Search establishments..."
+          placeholder="Search establishments... "
           class="ri-search-line c-site-header__search-input"
           id="c-search_input"
+          title="Search input (Press 'p' to focus)"
+          aria-label="Search input (Press 'p' to focus)"
           tabindex="0"
         />
         <button
@@ -164,7 +165,7 @@
           class="u-column-container u-tertiary-bg-color u-border-radius u-center"
           tabindex="-1"
         >
-          <div vw id="c-vlibras" class="enabled" tabindex="0">
+          <div vw id="c-vlibras" class="enabled" tabindex="-1">
             <div vw-access-button class="active" tabindex="0"></div>
             <div vw-plugin-wrapper>
               <div class="vw-plugin-top-wrapper"></div>
@@ -172,7 +173,7 @@
           </div>
           <div
             id="google_translate_element"
-            class="c-translator-button u-border-radius u-tertiary-bg-color u-padding"
+            class="c-translator-button u-padding"
             tabindex="0"
           ></div>
         </div>
@@ -363,7 +364,7 @@
               data-modal-target="#establishment_modal"
               tabindex="-1"
             >
-              Establishment
+              Establishment owner
             </button>
             <button
               class="c-modal__button u-tertiary-bg-color"
@@ -391,7 +392,10 @@
             tabindex="-1"
           />
           <br />
-          <span class="u-row-container u-margin" tabindex="-1">
+          <span
+            class="u-row-container u-margin u-mobile-container"
+            tabindex="-1"
+          >
             <span class="u-column-container u-margin" tabindex="-1">
               <label
                 class="c-label u-tertiary-bg-color"
@@ -498,7 +502,7 @@
                 required
                 class="c-modal__input u-tertiary-bg-color"
                 id="email_input_establishment_modal"
-                type="text"
+                type="email"
                 placeholder="Enter the establishment's e-mail.."
                 aria-label="Enter the establishment's e-mail."
                 tabindex="-1"
@@ -784,7 +788,7 @@
                 required
                 class="c-modal__input u-tertiary-bg-color"
                 id="email_input_user_modal"
-                type="text"
+                type="email"
                 placeholder="Enter the user's email.."
                 aria-label="Enter the user's email."
                 tabindex="-1"
@@ -871,76 +875,34 @@
         </form>
         <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
-      <section
-        class="u-space-between u-vertical-center u-row-container u-margin"
-      >
+      <section class="u-margin u-row-container">
         <h1 class="u-column-container u-margin u-title">
           <strong class="u-highlight-color"> DISCOVER </strong>
-          establishments that <br />
-          bring the comfort you need!
+          News, studies and much <br />
+          more related to respect for people <br />
+          with disabilities!
         </h1>
-        <img
-          class="u-main-img"
-          src="../imgs/img-html.jpeg"
-          alt="Woman in wheelchair, along with her husband and daughter"
-          width="180"
-          height="160"
-        />
       </section>
       <section class="u-column-container">
-        <label class="c-label u-self-center u-padding u-tertiary-bg-color">
+        <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong class="u-highlight-color"> Highlights of the week</strong>
-        </label>
+        </h2>
         <div
           class="c-slider u-secondary-bg-color u-margin u-padding u-self-center"
         >
           <i class="ri-arrow-left-s-line c-slider__button"></i>
-          <span class="c-slider__content-container u-row-container"></span>
+          <span class="c-slider__content-container u-row-container"> </span>
           <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
-      <section class="u-text-center u-margin">
-        <h2 class="u-margin u-title">
-          Which is
-          <strong class="u-highlight-color"> PURPOSE </strong>
-          of our project?
+      <section class="u-column-container">
+        <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
+          <strong>Mural</strong>
         </h2>
-        <p>
-          We want to encourage all establishments to adopt the accessibility for
-          the creation of a society that promotes more independence for people
-          with disabilities.
-        </p>
-        <p>
-          This project was developed during the Proz integrator project
-          Technology and you can meet the developers through the button below:
-        </p>
-        <a href="./contactPage.html">
-          <button
-            class="u-margin u-padding u-accept-color"
-            aria-label="button to meet the developers."
-          >
-            MEET THE DEVELOPERS <i class="ri-arrow-right-fill"></i>
-          </button>
-        </a>
-      </section>
-      <section class="u-text-center u-margin">
-        <h2 class="u-margin u-title">
-          visit our
-          <strong class="u-highlight-color"> MURAL</strong>!
-        </h2>
-        <p>
-          On our mural you have access to news, articles and much more. related
-          to respect for people with disabilities. don't miss the opportunity to
-          stay inside!
-        </p>
-        <a href="./muralPage.html">
-          <button
-            class="u-margin u-padding u-accept-color"
-            aria-label="button to mural"
-          >
-            MURAL <i class="ri-arrow-right-fill"></i>
-          </button>
-        </a>
+        <div
+          id="js-mural_section"
+          class="u-grid-container u-secondary-bg-color u-margin u-gap u-padding u-border-radius"
+        ></div>
       </section>
     </main>
   </body>
