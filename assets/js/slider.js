@@ -64,7 +64,7 @@ function setCard() {
 
   slideCard.setAttribute(
     "class",
-    "c-card c-card__slide-card u-margin u-border-radius u-tertiary-bg-color"
+    "c-card c-slider__card u-margin u-border-radius u-tertiary-bg-color"
   );
   slideCard.innerHTML = `
               <aside class="c-card__aside">

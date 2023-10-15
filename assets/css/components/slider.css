@@ -5,11 +5,15 @@
   border-radius: 15px;
 }
 
+.c-slider__card {
+  width: 90vh;
+}
+
 .c-slider__button {
   font-size: 4rem;
   cursor: pointer;
 }
 
 .c-slider__button:hover {
-  animation: jumpy 700ms alternate infinite;
+  animation: forward 700ms alternate infinite;
 }
