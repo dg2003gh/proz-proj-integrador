@@ -114,6 +114,10 @@
   border-radius: 15px;
 }
 
+.c-modal__error-field-container {
+  display: none;
+}
+
 .c-modal__error-field {
   min-width: 50vw;
   resize: none;
