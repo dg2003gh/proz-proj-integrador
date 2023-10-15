@@ -12,3 +12,9 @@
 .u-mobile__back-button {
   display: block;
 }
+
+.u-mobile__tags-container {
+  width: 95vw;
+  overflow-y: hidden;
+  margin: 40px 0;
+}
