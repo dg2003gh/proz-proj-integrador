@@ -1,17 +1,16 @@
-import NewsCard from "./classes/NewsCard";
+import NewsCard from "./classes/NewsCard.js";
 
 const muralGrid = document.querySelector("#js-mural_section");
-
+const moreCardsButton = document.getElementById("c-show-more-cards-button");
 const newsKey = () => {
   return "";
 };
 
-const cardCount = 5;
 function displayMoreCards() {
-  for (let index = 0; cardCount > index; index++) {
-    const card = new NewsCard("accessibility", muralGrid, newsKey());
-    card.showCard();
-  }
+  const card = new NewsCard("accessibility", muralGrid, newsKey(), 24);
+  card.showCard();
 }
+
+moreCardsButton.addEventListener("click", displayMoreCards);
 
 displayMoreCards();
