@@ -1,8 +1,9 @@
 export default class NewsCard {
-  constructor(keyWord, container, apiKey) {
+  constructor(keyWord, container, apiKey, numberOfRequests) {
     this.keyWord = keyWord;
     this.container = container;
     this.apiKey = apiKey;
+    this.numberOfRequests = numberOfRequests;
   }
 
   async #requestNews() {
@@ -10,8 +11,8 @@ export default class NewsCard {
       "https://newsapi.org/v2/everything?" +
       `q=${this.keyWord}&` +
       "sortBy=popularity&" +
+      `pageSize=${this.numberOfRequests}&` +
       `apiKey=${this.apiKey}`;
-
     const request = new Request(url);
 
     const response = await fetch(request)
@@ -26,6 +27,7 @@ export default class NewsCard {
     articles.forEach((newContent) => {
       const card = document.createElement("a");
       let contentTitle = String(newContent.title).slice(0, 60);
+      const contentDescription = String(newContent.description).slice(0, 60);
       let content = `
               <article class="c-card u-border-radius u-tertiary-bg-color">
                 <aside class="c-card__aside">
@@ -34,8 +36,8 @@ export default class NewsCard {
                     src="${newContent.urlToImage}"
                     width="150px"
                     height="100%"
-                    alt="${newContent.description}"
-                    title"${newContent.description}"
+                    alt="${contentDescription.concat("...")}"
+                    title"${contentDescription.concat("...")}"
                     />
                 </aside>
                 <div class="u-column-container u-space-between u-text-center u-padding">
