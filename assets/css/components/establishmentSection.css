@@ -1,8 +1,9 @@
-.c-estabilishment-section__header {
+.c-establishment-section__header {
   position: relative;
-  background-image: url("../../imgs/happycafeteria.webp");
+  background-image: url("../../imgs/establishments/gold_hotel.png");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 500px;
   min-height: 250px;
   width: 100%;
   border-top-left-radius: 15px;
