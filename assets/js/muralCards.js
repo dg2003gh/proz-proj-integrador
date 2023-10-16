@@ -3,7 +3,7 @@ import NewsCard from "./classes/NewsCard";
 const muralGrid = document.querySelector("#js-mural_section");
 
 const newsKey = () => {
-  return "e81b33b2828647d0887a4ea12e9ff25a";
+  return "";
 };
 
 const cardCount = 5;
