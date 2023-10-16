@@ -80,8 +80,9 @@
     <script defer src="../js/toolsDropdown.js"></script>
     <script defer src="../js/inputEvents.js"></script>
     <script defer src="../js/slider.js"></script>
-    <script defer type="module" src="../js/muralCards.js"></script>
     <script defer type="module" src="../js/classes/NewsCard.js"></script>
+    <script defer type="module" src="../js/muralCards.js"></script>
+
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -463,13 +464,21 @@
         </form>
         <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
-      <section class="u-margin u-row-container">
+      <section class="u-margin u-row-container u-center u-justify-around">
         <h1 class="u-column-container u-margin u-title">
           <strong class="u-highlight-color"> DISCOVER </strong>
           News, studies and much <br />
           more related to respect for people <br />
           with disabilities!
         </h1>
+        <img
+          src="../imgs/girl-reading-a-book.png"
+          alt="A girl Reading a book - img2go IA generated image. "
+          title="A girl Reading a book - img2go IA generated image."
+          class="u-main-img u-margin"
+          width="500"
+          height="500"
+        />
       </section>
       <section class="u-column-container">
         <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
@@ -483,18 +492,20 @@
           <i class="ri-arrow-right-s-line c-slider__button"></i>
         </div>
       </section>
-      <section class="u-column-container u-center">
+      <section class="u-column-container">
         <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
           <strong>Mural</strong>
         </h2>
         <div
-          id="js-mural_section"
-          class="u-grid-container u-secondary-bg-color u-margin u-gap u-padding u-border-radius"
+          class="u-column-container u-center u-secondary-bg-color u-padding u-border-radius u-margin"
         >
+          <div
+            id="js-mural_section"
+            class="u-grid-container u-gap u-full-width"
+          ></div>
           <button
             id="c-show-more-cards-button"
-            class="u-padding u-accept-color u-margin u-border-radius u-mouse-over"
-            onclick="displayMoreCards()"
+            class="u-padding u-accept-color u-margin u-border-radius u-mouse-over u-full-width"
           >
             Show more...
           </button>
