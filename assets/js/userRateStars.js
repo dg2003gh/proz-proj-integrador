@@ -6,9 +6,9 @@ userRateStars.forEach((star, hoveredStarIndex) => {
   star.addEventListener("mouseover", () => {
     userRateStars.forEach((star, index) => {
       if (index <= hoveredStarIndex) {
-        star.classList.add("active");
+        star.style.color = "var(--clr-highlight)";
       } else {
-        star.classList.remove("active");
+        star.style.color = "black";
       }
     });
   });
