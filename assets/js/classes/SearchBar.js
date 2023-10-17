@@ -73,7 +73,7 @@ export class SearchBar {
     
         let tagsFound = tagsFilter.length
 
-        card.tags_ocurrence += tagsFilter.length;
+        card.tagsOcurrence += tagsFilter.length;
 
         return tagsFound > 0;
       })
@@ -102,9 +102,9 @@ export class SearchBar {
         });
 
         let tagsFound = tagsFilter.length;
-        card.tags_ocurrence += tagsFound;
+        card.tagsOcurrence += tagsFound;
 
-        return (card.tags_ocurrence > 0)
+        return (card.tagsOcurrence > 0)
       }
       else{
         return 0;
@@ -113,7 +113,7 @@ export class SearchBar {
     
       cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
       cardsFound = cardsFound.concat(cardsFoundForTags)
-      cardsFound.sort((a, b) => b.tags_ocurrence - a.tags_ocurrence);
+      cardsFound.sort((a, b) => b.tagsOcurrence - a.tagsOcurrence);
 
       if (cardsFound.length == 0){
         this.#resetSearchResult(this.searchResultContainer);
