@@ -41,10 +41,7 @@ commentsBd.forEach((user, index) => {
                     ${commentsBd[index].userComment}
                 </span>
                 <footer>
-                    <span class="u-row-container u-gap c-card__rate-container">
-                    <small>Rating:</small>
                     ${setRate(index)}
-                    </span>
                 </footer>
                 </span>
             </article>
@@ -52,11 +49,18 @@ commentsBd.forEach((user, index) => {
 });
 
 function setRate(bdIndex) {
+  const starsContainer = document.createElement("span");
+  starsContainer.class = "u-row-container u-gap c-card__rate-container";
+  starsContainer.innerHTML = "<small>Establishment rate: </small>";
+
   for (let index = 0; index < 5; ++index) {
     let star = '<i class="ri-star-fill"></i>';
+
     if (index < commentsBd[bdIndex].userRate) {
       star = '<i class="ri-star-fill u-highlight-color"></i>';
     }
-    return star;
+
+    starsContainer.innerHTML += star;
   }
+  return starsContainer.outerHTML;
 }
