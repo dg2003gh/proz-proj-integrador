@@ -82,7 +82,7 @@ else{
   searchBarElement.onblur = ()=> {
     searchButtonElement.onclick = () =>{
       localStorage.setItem("searchTxt", searchBarElement.value);
-      window.location.assign("searchPage.html");
+      searchbar.searchReturn();
     }
   }
 }
