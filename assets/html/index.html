@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <!-- MEDIA QUERIES-->
@@ -88,6 +89,7 @@
     <script defer src="../js/vlibras.js"></script>
     <script defer src="../js/searchBar.js" type="module"></script>
     <script defer src="../js/classes/SearchBar.js" type="module"></script>
+    <script defer src="../js/validation.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -425,7 +427,10 @@
               id="disability_select_user_modal"
               tabindex="-1"
             >
-              <option tabindex="-1" value="">Not declared</option>
+              <option tabindex="-1" value="null">Not declared</option>
+              <option value="">Wheelchair user</option>
+              <option>Blind</option>
+              <option value="">NeuroDivergent</option>
             </select>
           </fieldset>
           <br />
