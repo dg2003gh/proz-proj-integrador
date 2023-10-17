@@ -16,20 +16,30 @@ const db = [
   },
 ];
 
-let showDescription = 100;
+function showMoreDescription() {
+  let descriptionChars = 100;
+  const descriptionContainer = document.getElementById(
+    "c-description-container"
+  );
+
+  descriptionChars == 100 ? (descriptionChars = 10) : (descriptionChars = 100);
+
+  descriptionContainer.innerText.slice(0, 10 | 100);
+  console.log(descriptionChars, descriptionContainer.innerText);
+}
 
 function setEstablishmentInfo() {
   infoContainer.innerHTML = `
 <article class="u-tertiary-bg-color u-border-radius u-column-container">
 <header id="c-establishment-info__header" class="u-position-relative">
-            <div class="u-overlay" data-modal-target="#c-more-photo-modal">
+            <div class="u-overlay u-mouse-over" data-modal-target="#c-more-photo-modal">
               See more photos
             </div>
           </header>
           <div class="u-text-center">
             <h2 class="u-margin">${db[0].title}</h2>
-            <p id="c-description-container u-overflow-hidden">
-                ${db[0].description.slice(0, showDescription).concat("...")}
+            <p id="c-description-container">
+                ${db[0].description}
             </p>
             <strong
               class="u-highlight-color u-mouse-over"
@@ -68,18 +78,19 @@ function setEstablishmentInfo() {
                 width="40"
                 height="40"
             /></span>
-            Location: ${
-              db[0].location
-            }<button class="u-accept-color u-mouse-over">
+            Location: ${db[0].location}<button class="u-accept-color u-mouse-over">
               View on maps<i class="ri-arrow-right-fill"></i></button
-            >Inauguration date: ${db[0].inaugurationDate}
+            >
+            <span>
+              Inauguration date: ${db[0].inaugurationDate}
+            </span>
           </footer>
         </article>
 
 `;
+  setBackgroundPhoto();
+  setRate();
 }
-
-setEstablishmentInfo();
 
 function setBackgroundPhoto() {
   const header = document.getElementById("c-establishment-info__header");
@@ -106,5 +117,4 @@ function setRate() {
   }
 }
 
-setRate();
-setBackgroundPhoto();
+setEstablishmentInfo();
