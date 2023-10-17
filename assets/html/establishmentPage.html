@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/components/slider.css" />
     <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
+    <link rel="stylesheet" href="../css/utilities/animation.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
     <!-- MEDIA QUERIES-->
@@ -79,8 +80,7 @@
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script defer src="../js/toolsDropdown.js"></script>
     <script defer src="../js/inputEvents.js"></script>
-    <script defer src="../js/userRateStars.js "></script>
-    <script defer src="../js/establishmentInfo.js"></script>
+    <script defer src="../js/comments.js"></script>
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
@@ -89,6 +89,9 @@
     <script defer src="../js/vlibras.js"></script>
     <script defer src="../js/searchBar.js" type="module"></script>
     <script defer src="../js/classes/SearchBar.js" type="module"></script>
+    <script defer src="../js/establishmentInfo.js"></script>
+    <script defer src="../js/userRateStars.js"></script>
+    <script defer src="../js/validation.js"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -426,7 +429,10 @@
               id="disability_select_user_modal"
               tabindex="-1"
             >
-              <option tabindex="-1" value="">Not declared</option>
+              <option tabindex="-1" value="null">Not declared</option>
+              <option value="">Wheelchair user</option>
+              <option>Blind</option>
+              <option value="">NeuroDivergent</option>
             </select>
           </fieldset>
           <br />
@@ -462,95 +468,35 @@
         </form>
         <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
+      <section
+        id="js-establishment-info-container"
+        class="u-column-container u-margin"
+      ></section>
       <section class="u-column-container u-margin">
-        <article class="u-tertiary-bg-color u-border-radius u-column-container">
-          <header class="c-estabilishment-section__header">
-            <div
-              class="c-estabilishment-section__photo-overlay"
-              data-modal-target="#c-more-photo-modal"
-            >
-              See more photos
-            </div>
-          </header>
-          <div class="u-text-center">
-            <h2>Happy Cafeteria</h2>
-            <p id="c-description-container">
-              A comfortable place for you and your whole family. <br />Our
-              facilities have ramps, a room for guide dogs menus...
-            </p>
-            <strong
-              class="u-highlight-color u-mouse-over"
-              id="c-description-container__see-more-button"
-              onclick="showMoreDescription()"
-            >
-              See More
-            </strong>
-          </div>
-          <footer class="u-row-container u-center u-gap u-margin">
-            <span id="c-establishment-section__stars">
-              <small>Ranking:</small>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-              <i class="ri-star-fill"></i>
-            </span>
-            Support:
-            <img
-              src="../imgs/accessibility_icons/deficiência visual.svg"
-              alt="Icone de Deficiência Visual"
-              width="40"
-              height="40"
-            />
-            <img
-              src="../imgs/accessibility_icons/D Auditiva.svg"
-              alt="Icone de Deficiencia Auditiva"
-              width="40"
-              height="40"
-            />
-            <img
-              src="../imgs/accessibility_icons/espectro autista.svg"
-              alt="Icone de Espectro Autista"
-              width="40"
-              height="40"
-            />
-            <img
-              src="../imgs/accessibility_icons/cão guia.svg"
-              alt="Icone de Cão Guia"
-              width="40"
-              height="40"
-            />Location:<button class="u-accept-color u-mouse-over">
-              View on maps<i class="ri-arrow-right-fill"></i></button
-            >Inauguration date: 10/10/1990
-          </footer>
-        </article>
-      </section>
-      <section class="u-column-container u-margin">
-        <label
-          for="comments_section"
-          class="c-label u-tertiary-bg-color u-self-center u-padding"
-        >
-          <strong>COMMENTS</strong></label
-        >
+        <h2 class="c-label u-tertiary-bg-color u-self-center u-padding">
+          <strong>COMMENTS</strong>
+        </h2>
         <div
-          id="comment_section"
+          id="js-comments-container"
           class="u-secondary-bg-color u-border-radius u-margin u-center u-column-container u-padding u-gap"
         >
           <form
             class="u-column-container u-full-width c-card u-tertiary-bg-color u-border-radius u-padding u-gap u-vertical-center"
           >
-            <div class="u-row-container u-full-width u-vertical-center">
+            <div
+              class="u-row-container u-full-width u-vertical-center u-mobile__container"
+            >
               <span class="u-column-container u-text-center">
                 <img
                   id="profile_img"
-                  alt=""
+                  alt="User's photo"
                   src="../imgs/icons/user.svg"
-                  width="50px"
-                  height="50px"
+                  width="150px"
+                  height="150px"
                 />
-                <label for="profile_img"
-                  ><strong class="u-highlight-color">Me</strong></label
-                >
+                <label for="profile_img">
+                  <strong class="u-highlight-color">Me</strong>
+                </label>
               </span>
               <textarea
                 type="text"
@@ -562,10 +508,10 @@
                 aria-placeholder="After going to the establishment enter your considerations..."
               ></textarea>
             </div>
-            <footer>
+            <footer class="u-mobile__container u-row-container u-full-width">
               <button
                 type="submit"
-                class="u-accept-color u-padding u-mouse-over"
+                class="u-accept-color u-padding u-mouse-over u-margin"
               >
                 Send review
               </button>
@@ -582,32 +528,6 @@
               </span>
             </footer>
           </form>
-          <article
-            class="u-row-container u-full-width c-card u-tertiary-bg-color u-border-radius u-padding c-gap u-vertical-center"
-          >
-            <span class="u-column-container">
-              <img
-                alt=""
-                src="../imgs/icons/user.svg"
-                width="50px"
-                height="50px"
-              />
-              <label for="commentary_textarea_commentary_section">
-                Fulano1
-              </label>
-            </span>
-            <textarea
-              readonly
-              class="c-card__text-input u-full-width u-margin u-text-center"
-            >
-              Excellent service and well located
-            </textarea>
-            <span class="u-row-container u-gap c-card__rate-container">
-              <small>Rating:</small><i class="ri-star-fill"></i
-              ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
-              ><i class="ri-star-fill"></i><i class="ri-star-fill"></i
-            ></span>
-          </article>
         </div>
       </section>
     </main>
