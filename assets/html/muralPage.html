@@ -79,16 +79,18 @@
     <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
     <script defer src="../js/toolsDropdown.js"></script>
     <script defer src="../js/inputEvents.js"></script>
-    <script defer src="../js/classes/Slider.js"></script>
     <script defer src="../js/slider.js"></script>
+    <script defer type="module" src="../js/classes/NewsCard.js"></script>
     <script defer type="module" src="../js/muralCards.js"></script>
-    <script defer src="../js/classes/NewsCard.js"></script>
+
     <script
       defer
       src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
     ></script>
     <script defer src="../js/translate.js"></script>
     <script defer src="../js/vlibras.js"></script>
+    <script defer src="../js/searchBar.js" type="module"></script>
+    <script defer src="../js/classes/SearchBar.js" type="module"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
@@ -157,7 +159,11 @@
       </span>
     </header>
     <main>
-      <section>
+      <section class="u-position-relative">
+        <i
+          class="ri-arrow-go-back-line u-margin u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+          onclick="window.history.back()"
+        ></i>
         <i
           class="ri-tools-line u-mouse-over u-accept-color u-center"
           id="c-tools-dropdown"
@@ -184,7 +190,77 @@
         </div>
       </section>
       <section>
+        <form class="c-modal u-primary-bg-color" id="login_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#login_modal"
+          ></i>
+          <fieldset class="u-column-container">
+            <label
+              for="user_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
+            >
+              Username
+            </label>
+            <input
+              required
+              id="user_input_login_modal"
+              type="text"
+              class="c-modal__input u-tertiary-bg-color"
+              placeholder="Enter your username..."
+              aria-label="Enter your username."
+              tabindex="-1"
+            />
+          </fieldset>
+          <br />
+          <fieldset class="u-column-container">
+            <label
+              for="password_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
+            >
+              Password
+            </label>
+            <span class="c-modal__password-container" tabindex="-1">
+              <input
+                required
+                id="password_input_login_modal"
+                class="c-modal__input u-tertiary-bg-color"
+                type="password"
+                placeholder="Enter your password..."
+                aria-label="Enter your password."
+                tabindex="-1"
+              />
+              <i class="ri-eye-line c-modal__toggle-password" tabindex="-1"></i>
+            </span>
+          </fieldset>
+          <br />
+          <fieldset>
+            <button
+              id="submit_login_modal"
+              class="c-modal__button u-tertiary-bg-color"
+              type="submit"
+              aria-label="Login button"
+              tabindex="-1"
+            >
+              Login
+            </button>
+            <br />
+            <a
+              data-modal-target="#recover_password_modal"
+              class="c-modal__link u-highlight-color"
+              tabindex="-1"
+            >
+              Forgot your password ?
+            </a>
+          </fieldset>
+        </form>
         <form class="c-modal u-primary-bg-color" id="user_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#user_modal"
+          ></i>
           <img
             id="user_photo"
             src="../imgs/icons/user.svg"
@@ -194,8 +270,11 @@
             tabindex="-1"
           />
           <br />
-          <fieldset class="u-column-container u-mobile-container" tabindex="-1">
-            <fieldset class="u-row-container u-mobile-container" tabindex="-1">
+          <fieldset
+            class="u-column-container u-mobile__container"
+            tabindex="-1"
+          >
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -234,7 +313,7 @@
                 />
               </span>
             </fieldset>
-            <fieldset class="u-row-container u-mobile-container">
+            <fieldset class="u-row-container u-mobile__container">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -274,7 +353,7 @@
               </span>
             </fieldset>
             <br />
-            <fieldset class="u-row-container u-mobile-container" tabindex="-1">
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
               <span class="u-column-container u-margin">
                 <label
                   class="c-label u-tertiary-bg-color"
@@ -353,7 +432,7 @@
             </select>
           </fieldset>
           <br />
-          <fieldset class="u-column-container">
+          <fieldset class="u-column-container c-modal__error-field-container">
             <label
               class="c-label u-self-center u-tertiary-bg-color"
               for="error_field_user_modal"
@@ -373,7 +452,6 @@
          </textarea
             >
           </fieldset>
-
           <br />
           <button
             class="c-modal__button u-accept-color"
@@ -386,13 +464,21 @@
         </form>
         <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
-      <section class="u-margin u-row-container">
+      <section class="u-margin u-row-container u-center u-justify-around">
         <h1 class="u-column-container u-margin u-title">
           <strong class="u-highlight-color"> DISCOVER </strong>
           News, studies and much <br />
           more related to respect for people <br />
           with disabilities!
         </h1>
+        <img
+          src="../imgs/girl-reading-a-book.png"
+          alt="A girl Reading a book - img2go IA generated image. "
+          title="A girl Reading a book - img2go IA generated image."
+          class="u-main-img u-margin"
+          width="500"
+          height="500"
+        />
       </section>
       <section class="u-column-container">
         <h2 class="c-label u-self-center u-padding u-tertiary-bg-color">
@@ -411,9 +497,19 @@
           <strong>Mural</strong>
         </h2>
         <div
-          id="js-mural_section"
-          class="u-grid-container u-secondary-bg-color u-margin u-gap u-padding u-border-radius"
-        ></div>
+          class="u-column-container u-center u-secondary-bg-color u-padding u-border-radius u-margin"
+        >
+          <div
+            id="js-mural_section"
+            class="u-grid-container u-gap u-full-width"
+          ></div>
+          <button
+            id="c-show-more-cards-button"
+            class="u-padding u-accept-color u-margin u-border-radius u-mouse-over u-full-width"
+          >
+            Show more...
+          </button>
+        </div>
       </section>
     </main>
   </body>

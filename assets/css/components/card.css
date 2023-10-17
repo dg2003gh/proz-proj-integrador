@@ -37,7 +37,5 @@
 }
 
 .c-card__rate-container {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
+  margin: auto 0 auto auto;
 }

@@ -10,6 +10,15 @@
 .u-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+}
+
+.u-display-block {
+  display: block !important;
+}
+
+.u-position-relative {
+  position: relative;
 }
 
 .u-space-between {
@@ -56,7 +65,7 @@
   align-self: center;
 }
 
-.u-all-parent {
+.u-full {
   height: 100%;
   width: 100%;
 }
@@ -103,4 +112,29 @@
 
 .u-full-width {
   width: 100%;
+}
+
+.u-rounded {
+  border-radius: 50%;
+}
+
+.u-mobile__back-button {
+  position: absolute;
+  display: none;
+  top: 10px;
+  left: 10px;
+}
+
+.u-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--clr-overlay-background);
+  backdrop-filter: blur(10px);
+  border-top-right-radius: 15px;
+  width: 50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
 }

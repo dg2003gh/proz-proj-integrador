@@ -1,75 +1,120 @@
-<!-- <!DOCTYPE html> -->
-<!ATTLIST element-name attribute-name attribute-type attribute-value>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
-      name="author"
-      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
-    />
-    <meta
       name="description"
-      content="A site to search and discover establishments near you in a simple and fast way."
+      content="website so that people with any type of disability can find establishments that offer support to them."
     />
     <meta
       name="keywords"
-      content="accessible establishments, disability-friendly locations, inclusive businesses, wheelchair-accessible venues, mobility-friendly places, barrier-free facilities, ADA-compliant spaces, inclusive travel, handicapped-accessible services"
+      content="Accessuratio, accessible establishments, accessibility, establishment "
     />
-    <meta name="rating" content="general" />
-    <meta name="robots" content="follow" />
-    <meta name="copyright" content="©2023 Accessuratio Group" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta
+      name="author"
+      content="David Shelton, Douglas Guimarães, Elisângela Rosa, Isabella Flauzino"
+    />
     <title>Accessuratio</title>
+    <!-- CSS IMPORTS-->
     <link rel="stylesheet" href="../css/utilities/reset.css" />
     <link rel="stylesheet" href="../css/components/header.css" />
     <link rel="stylesheet" href="../css/components/modal.css" />
     <link rel="stylesheet" href="../css/components/label.css" />
-    <link rel="stylesheet" href="../css/components/searchCard.css" />
-    <link rel="stylesheet" href="../css/components/searchArea.css" />
-    <link rel="stylesheet" href="../css/components/tags.css" />
+    <link rel="stylesheet" href="../css/components/card.css" />
+    <link rel="stylesheet" href="../css/components/toolsDropdow.css" />
     <link rel="stylesheet" href="../css/utilities/utilities.css" />
     <link rel="stylesheet" href="../css/utilities/color.css" />
     <link rel="stylesheet" href="../css/utilities/color-classes.css" />
-    <link 
-    rel="stylesheet" 
-    media="screen and (max-width:760px)" 
-    href="../css/components/mediaQueries/tags.css" 
+    <!-- MEDIA QUERIES-->
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/header.css"
     />
-    <link 
-    rel="stylesheet" 
-    media="screen and (max-width:760px)" 
-    href="../css/components/mediaQueries/searchCard.css" 
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/modal.css"
     />
-
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/components/mediaQueries/card.css"
+    />
+    <link
+      rel="stylesheet"
+      media="screen and (max-width: 768px)"
+      href="../css/utilities/mediaQueries/utilities.css"
+    />
+    <!-- WEBSITE FAVICON-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../imgs/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../imgs/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../imgs/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../imgs/favicon/site.webmanifest" />
+    <!-- ICON LIBRARIES-->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- JAVASCRIPT IMPORTS-->
+    <script defer src="../js/modal.js"></script>
+    <script defer src="../js/togglePassword.js"></script>
+    <script defer src="../js/mobileButton.js"></script>
+    <script defer src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script defer src="../js/toolsDropdown.js"></script>
+    <script defer src="../js/inputEvents.js"></script>
+    <script defer type="module" src="../js/muralCards.js"></script>
+    <script defer type="module" src="../js/classes/NewsCard.js"></script>
+    <script
+      defer
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+    <script defer src="../js/translate.js"></script>
+    <script defer src="../js/vlibras.js"></script>
     <script defer src="../js/searchBar.js" type="module"></script>
     <script defer src="../js/classes/SearchBar.js" type="module"></script>
   </head>
   <body>
     <header class="c-site-header u-secondary-bg-color">
-      <a href="./index.html">
+      <a href="./index.html" tabindex="0" class="c-site-header__logo">
         <img
           src="../imgs/site-icon.png"
           alt="website icon"
-          width="30"
-          height="30"
-          class="c-site-header__logo"
+          width="35"
+          height="35"
+          tabindex="-1"
         />
       </a>
       <span class="u-row-container">
         <input
           type="text"
-          placeholder="Search establishments..."
+          placeholder="Search establishments... "
           class="ri-search-line c-site-header__search-input"
+          id="c-search_input"
+          title="Search input (Press 'p' to focus)"
+          aria-label="Search input (Press 'p' to focus)"
+          tabindex="0"
         />
         <button
-          id="header_search_button"
+          id="c-search_button"
           aria-label="Search button."
-          class="c-site-header_search-button u-primary-bg-color"
+          class="c-site-header_search-button u-primary-bg-color u-primary-bg-color-hovered"
+          tabindex="0"
         >
           <i class="ri-search-line"></i>
         </button>
@@ -77,12 +122,33 @@
       <span class="c-site-header__buttons-container">
         <button
           class="c-site-header__register-button u-accept-color"
-          data-modal-target="#register_type_modal"
+          data-modal-target="#user_modal"
+          tabindex="0"
         >
           Register
         </button>
         <button
-          class="c-site-header__login-button u-primary-bg-color"
+          class="c-site-header__login-button u-primary-bg-color u-primary-bg-color-hovered"
+          data-modal-target="#login_modal"
+          tabindex="0"
+        >
+          Login
+        </button>
+      </span>
+      <i
+        class="ri-align-justify u-primary-bg-color u-primary-bg-color-hovered"
+        id="c-site-header__mobile-button"
+        onclick="toggleMobileMenu()"
+      ></i>
+      <span id="c-site-header__mobile-menu">
+        <button
+          class="c-site-header__register-button u-accept-color"
+          data-modal-target="#user_modal"
+        >
+          Register
+        </button>
+        <button
+          class="c-site-header__login-button u-primary-bg-color u-primary-bg-color-hovered"
           data-modal-target="#login_modal"
         >
           Login
@@ -90,461 +156,263 @@
       </span>
     </header>
     <main>
+      <section class="u-position-relative">
+        <i
+          class="ri-arrow-go-back-line u-margin u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+          onclick="window.history.back()"
+        ></i>
+        <i
+          class="ri-tools-line u-mouse-over u-accept-color u-center"
+          id="c-tools-dropdown"
+          title="Toolbox - Choose language and use Vlibras app. (Press 'b' to open)"
+          aria-label="Toolbox - Choose language and use Vlibras app."
+          tabindex="0"
+        ></i>
+        <div
+          id="c-tools-dropdown__menu"
+          class="u-column-container u-tertiary-bg-color u-border-radius u-center"
+          tabindex="-1"
+        >
+          <div vw id="c-vlibras" class="enabled" tabindex="-1">
+            <div vw-access-button class="active" tabindex="0"></div>
+            <div vw-plugin-wrapper>
+              <div class="vw-plugin-top-wrapper"></div>
+            </div>
+          </div>
+          <div
+            id="google_translate_element"
+            class="c-translator-button u-padding"
+            tabindex="0"
+          ></div>
+        </div>
+      </section>
       <section>
-        <form class="c-modal u-primary-bg-color" id="login_modal">
-          <label
-            for="user_input_login_modal"
-            class="c-label u-tertiary-bg-color"
-          >
-            User
-          </label>
-          <input
-            required
-            id="user_input_login_modal"
-            type="text"
-            class="c-modal__input u-tertiary-bg-color"
-            placeholder="Enter your username..."
-            aria-label="Enter your username."
-          />
-          <br />
-          <label
-            for="password_input_login_modal"
-            class="c-label u-tertiary-bg-color"
-          >
-            Password
-          </label>
-          <input
-            required
-            id="password_input_login_modal"
-            class="c-modal__input u-tertiary-bg-color"
-            type="password"
-            placeholder="Enter your password..."
-            aria-label="Enter your password."
-          />
-          <br />
-          <button
-            id="submit_login_modal"
-            class="c-modal__button u-tertiary-bg-color"
-            type="submit"
-            aria-label="Login button"
-          >
-            Login
-          </button>
-          <br />
-          <a
-            data-modal-target="#recover_password_modal"
-            class="c-modal__link u-highlight-color"
-          >
-            Forgot your password ?
-          </a>
-        </form>
-        <form class="c-modal u-primary-bg-color" id="recover_password_modal">
-          <h3 class="u-margin">
-            In order for us to recover
-            <br />
-            your <strong class="u-highlight-color">password</strong>, we will
-            send
-            <br />
-            a recovery link to your e-mail.
-          </h3>
-          <hr />
-          <br />
-          <label
-            class="c-label u-tertiary-bg-color"
-            for="email_input_recover_password_modal"
-          >
-            E-mail
-          </label>
-          <input
-            required
-            class="c-modal__input u-tertiary-bg-color"
-            id="email_input_recover_password_modal"
-            type="email"
-            placeholder="Enter your e-mail..."
-            aria-label="Enter your e-mail"
-          />
-          <br />
-          <button
-            class="c-modal__button u-tertiary-bg-color"
-            id="submit_recover_password_modal"
-            aria-label="Button to send your e-mail."
-          >
-            send e-mail
-          </button>
-        </form>
-        <form class="c-modal u-primary-bg-color" id="new_password_modal">
-          <h2>Email confirmed, enter your new password!</h2>
-          <br />
-          <label
-            class="c-label u-tertiary-bg-color"
-            for="password_input_new_password_modal"
-          >
-            password
-          </label>
-          <input
-            required
-            class="c-modal__input u-tertiary-bg-color"
-            id="password_input_new_password_modal"
-            type="password"
-            placeholder="Enter your password.."
-            aria-label="Enter your password."
-          />
-          <br />
-          <label
-            class="c-label u-tertiary-bg-color"
-            for="retype_password_input_new_password_modal"
-          >
-            check password
-          </label>
-          <input
-            required
-            class="c-modal__input u-tertiary-bg-color"
-            id="retype_password_input_new_password_modal"
-            type="password"
-            placeholder="Retype your password..."
-            aria-label="Retype your password."
-          />
-          <br />
-          <label
-            class="c-label u-tertiary-bg-color"
-            for="error_field_new_password_modal"
-          >
-            Error output
-          </label>
-          <br />
-          <textarea
-            class="c-modal__error-field u-tertiary-bg-color u-denied"
-            id="error_field_new_password_modal"
-            disabled
-          >
-               Validation field if any data
-               are exempt! hidden by default.
-         </textarea
-          >
-          <br />
-          <button
-            class="c-modal__button u-tertiary-bg-color"
-            type="submit"
-            id="save_button_new_password_modal"
-            aria-label="Save new password button"
-          >
-            save
-          </button>
-        </form>
-        <form class="c-modal u-primary-bg-color" id="register_type_modal">
-          <h2>Would you like to register as:</h2>
-          <br />
-          <span class="u-row-container">
-            <button
-              class="c-modal__button u-tertiary-bg-color"
-              type="button"
-              id="establishment_button_register_type_modal"
-              aria-label="Button register  a establishment . "
-              data-modal-target="#establishment_modal"
-            >
-              Establishment
-            </button>
-            <button
-              class="c-modal__button u-tertiary-bg-color"
-              type="button"
-              id="user_register_button_type_modal"
-              aria-label="Button register  as a user. "
-              data-modal-target="#user_modal"
-            >
-              User
-            </button>
-          </span>
-        </form>
-        <form class="c-modal u-primary-bg-color" id="establishment_modal">
-          <img
-            id="establishment_photo"
-            src="../imgs/icons/establishment.svg"
-            alt="Establishment photo"
-            width="150"
-            height="150"
-          />
-          <br />
-          <span class="u-row-container u-margin">
-            <span class="u-column-container u-margin">
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="name_input_establishment_modal"
-              >
-                Name
-              </label>
-              <input
-                required
-                id="name_input_establishment_modal"
-                class="c-modal__input u-tertiary-bg-color"
-                type="text"
-                placeholder="Enter the name of the establishment..."
-                aria-label="Enter the name of the establishment."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="username_input_establishment_modal"
-              >
-                Username
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="username_input_establishment_modal"
-                type="text"
-                placeholder="Enter your username..."
-                aria-label="Enter your username."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="password_input_establishment_modal"
-              >
-                password
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="password_input_establishment_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="telephone_input_establishment_modal"
-              >
-                Telephone
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="telephone_input_establishment_modal"
-                type="tel"
-                placeholder="Enter your company phone number..."
-                aria-label="Enter your company phone number."
-              />
-              <br />
-            </span>
-            <br />
-            <span class="u-column-container u-margin">
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="owner_input_establishment_modal"
-              >
-                owner
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="owner_input_establishment_modal"
-                type="text"
-                placeholder="Enter the name of the owner..."
-                aria-label="Enter the name of the owner."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="email_input_establishment_modal"
-              >
-                E-mail
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="email_input_establishment_modal"
-                type="text"
-                placeholder="Enter the establishment's e-mail.."
-                aria-label="Enter the establishment's e-mail."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="retype_password_input_establishment_modal"
-              >
-                Check Password
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_establishment_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="cnpj_input_establishment_modal"
-                title="Needed to register your property as unique on the site."
-              >
-                CNPJ
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="cnpj_input_establishment_modal"
-                type="number"
-                placeholder="Type the CNPJ of the establishment..."
-                aria-label="Type the CNPJ of the establishment."
-              />
-            </span>
-          </span>
-          <br />
-          <span
-            class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
-          >
+        <form class="c-modal u-primary-bg-color" id="login_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#login_modal"
+          ></i>
+          <fieldset class="u-column-container">
             <label
-              class="c-label u-self-center"
-              for="inauguration_input_establishment_modal"
+              for="user_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
             >
-              Inauguration date
+              Username
             </label>
             <input
               required
-              class="c-modal__date u-primary-bg-color"
-              type="date"
-              name=""
-              id="inauguration_input_establishment_modal"
-              aria-label="Type the establishment inauguration date."
+              id="user_input_login_modal"
+              type="text"
+              class="c-modal__input u-tertiary-bg-color"
+              placeholder="Enter your username..."
+              aria-label="Enter your username."
+              tabindex="-1"
             />
-          </span>
+          </fieldset>
           <br />
-          <label
-            class="c-label u-self-center u-tertiary-bg-color"
-            for="error_field_establishment_modal"
-          >
-            Error output
-          </label>
+          <fieldset class="u-column-container">
+            <label
+              for="password_input_login_modal"
+              class="c-label u-tertiary-bg-color"
+              tabindex="-1"
+            >
+              Password
+            </label>
+            <span class="c-modal__password-container" tabindex="-1">
+              <input
+                required
+                id="password_input_login_modal"
+                class="c-modal__input u-tertiary-bg-color"
+                type="password"
+                placeholder="Enter your password..."
+                aria-label="Enter your password."
+                tabindex="-1"
+              />
+              <i class="ri-eye-line c-modal__toggle-password" tabindex="-1"></i>
+            </span>
+          </fieldset>
           <br />
-          <textarea
-            class="c-modal__error-field u-tertiary-bg-color u-denied"
-            id="error_field_establishment_modal"
-            disabled
-          >
-          Validation field if any data
-          are exempt! hidden by default.    
-       </textarea
-          >
-          <br />
-          <button
-            class="c-modal__button u-tertiary-bg-color"
-            type="submit"
-            aria-label="Button to register the establishment"
-          >
-            Register
-          </button>
+          <fieldset>
+            <button
+              id="submit_login_modal"
+              class="c-modal__button u-tertiary-bg-color"
+              type="submit"
+              aria-label="Login button"
+              tabindex="-1"
+            >
+              Login
+            </button>
+            <br />
+            <a
+              data-modal-target="#recover_password_modal"
+              class="c-modal__link u-highlight-color"
+              tabindex="-1"
+            >
+              Forgot your password ?
+            </a>
+          </fieldset>
         </form>
-        <form class="c-modal u-primary-bg-color" id="user_modal">
+        <form class="c-modal u-primary-bg-color" id="user_modal" tabindex="-1">
+          <i
+            class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
+            data-modal-target="#user_modal"
+          ></i>
           <img
             id="user_photo"
             src="../imgs/icons/user.svg"
             alt="User photo"
             width="150"
             height="150"
+            tabindex="-1"
           />
           <br />
-          <span class="u-row-container">
-            <span class="u-column-container u-margin">
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="name_input_user_modal"
-              >
-                Name
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="name_input_user_modal"
-                type="text"
-                placeholder="Enter the name of the user..."
-                aria-label="Enter the name of the user."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="username_input_user_modal"
-              >
-                Username
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="username_input_user_modal"
-                type="text"
-                placeholder="Enter your username..."
-                aria-label="Enter your username."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="password_input_user_modal"
-              >
-                password
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="password_input_user_modal"
-                type="password"
-                placeholder="Enter your password..."
-                aria-label="Enter your password."
-              />
-            </span>
-            <br />
-            <span class="u-column-container u-margin">
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="surname_input_user_modal"
-              >
-                Surname
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="surname_input_user_modal"
-                type="text"
-                placeholder="Enter your surname..."
-                aria-label="Enter your surname."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="email_input_user_modal"
-              >
-                Email
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="email_input_user_modal"
-                type="text"
-                placeholder="Enter the user's email.."
-                aria-label="Enter the user's email."
-              />
-              <br />
-              <label
-                class="c-label u-tertiary-bg-color"
-                for="retype_password_input_user_modal"
-              >
-                Check Password
-              </label>
-              <input
-                required
-                class="c-modal__input u-tertiary-bg-color"
-                id="retype_password_input_user_modal"
-                type="password"
-                placeholder="Retype your password..."
-                aria-label="Retype your password."
-              />
-            </span>
-          </span>
-          <br />
-          <span
-            class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
+          <fieldset
+            class="u-column-container u-mobile__container"
+            tabindex="-1"
           >
-            <label class="c-label" for="disability_select_user_modal">
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="name_input_user_modal"
+                  tabindex="-1"
+                >
+                  Name
+                </label>
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="name_input_user_modal"
+                  type="text"
+                  placeholder="Enter the name of the user..."
+                  aria-label="Enter the name of the user."
+                  tabindex="-1"
+                />
+              </span>
+              <br />
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="surname_input_user_modal"
+                  tabindex="-1"
+                >
+                  Surname
+                </label>
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="surname_input_user_modal"
+                  type="text"
+                  placeholder="Enter your surname..."
+                  aria-label="Enter your surname."
+                  tabindex="-1"
+                />
+              </span>
+            </fieldset>
+            <fieldset class="u-row-container u-mobile__container">
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="username_input_user_modal"
+                  tabindex="-1"
+                >
+                  Username
+                </label>
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="username_input_user_modal"
+                  type="text"
+                  placeholder="Enter your username..."
+                  aria-label="Enter your username."
+                  tabindex="-1"
+                />
+              </span>
+              <br />
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="email_input_user_modal"
+                  tabindex="-1"
+                >
+                  E-mail
+                </label>
+                <input
+                  required
+                  class="c-modal__input u-tertiary-bg-color"
+                  id="email_input_user_modal"
+                  type="email"
+                  placeholder="Enter the user's email.."
+                  aria-label="Enter the user's email."
+                  tabindex="-1"
+                />
+              </span>
+            </fieldset>
+            <br />
+            <fieldset class="u-row-container u-mobile__container" tabindex="-1">
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="password_input_user_modal"
+                  tabindex="-1"
+                >
+                  Password
+                </label>
+                <span class="c-modal__password-container" tabindex="-1">
+                  <input
+                    required
+                    class="c-modal__input u-tertiary-bg-color u-tertiary-bg-color"
+                    id="password_input_user_modal"
+                    type="password"
+                    placeholder="Enter your password..."
+                    aria-label="Enter your password."
+                    tabindex="-1"
+                  />
+                  <i
+                    class="ri-eye-line c-modal__toggle-password"
+                    tabindex="-1"
+                  ></i>
+                </span>
+              </span>
+              <br />
+              <span class="u-column-container u-margin">
+                <label
+                  class="c-label u-tertiary-bg-color"
+                  for="retype_password_input_user_modal"
+                  tabindex="-1"
+                >
+                  Check Password
+                </label>
+                <span class="c-modal__password-container" tabindex="-1">
+                  <input
+                    required
+                    class="c-modal__input u-tertiary-bg-color"
+                    id="retype_password_input_user_modal"
+                    type="password"
+                    placeholder="Retype your password..."
+                    aria-label="Retype your password."
+                    tabindex="-1"
+                  />
+                  <i
+                    class="ri-eye-line c-modal__toggle-password"
+                    tabindex="-1"
+                  ></i>
+                </span>
+              </span>
+            </fieldset>
+          </fieldset>
+          <br />
+          <fieldset
+            class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
+            tabindex="-1"
+          >
+            <label
+              class="c-label"
+              for="disability_select_user_modal"
+              title="Necessary for the website to recommend establishments that support your disability."
+              tabindex="-1"
+            >
               <strong>
                 Do you want to declare<br />
                 your disability?
@@ -555,288 +423,191 @@
               class="c-modal__select u-primary-bg-color"
               name=""
               id="disability_select_user_modal"
+              tabindex="-1"
             >
-              <option value="">Not declared</option>
+              <option tabindex="-1" value="">Not declared</option>
             </select>
-          </span>
+          </fieldset>
           <br />
-          <label
-            class="c-label u-self-center u-tertiary-bg-color"
-            for="error_field_user_modal"
-          >
-            Error output
-          </label>
-          <br />
-          <textarea
-            class="c-modal__error-field u-tertiary-bg-color u-denied"
-            id="error_field_user_modal"
-            disabled
-          >
+          <fieldset class="u-column-container c-modal__error-field-container">
+            <label
+              class="c-label u-self-center u-tertiary-bg-color"
+              for="error_field_user_modal"
+              tabindex="-1"
+            >
+              Error output
+            </label>
+            <br />
+            <textarea
+              class="c-modal__error-field u-tertiary-bg-color u-denied"
+              id="error_field_user_modal"
+              tabindex="-1"
+              disabled
+            >
                Validation field if any data
                are exempt! hidden by default.
          </textarea
-          >
+            >
+          </fieldset>
           <br />
           <button
-            class="c-modal__button u-tertiary-bg-color"
+            class="c-modal__button u-accept-color"
             type="submit"
             aria-label="Button to register the user."
+            tabindex="-1"
           >
             Register
           </button>
         </form>
-        <div id="overlay" data-modal-target=""></div>
+        <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
       <section class="u-column-container u-center">
-        <section class="c-tags-container u-center" class="u-flex-wrap">
-          <div class="c-tags-container__label-container u-column-container">
-            <label class="c-label u-tertiary-bg-color u-self-center"   for="c-tags-container__stablishments_container">Stablishments</label>
-            <div id="c-tags-container__stablishments_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
-              <span class="mobile-container" >
-                <span name="#restaurant" class="tag">Restaurant</span>
-                <span name="#coffeeShop" class="tag">Coffee Shop</span>
-              </span>
-              <span class="mobile-container" >
-                <span name="#hotel" class="tag">Hotel</span>
-                <span name="#company" class="tag">Company</span>
-              </span>
+        <section>
+          <div
+            class="u-row-container u-vertical-center u-mobile__tags-container"
+          >
+            <div class="u-column-container">
+              <label
+                class="c-label u-tertiary-bg-color u-self-center"
+                for="c-tags-container__stablishments_container"
+              >
+                Establishments
+              </label>
+              <div
+                id="c-tags-container__stablishments_container"
+                class="u-column-container u-secondary-bg-color u-border-radius u-gap u-padding u-margin"
+              >
+                <span class="u-row-container u-gap u-center">
+                  <span
+                    name="#restaurant"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Restaurant
+                  </span>
+                  <span
+                    name="#coffeeShop"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Coffee Shop
+                  </span>
+                </span>
+                <span class="u-row-container u-gap">
+                  <span
+                    name="#hotel"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Hotel
+                  </span>
+                  <span
+                    name="#company"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Company
+                  </span>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="c-tags-container__label-container u-column-container u-center">
-            <label class="c-label u-tertiary-bg-color u-self-center" for="c-tags-container__types_of_disability_container"
-              >Types of Disability</label
-            >
-            <div id="c-tags-container__types_of_disability_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
-              <span class="mobile-container" >
-                <span name="#physicalMotorDesability" class="tag">Physical-motor</span>
-                <span name="#visualDesability" class="tag">Visual</span>
-              </span>
-              <span  class="mobile-container" >
-                <span name="#neuroDivergentDesability" class="tag">Neurodivergent</span>
-                <span name="#hearingDesability" class="tag">Hearing</span>
-              </span>
+            <div class="u-column-container u-center">
+              <label
+                class="c-label u-tertiary-bg-color u-self-center"
+                for="c-tags-container__types_of_disability_container"
+              >
+                Types of Disability
+              </label>
+              <div
+                id="c-tags-container__types_of_disability_container"
+                class="u-column-container u-secondary-bg-color u-border-radius u-gap u-padding u-margin"
+              >
+                <span class="u-row-container u-gap">
+                  <span
+                    name="#physicalMotorDisability"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Physical-motor
+                  </span>
+                  <span
+                    name="#visualDisability"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Visual
+                  </span>
+                </span>
+                <span class="u-row-container u-gap">
+                  <span
+                    name="#neuroDivergentDisability"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Neurodivergent
+                  </span>
+                  <span
+                    name="#hearingDisability"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Hearing
+                  </span>
+                </span>
+              </div>
             </div>
-          </div>
-          <div class="c-tags-container__label-container u-column-container">
-            <label class="c-label u-tertiary-bg-color u-self-center" for="c-tags-container__locality_container">Locality</label>
-            <div id="c-tags-container__locality_container" class="c-tags-container__tags-container u-flex-wrap u-secondary-bg-color u-padding u-margin u-justify-around">
-              <span class="mobile-container" >
-                <span name="upTo2km" class="tag">Up to 2km</span>
-              <span name="upTo4km" active="false" class="tag">Up to 4km</span>
-              </span>
-              <span class="mobile-container" >
-                <spa name="upTo10km" class="tag">Up to 10km</spa>
-                <span name="nearToMe" class="tag">Near to me</span>
-              </span>
+            <div class="u-column-container">
+              <label
+                class="c-label u-tertiary-bg-color u-self-center"
+                for="c-tags-container__locality_container"
+              >
+                Locality
+              </label>
+              <div
+                id="c-tags-container__locality_container"
+                class="u-column-container u-center u-secondary-bg-color u-gap u-border-radius u-padding u-margin"
+              >
+                <span class="u-row-container u-gap">
+                  <span
+                    name="upTo2km"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Up to 2km
+                  </span>
+                  <span
+                    name="upTo4km"
+                    active="false"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Up to 4km
+                  </span>
+                </span>
+                <span class="u-row-container u-gap">
+                  <span
+                    name="upTo10km"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Up to 10km
+                  </span>
+                  <span
+                    name="nearToMe"
+                    class="u-tertiary-bg-color u-border-radius u-padding"
+                  >
+                    Near to me
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
         </section>
-        <section class="c-searching-container u-column-container u-center">
-          <label class="c-label u-tertiary-bg-color u-padding u-self-center" for="c-searching-container__result">Searching Result</label>
-          <div class="c-searching-container__result u-secondary-bg-color">
+        <section class="u-column-container u-center">
+          <h3
+            class="c-label u-tertiary-bg-color u-border-radius u-padding u-self-center"
+          >
+            Searching Result
+          </h3>
+          <div
+            id="c-searching-container__result"
+            class="u-secondary-bg-color u-border-radius u-padding"
+          >
             <div class="u-padding">
-              <h1>No stablishments found</h1>
+              <strong>No establishments found</strong>
             </div>
-            <!-- <article class="c-searching__card">
-              <aside>
-                <img class="c-searching-container__image" src="/assets/imgs/stablishments/default.png" alt="Establishment image">
-              </aside>
-              <div class="c-searching-container__card-information u-column-container u-space-between">
-                <header>
-                  <h2>Happiness Coffee Shop</h2>
-                </header>
-                <div>
-                  <p>A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...</p>
-                </div>
-                <footer class="c-searching-container__footer u-space-around">
-                  <div class="rank">
-                      <span>Rank: </span>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                  </div>
-                  <div class="support">
-                    <span>Support</span>
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/Braile.svg"
-                      alt="Braille icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/cão guia.svg"
-                      alt="Guide dog icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                      alt="Low vision icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                      alt="Pound interpreter icon"
-                    />
-                  </div>
-                  <div class="locality">
-                    <span>Locality: </span><span>...</span>
-                  </div>
-                </footer>
-              </div>
-          </article>
-          <article class="c-searching__card">
-              <aside>
-                <img class="c-searching-container__image" src="/assets/imgs/stablishments/default.png" alt="Establishment image">
-              </aside>
-              <div class="c-searching-container__card-information u-column-container u-space-between">
-                <header>
-                  <h2>Happiness Coffee Shop</h2>
-                </header>
-                <div>
-                  <p>A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...</p>
-                </div>
-                <footer class="c-searching-container__footer u-space-around">
-                  <div class="rank">
-                      <span>Rank: </span>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                  </div>
-                  <div class="support">
-                    <span>Support</span>
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/Braile.svg"
-                      alt="Braille icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/cão guia.svg"
-                      alt="Guide dog icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                      alt="Low vision icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                      alt="Pound interpreter icon"
-                    />
-                  </div>
-                  <div class="locality">
-                    <span>Locality: </span><span>...</span>
-                  </div>
-                </footer>
-              </div>
-          </article>
-          <article class="c-searching__card">
-              <aside>
-                <img class="c-searching-container__image" src="/assets/imgs/stablishments/default.png" alt="Establishment image">
-              </aside>
-              <div class="c-searching-container__card-information u-column-container u-space-between">
-                <header>
-                  <h2>Happiness Coffee Shop</h2>
-                </header>
-                <div>
-                  <p>A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...</p>
-                </div>
-                <footer class="c-searching-container__footer u-space-around">
-                  <div class="rank">
-                      <span>Rank: </span>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                  </div>
-                  <div class="support">
-                    <span>Support</span>
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/Braile.svg"
-                      alt="Braille icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/cão guia.svg"
-                      alt="Guide dog icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                      alt="Low vision icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                      alt="Pound interpreter icon"
-                    />
-                  </div>
-                  <div class="locality">
-                    <span>Locality: </span><span>...</span>
-                  </div>
-                </footer>
-              </div>
-          </article>
-          <article class="c-searching__card">
-              <aside>
-                <img class="c-searching-container__image" src="/assets/imgs/stablishments/default.png" alt="Establishment image">
-              </aside>
-              <div class="c-searching-container__card-information u-column-container u-space-between">
-                <header>
-                  <h2>Happiness Coffee Shop</h2>
-                </header>
-                <div>
-                  <p>A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...</p>
-                </div>
-                <footer class="c-searching-container__footer u-space-around">
-                  <div class="rank">
-                      <span>Rank: </span>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                      <i class="ri-star-line"></i>
-                  </div>
-                  <div class="support">
-                    <span>Support</span>
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/Braile.svg"
-                      alt="Braille icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/cão guia.svg"
-                      alt="Guide dog icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/baixa visão.svg"
-                      alt="Low vision icon"
-                    />
-                    <img
-                      class="acessIcon c-searching-container__icon"
-                      src="/assets/imgs/accessibility_icons/interprete libras.svg"
-                      alt="Pound interpreter icon"
-                    />
-                  </div>
-                  <div class="locality">
-                    <span>Locality: </span><span>...</span>
-                  </div>
-                </footer>
-              </div>
-          </article> -->
           </div>
         </section>
       </section>
     </main>
-
   </body>
 </html>

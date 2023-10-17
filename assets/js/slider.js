@@ -2,27 +2,27 @@ const slideButtons = document.querySelectorAll(".c-slider__button");
 const slideContainer = document.querySelector(".c-slider__content-container");
 const dataBase = [
   {
-    image: "",
-    title: "ewqeq",
-    text: "cgzdvjfsakjfgkjdsfghdgsfjhgfsdj",
+    image: "../imgs/establishments/default.png",
+    title: "Happy place restaurant",
+    text: "The perfect place for you! ",
     rate: 2,
   },
   {
-    image: "",
-    title: "titltwdskag",
-    text: "ewqewqewq",
+    image: "../imgs/establishments/green_vegan_restaurant.png",
+    title: "Green vegan restaurant",
+    text: "The prefect green and animal friendly place for you!",
     rate: 5,
   },
   {
-    image: "",
-    title: "teqwewqewq",
-    text: "dsadsadsa",
+    image: "../imgs/establishments/zursky_tech.png",
+    title: "Zursky tech",
+    text: "The best technology for the best people!",
     rate: 3,
   },
   {
-    image: "",
-    title: "teqwedsadsawqewq",
-    text: "dsadsadsa",
+    image: "../imgs/establishments/gold_hotel.png",
+    title: "Gold Hotel",
+    text: "Comfort and beauty, that's what you want, right? Well, that's your home then...",
     rate: 1,
   },
 ];
@@ -39,15 +39,15 @@ setInterval(() => {
     count = 0;
   }
   nextSlide();
-}, 10000);
+}, 5000);
 
 document.onload = setCard();
 
 function previousSlide() {
-  slideContainer.innerHTML = "";
-  if (count < 0) return;
+  if (count <= 0) return;
   setCard();
   --count;
+  slideContainer.innerHTML = "";
 }
 
 function nextSlide() {
@@ -83,6 +83,8 @@ function setCard() {
                   ${dataBase[count].text}
                 </p>
                 <footer class="c-card__footer"> 
+                  <span class="u-row-container u-gap c-card__rate-container">
+                  </span>
               </footer> 
               </div>
 `;

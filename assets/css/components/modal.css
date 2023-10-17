@@ -114,9 +114,21 @@
   border-radius: 15px;
 }
 
+.c-modal__error-field-container {
+  height: 0;
+  overflow-y: hidden;
+}
+
+.c-modal__error-field-container.u-visible {
+  height: fit-content;
+  overflow-y: visible;
+}
+
 .c-modal__error-field {
   min-width: 50vw;
+  text-align: center;
   resize: none;
+  font-size: clamp(1rem, 1.2rem, 2rem);
   padding: 50px 0;
   overflow: hidden;
   border: transparent;
@@ -153,5 +165,6 @@
 
 .c-modal__input.u-input-error {
   background-color: var(--clr-denied);
+  animation: bounce 150ms alternate;
   transition: background-color 500ms ease-in-out;
 }

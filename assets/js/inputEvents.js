@@ -1,5 +1,6 @@
 document.addEventListener("keydown", ({ key }) => {
   const modal = document.querySelector(".c-modal.u-visible");
+  const overlay = document.getElementById("overlay");
   const searchInput = document.getElementById("c-search_input");
   const searchButton = document.getElementById("c-search_button");
   const toolsDropdownButton = document.getElementById("c-tools-dropdown");
@@ -8,6 +9,7 @@ document.addEventListener("keydown", ({ key }) => {
     case "Escape":
       if (modal != null) {
         modal.classList.remove("u-visible");
+        overlay.classList.remove("u-visible");
       }
       break;
     case "b":
