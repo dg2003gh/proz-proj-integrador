@@ -11,7 +11,7 @@ const searchResultElement = document.querySelector(
 );
 
 // Tags
-let tagList = document.querySelectorAll("span.tag");
+let tagList = document.querySelectorAll("span.js-tag");
 
 // Cards fictícios
 let arrayCard = [
@@ -51,8 +51,6 @@ const searchbar = new SearchBar(searchBarElement,
   searchResultElement,
   tagList,
   arrayCard)
-
-
 
 
 if (!window.location.href.endsWith("searchPage.html")){

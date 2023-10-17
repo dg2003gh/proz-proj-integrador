@@ -20,12 +20,14 @@ export class SearchBar {
     });
   }
 
-  #renderTags(tagList, container) {
+  #renderTags(tagList) {
+    const renderedTagsContainer = document.getElementById("rendered-tags-container");
+    console.log("renderTags" + renderedTagsContainer)
     for (let tag in tagList) {
       let newTag = document.createElement("span");
       newTag.innerText = tagList[tag];
-      newTag.setAttribute("class", "tag-card");
-      container.appendChild(newTag);
+      newTag.setAttribute("class", "js-tag-card u-primary-bg-color u-border-radius u-padding");
+      renderedTagsContainer.appendChild(newTag);
     }
   }
 
@@ -33,7 +35,7 @@ export class SearchBar {
     const tags = this.tagsList;
     tags.forEach((element) => {
       element.onclick = () => {
-        element.classList.toggle("u-tag-active");
+        element.classList.toggle("u-accept-color");
       };
     });
   }
@@ -110,9 +112,9 @@ export class SearchBar {
         return 0;
       }
     });
-    
       cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
       cardsFound = cardsFound.concat(cardsFoundForTags)
+      console.log(cardsFound[0].cardInfo)
       cardsFound.sort((a, b) => b.tagsOcurrence - a.tagsOcurrence);
 
       if (cardsFound.length == 0){
@@ -128,62 +130,64 @@ export class SearchBar {
 
   #addCard(cardInfo) {
     const card = document.createElement("article");
-    card.setAttribute("class", "c-searching__card");
+    card.setAttribute("class", "c-card u-border-radius u-tertiary-bg-color");
 
-    const renderedTags = document.createElement("div");
-    renderedTags.setAttribute("class", "u-row-container");
     card.innerHTML = `
-      <aside>
-        <img class="c-searching-container__image" src="${cardInfo.image}" alt="Establishment image">
+      <aside class="c-card__aside">
+        <img class="c-card__img" src="${cardInfo.image}" width="200px" height="100%" alt="Establishment image">
       </aside>
-      <div class="c-searching-container__card-information u-column-container u-all-parent">
+      <div class="u-column-container u-space-between u-text-center u-padding">
         <header>
-          <h2>${cardInfo.title}</h2>
+          <p c-card__title>${cardInfo.title}</p>
         </header>
         <div>
           <p>${cardInfo.description}</p>
         </div>
-        <footer class="c-searching-container__footer u-space-around">
-          <div class="rank">
-              <span>Rank: </span>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-          </div>
-          <div class="support">
-            <span>Support</span>
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/Braile.svg"
-              alt="Braille icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/cão guia.svg"
-              alt="Guide dog icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/baixa visão.svg"
-              alt="Low vision icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/interprete libras.svg"
-              alt="Pound interpreter icon"
-            />
-          </div>
-          <div class="locality">
-            <span>Locality: </span><span>...</span>
+        <footer class="u-column-container">
+          <span class="u-row-container u-space-around">
+            <div class="rank u-center">
+                <span>Rank: </span>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+                <i class="ri-star-line"></i>
+            </div>
+            <div class="support u-center">
+              <span>Support</span>
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/Braile.svg"
+                alt="Braille icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/cão guia.svg"
+                alt="Guide dog icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/baixa visão.svg"
+                alt="Low vision icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/interprete libras.svg"
+                alt="Pound interpreter icon"
+              />
+            </div>
+            <div class="locality u-center">
+              <span>Locality: </span><span>...</span>
+            </div>
+          </span>
+          <div id="rendered-tags-container" class="u-row-container u-gap">
+            
           </div>
         </footer>
       </div>
     `;
-    this.#renderTags(cardInfo.tags, renderedTags);
-    card.childNodes[3].appendChild(renderedTags);
     this.searchResultContainer.appendChild(card);
+    this.#renderTags(cardInfo.tags)
   }
 
   #resetSearchResult(container) {
