@@ -13,20 +13,20 @@ export class SearchBar {
     this.dataBase = dataBase;
     this.regExp = /#[a-z A-Z 0-9]+/g;
     this.#activeTag();
-    window.addEventListener("keydown", (event) => {
-      if (event.code == "Enter") {
-        console.log("Enter Pressionada");
-      }
-    });
   }
 
   #renderTags(tagList) {
-    const renderedTagsContainer = document.getElementById("rendered-tags-container");
-    console.log("renderTags" + renderedTagsContainer)
+    const renderedTagsContainer = document.getElementById(
+      "rendered-tags-container"
+    );
+
     for (let tag in tagList) {
       let newTag = document.createElement("span");
       newTag.innerText = tagList[tag];
-      newTag.setAttribute("class", "js-tag-card u-primary-bg-color u-border-radius u-padding");
+      newTag.setAttribute(
+        "class",
+        "js-tag-card u-primary-bg-color u-border-radius u-padding"
+      );
       renderedTagsContainer.appendChild(newTag);
     }
   }
@@ -55,34 +55,32 @@ export class SearchBar {
 
     this.#activeTag();
 
-    // if (!searchText) return;
-
     if (!window.location.href.endsWith("searchPage.html")) {
       return false;
     }
 
     this.searchResultContainer.innerHTML = "";
-    tagsActiveList = tagsList.filter((tag)=>{
-      return tag.classList.contains("u-tag-active")
-    })
+    tagsActiveList = tagsList.filter((tag) => {
+      return tag.classList.contains("u-tag-active");
+    });
 
-    if (tagsActiveList.length > 0){
-        cardsFiltered = dataBase.filter((card) =>{
-        let namesTagsActive = tagsActiveList.map((tag)=>tag.getAttribute('name'))
-        tagsFilter = card.tags.filter((tag) =>{
-          return namesTagsActive.includes(tag)
+    if (tagsActiveList.length > 0) {
+      cardsFiltered = dataBase.filter((card) => {
+        let namesTagsActive = tagsActiveList.map((tag) =>
+          tag.getAttribute("name")
+        );
+        tagsFilter = card.tags.filter((tag) => {
+          return namesTagsActive.includes(tag);
         });
-    
-        let tagsFound = tagsFilter.length
 
-        card.tagsOcurrence += tagsFilter.length;
+        let tagsFound = tagsFilter.length;
+
+        card.tagsOccurrence += tagsFilter.length;
 
         return tagsFound > 0;
-      })
-      console.log(cardsFiltered)
-    }
-    else{
-        cardsFiltered = dataBase;
+      });
+    } else {
+      cardsFiltered = dataBase;
     }
 
     cardsFoundForTitle = cardsFiltered.filter((card) => {
@@ -92,49 +90,54 @@ export class SearchBar {
 
     cardsFoundForDescription = cardsFiltered.filter((card) => {
       const regExp = new RegExp(searchText.toLowerCase());
-      return regExp.test(card.description.toLowerCase()) && !cardsFoundForTitle.includes(card);
+      return (
+        regExp.test(card.description.toLowerCase()) &&
+        !cardsFoundForTitle.includes(card)
+      );
     });
 
-    cardsFoundForTags = cardsFiltered.filter((card) => {   
-      if (arrayTagSearch != null){
-        arrayTagSearch = arrayTagSearch.map((tag)=> tag.trim())
+    cardsFoundForTags = cardsFiltered.filter((card) => {
+      if (arrayTagSearch != null) {
+        arrayTagSearch = arrayTagSearch.map((tag) => tag.trim());
 
-        tagsFilter = card.tags.filter((tag)=>{
-          return arrayTagSearch.includes(tag)
+        tagsFilter = card.tags.filter((tag) => {
+          return arrayTagSearch.includes(tag);
         });
 
         let tagsFound = tagsFilter.length;
-        card.tagsOcurrence += tagsFound;
+        card.tagsOccurrence += tagsFound;
 
-        return (card.tagsOcurrence > 0)
-      }
-      else{
+        return card.tagsOccurrence > 0;
+      } else {
         return 0;
       }
     });
-      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
-      cardsFound = cardsFound.concat(cardsFoundForTags)
-      console.log(cardsFound[0].cardInfo)
-      cardsFound.sort((a, b) => b.tagsOcurrence - a.tagsOcurrence);
+    cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription);
+    cardsFound = cardsFound.concat(cardsFoundForTags);
+    cardsFound.sort((a, b) => b.tagsOccurrence - a.tagsOccurrence);
 
-      if (cardsFound.length == 0){
-        this.#resetSearchResult(this.searchResultContainer);
-      }
-      else{
-        cardsFound.forEach((cardFound) => {
-          this.#addCard(cardFound);
-        });
-      }
+    if (cardsFound.length == 0) {
+      this.#resetSearchResult(this.searchResultContainer);
+    } else {
+      cardsFound.forEach((cardFound, cardIndex) => {
+        this.#addCard(cardFound, cardIndex);
+      });
+    }
     return true;
   }
 
-  #addCard(cardInfo) {
+  #addCard(cardInfo, cardIndex) {
     const card = document.createElement("article");
-    card.setAttribute("class", "c-card u-border-radius u-tertiary-bg-color");
+    card.setAttribute(
+      "class",
+      "c-card u-border-radius u-tertiary-bg-color u-mouse-over"
+    );
 
     card.innerHTML = `
       <aside class="c-card__aside">
-        <img class="c-card__img" src="${cardInfo.image}" width="200px" height="100%" alt="Establishment image">
+        <img class="c-card__img" src="${
+          cardInfo.image
+        }" width="200px" height="100%" alt="Establishment image">
       </aside>
       <div class="u-column-container u-space-between u-text-center u-padding">
         <header>
@@ -144,14 +147,9 @@ export class SearchBar {
           <p>${cardInfo.description}</p>
         </div>
         <footer class="u-column-container">
-          <span class="u-row-container u-space-around">
-            <div class="rank u-center">
+          <span  class="u-row-container u-space-around u-mobile__container">
+            <div id="c-rate-container${cardIndex}" class="u-gap u-center u-margin">
                 <span>Rank: </span>
-                <i class="ri-star-line"></i>
-                <i class="ri-star-line"></i>
-                <i class="ri-star-line"></i>
-                <i class="ri-star-line"></i>
-                <i class="ri-star-line"></i>
             </div>
             <div class="support u-center">
               <span>Support</span>
@@ -177,24 +175,47 @@ export class SearchBar {
               />
             </div>
             <div class="locality u-center">
-              <span>Locality: </span><span>...</span>
+              <span>Locality: ${cardInfo.address
+                .slice(0, 60)
+                .concat("...")}</span>
             </div>
           </span>
-          <div id="rendered-tags-container" class="u-row-container u-gap">
-            
+          <div id="rendered-tags-container" class="u-row-container u-center u-margin u-gap u-mobile__none">
           </div>
         </footer>
       </div>
     `;
+
+    card.onclick = () => {
+      if (!window.location.href.endsWith("establishmentPage")) {
+        window.location.href = "../html/establishmentPage.html";
+        localStorage.setItem("establishmentIndex", cardInfo.id);
+      }
+    };
+
     this.searchResultContainer.appendChild(card);
-    this.#renderTags(cardInfo.tags)
+    this.#renderTags(cardInfo.tags);
+    this.#setRate(cardIndex);
   }
 
   #resetSearchResult(container) {
     container.innerHTML = `
       <div class="u-padding">
-              <h1>No stablishments found</h1>
+              <h1>No establishments found</h1>
       </div>
     `;
+  }
+
+  #setRate(cardIndex) {
+    const rateContainer = document.getElementById(
+      "c-rate-container" + cardIndex
+    );
+    for (let index = 0; index < 5; ++index) {
+      let star = '<i class="ri-star-fill"></i>';
+      if (index < this.dataBase[cardIndex].rate) {
+        star = '<i class="ri-star-fill u-highlight-color"></i>';
+      }
+      rateContainer.innerHTML += star;
+    }
   }
 }
