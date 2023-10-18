@@ -35,6 +35,10 @@
   gap: 20px;
 }
 
+.u-display-none {
+  display: none !important;
+}
+
 .u-space-around {
   display: flex;
   justify-content: space-around;
