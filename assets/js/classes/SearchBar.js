@@ -15,9 +15,9 @@ export class SearchBar {
     this.#activeTag();
   }
 
-  #renderTags(tagList) {
+  #renderTags(tagList, cardIndex) {
     const renderedTagsContainer = document.getElementById(
-      "rendered-tags-container"
+      "rendered-tags-container" + cardIndex
     );
 
     for (let tag in tagList) {
@@ -180,7 +180,7 @@ export class SearchBar {
                 .concat("...")}</span>
             </div>
           </span>
-          <div id="rendered-tags-container" class="u-row-container u-center u-margin u-gap u-mobile__none">
+          <div id="rendered-tags-container${cardIndex}" class="u-row-container u-flex-wrap u-center u-margin u-gap u-mobile__none">
           </div>
         </footer>
       </div>
@@ -194,14 +194,14 @@ export class SearchBar {
     };
 
     this.searchResultContainer.appendChild(card);
-    this.#renderTags(cardInfo.tags);
     this.#setRate(cardIndex);
+    this.#renderTags(cardInfo.tags, cardIndex);
   }
 
   #resetSearchResult(container) {
     container.innerHTML = `
       <div class="u-padding">
-              <h1>No establishments found</h1>
+              <h3>No establishments found</h3>
       </div>
     `;
   }
