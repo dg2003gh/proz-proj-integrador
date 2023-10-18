@@ -13,6 +13,7 @@ const emailRexExp =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 const passwordRexExp =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+const isEstablishmentOwner = document.getElementById("c-IsAEstablishmentOwner");
 
 function inputEmpty(input) {
   input.classList.add("u-input-error");
@@ -50,4 +51,18 @@ formInputs.forEach((input) => {
 
     input.classList.toggle("u-input-correct");
   });
+});
+
+isEstablishmentOwner.addEventListener("click", () => {
+  const establishmentOwnerContainer = document.getElementById(
+    "c-owner-id-container"
+  );
+  const userDisability = document.getElementById("c-userDisability-container");
+  if (isEstablishmentOwner.checked) {
+    establishmentOwnerContainer.classList.remove("u-display-none");
+    userDisability.classList.add("u-display-none");
+  } else {
+    establishmentOwnerContainer.classList.add("u-display-none");
+    userDisability.classList.remove("u-display-none");
+  }
 });
