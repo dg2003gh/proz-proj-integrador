@@ -193,7 +193,7 @@
           ></div>
         </div>
       </section>
-      <section>
+      <section id="c-modal-container">
         <form class="c-modal u-primary-bg-color" id="login_modal" tabindex="-1">
           <i
             class="ri-arrow-go-back-line u-mobile__back-button u-padding u-rounded u-tertiary-bg-color u-mouse-over"
@@ -408,9 +408,18 @@
                 </span>
               </span>
             </fieldset>
+            <fieldset
+              class="u-column-container u-center u-gap u-margin u-border-radius u-padding u-tertiary-bg-color"
+            >
+              <label for="c-IsAEstablishmentOwner">
+                <strong>I'm a establishment Owner</strong>
+              </label>
+              <input id="c-IsAEstablishmentOwner" value="yes" type="checkbox" />
+            </fieldset>
           </fieldset>
           <br />
           <fieldset
+            id="c-userDisability-container"
             class="u-column-container u-center u-margin u-border-radius u-padding u-tertiary-bg-color"
             tabindex="-1"
           >
@@ -437,6 +446,26 @@
               <option>Blind</option>
               <option value="">NeuroDivergent</option>
             </select>
+          </fieldset>
+          <fieldset
+            id="c-owner-id-container"
+            class="u-column-container u-center u-margin u-border-radius u-display-none u-padding u-tertiary-bg-color"
+          >
+            <label
+              class="c-label u-self-center u-tertiary-bg-color"
+              for="c-ownerId"
+            >
+              <strong>Owner ID</strong>
+            </label>
+            <input
+              id="c-ownerId"
+              class="c-modal__input u-primary-bg-color u-border-radius"
+              type="text"
+              aria-label="Owner id"
+              placeholder="type your id..."
+              title="type your id!"
+              tabindex="-1"
+            />
           </fieldset>
           <br />
           <fieldset class="u-column-container c-modal__error-field-container">
@@ -469,6 +498,7 @@
             Register
           </button>
         </form>
+        <form id="c-more-photo-modal" class="c-modal u-primary-bg-color"></form>
         <div id="overlay" data-modal-target="" tabindex="-1"></div>
       </section>
       <section
