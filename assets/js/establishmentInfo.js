@@ -1,21 +1,7 @@
-const infoContainer = document.getElementById(
-  "js-establishment-info-container"
-);
+import database from "./fictionalDataBase.js";
 
-const db = [
-  {
-    mainPhoto: "",
-    photos: [],
-    title: "Happy Cafeteria",
-    description: `A comfortable place for you and your whole family. <br />Our
-              facilities have ramps, a room for guide dogs menus...`,
-    rate: 4,
-    support: [],
-    location: "Rua Olindo de araújo, sp, Brasil",
-    inaugurationDate: "10/01/2010",
-  },
-];
-
+const establishmentIndex = localStorage.getItem("establishmentIndex");
+console.log(establishmentIndex);
 function showMoreDescription() {
   let descriptionChars = 100;
   const descriptionContainer = document.getElementById(
@@ -24,11 +10,38 @@ function showMoreDescription() {
 
   descriptionChars == 100 ? (descriptionChars = 10) : (descriptionChars = 100);
 
-  descriptionContainer.innerText.slice(0, 10 | 100);
-  console.log(descriptionChars, descriptionContainer.innerText);
+  descriptionContainer.innerText.slice(0, descriptionChars);
+}
+
+function setBackgroundPhoto() {
+  const header = document.getElementById("c-establishment-info__header");
+  console.log(database[establishmentIndex].image);
+  header.style = `
+    background-image: url(${database[establishmentIndex].image});
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 250px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  `;
+}
+
+function setRate() {
+  const rateContainer = document.getElementById("c-establishment-info__stars");
+  for (let index = 0; index < 5; ++index) {
+    let star = '<i class="ri-star-fill"></i>';
+    if (index < database[establishmentIndex].rate) {
+      star = '<i class="ri-star-fill u-highlight-color"></i>';
+    }
+    rateContainer.innerHTML += star;
+  }
 }
 
 function setEstablishmentInfo() {
+  const infoContainer = document.getElementById(
+    "js-establishment-info-container"
+  );
   infoContainer.innerHTML = `
 <article class="u-tertiary-bg-color u-border-radius u-column-container">
 <header id="c-establishment-info__header" class="u-position-relative">
@@ -37,9 +50,9 @@ function setEstablishmentInfo() {
             </div>
           </header>
           <div class="u-text-center">
-            <h2 class="u-margin">${db[0].title}</h2>
+            <h2 class="u-margin">${database[establishmentIndex].title}</h2>
             <p id="c-description-container">
-                ${db[0].description}
+                ${database[establishmentIndex].description}
             </p>
             <strong
               class="u-highlight-color u-mouse-over"
@@ -77,12 +90,16 @@ function setEstablishmentInfo() {
                 alt="Icone de Cão Guia"
                 width="40"
                 height="40"
-            /></span>
-            Location: ${db[0].location}<button class="u-accept-color u-mouse-over">
+            />
+          </span>
+          <span class="u-text-center">
+            Location: ${database[establishmentIndex].address}
+            </span><button class="u-accept-color u-mouse-over">
               View on maps<i class="ri-arrow-right-fill"></i></button
             >
+
             <span>
-              Inauguration date: ${db[0].inaugurationDate}
+              Inauguration date: ${database[establishmentIndex].inaugurationDate}
             </span>
           </footer>
         </article>
@@ -90,31 +107,6 @@ function setEstablishmentInfo() {
 `;
   setBackgroundPhoto();
   setRate();
-}
-
-function setBackgroundPhoto() {
-  const header = document.getElementById("c-establishment-info__header");
-
-  header.style = `
-    background-image: url("../imgs/establishments/green_vegan_restaurant.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 250px;
-    width: 100%;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  `;
-}
-
-function setRate() {
-  const rateContainer = document.getElementById("c-establishment-info__stars");
-  for (let index = 0; index < 5; ++index) {
-    let star = '<i class="ri-star-fill"></i>';
-    if (index < db[0].rate) {
-      star = '<i class="ri-star-fill u-highlight-color"></i>';
-    }
-    rateContainer.innerHTML += star;
-  }
 }
 
 setEstablishmentInfo();
