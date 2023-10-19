@@ -1,89 +1,41 @@
 import { SearchBar } from "./classes/SearchBar.js";
+import fictionalDataBase from "./fictionalDataBase.js";
 
-// Barra de pesquisa
 const searchBarElement = document.querySelector("input.ri-search-line");
-// Botão de pesquisa
 const searchButtonElement = document.querySelector("button#c-search_button");
-
-// Resultado da pesquisa
 const searchResultElement = document.querySelector(
-  "div.c-searching-container__result"
+  "div#c-searching-container__result"
 );
+let tagList = document.querySelectorAll("span.js-tag");
 
-// Tags
-let tagList = document.querySelectorAll("span.tag");
-
-// Array de filtro
-let filterArrayTags = [];
-let filterArrayTitle = [];
-let filterArrayDescription = [];
-let filterFinalArray = [];
-
-// Cards fictícios
-let arrayCard = [
-  {
-    "image": "/assets/imgs/stablishments/happiness_coffee_shop.png",
-    "title": "Happiness Coffee Shop",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#coffeeShop", "#visualDesability", "#physicalMotorDesability"],
-   "tagsOcurrence": 0
-  },
-  {
-    "image": "/assets/imgs/stablishments/zursky_tech.png",
-    "title": "Zurski Tech",
-    "description": "If you want the best tecnology solutions, we can help you...",
-   "tags": ["#company", "#visualDesability", "#hearingDesability", "#physicalMotorDesability"],
-   "tagsOcurrence": 0
-  },
-  {
-    "image": "/assets/imgs/stablishments/green_vegan_restaurant.png",
-    "title": "Green Vegan Restaurant",
-    "description": "Our food can help you to care your health...",
-   "tags": ["#restaurant", "#physicalMotorDesability"],
-   "tagsOcurrence": 0
-  },
-  {
-    "image": "/assets/imgs/stablishments/gold_hotel.png",
-    "title": "Gold Hotel",
-    "description": "A comfortable place for you and your whole family. Our facilities have ramps, a room for guide dogs, menus in Pounds version...",
-   "tags": ["#hotel", "#physicalMotorDesability"],
-   "tagsOcurrence": 0
-  }
-];
-
-
-const searchbar = new SearchBar(searchBarElement, 
-  searchButtonElement, 
+const searchbar = new SearchBar(
+  searchBarElement,
+  searchButtonElement,
   searchResultElement,
   tagList,
-  arrayCard)
+  fictionalDataBase
+);
 
-
-
-
-if (!window.location.href.endsWith("searchPage.html")){
-  console.log(window.location.href.endsWith("searchPage.html"))
-  searchBarElement.onblur = ()=> {
-    searchButtonElement.onclick = () =>{
+if (!window.location.href.endsWith("searchPage.html")) {
+  searchBarElement.onblur = () => {
+    searchButtonElement.onclick = () => {
       localStorage.setItem("searchTxt", searchBarElement.value);
-      localStorage.setItem("redirecionado", true)
+      localStorage.setItem("searchValue", true);
       window.location.assign("searchPage.html");
-    }
-  }
-}
-else{
-  let redirecionado = localStorage.getItem("redirecionado")
-  if (redirecionado){
+    };
+  };
+} else {
+  let searchValue = localStorage.getItem("searchValue");
+  if (searchValue) {
     searchBarElement.value = localStorage.getItem("searchTxt");
     searchbar.searchReturn();
-    redirecionado = false;
+    searchValue = false;
   }
- 
-  searchBarElement.onblur = ()=> {
-    searchButtonElement.onclick = () =>{
+
+  searchBarElement.onblur = () => {
+    searchButtonElement.onclick = () => {
       localStorage.setItem("searchTxt", searchBarElement.value);
-      window.location.assign("searchPage.html");
-    }
-  }
+      searchbar.searchReturn();
+    };
+  };
 }
-  

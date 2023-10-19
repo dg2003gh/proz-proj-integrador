@@ -13,19 +13,21 @@ export class SearchBar {
     this.dataBase = dataBase;
     this.regExp = /#[a-z A-Z 0-9]+/g;
     this.#activeTag();
-    window.addEventListener("keydown", (event) => {
-      if (event.code == "Enter") {
-        console.log("Enter Pressionada");
-      }
-    });
   }
 
-  #renderTags(tagList, container) {
+  #renderTags(tagList, cardIndex) {
+    const renderedTagsContainer = document.getElementById(
+      "rendered-tags-container" + cardIndex
+    );
+
     for (let tag in tagList) {
       let newTag = document.createElement("span");
       newTag.innerText = tagList[tag];
-      newTag.setAttribute("class", "tag-card");
-      container.appendChild(newTag);
+      newTag.setAttribute(
+        "class",
+        "js-tag-card u-primary-bg-color u-border-radius u-padding"
+      );
+      renderedTagsContainer.appendChild(newTag);
     }
   }
 
@@ -33,7 +35,7 @@ export class SearchBar {
     const tags = this.tagsList;
     tags.forEach((element) => {
       element.onclick = () => {
-        element.classList.toggle("u-tag-active");
+        element.classList.toggle("u-accept-color");
       };
     });
   }
@@ -53,34 +55,32 @@ export class SearchBar {
 
     this.#activeTag();
 
-    // if (!searchText) return;
-
     if (!window.location.href.endsWith("searchPage.html")) {
       return false;
     }
 
     this.searchResultContainer.innerHTML = "";
-    tagsActiveList = tagsList.filter((tag)=>{
-      return tag.classList.contains("u-tag-active")
-    })
+    tagsActiveList = tagsList.filter((tag) => {
+      return tag.classList.contains("u-tag-active");
+    });
 
-    if (tagsActiveList.length > 0){
-        cardsFiltered = dataBase.filter((card) =>{
-        let namesTagsActive = tagsActiveList.map((tag)=>tag.getAttribute('name'))
-        tagsFilter = card.tags.filter((tag) =>{
-          return namesTagsActive.includes(tag)
+    if (tagsActiveList.length > 0) {
+      cardsFiltered = dataBase.filter((card) => {
+        let namesTagsActive = tagsActiveList.map((tag) =>
+          tag.getAttribute("name")
+        );
+        tagsFilter = card.tags.filter((tag) => {
+          return namesTagsActive.includes(tag);
         });
-    
-        let tagsFound = tagsFilter.length
 
-        card.tags_ocurrence += tagsFilter.length;
+        let tagsFound = tagsFilter.length;
+
+        card.tagsOccurrence += tagsFilter.length;
 
         return tagsFound > 0;
-      })
-      console.log(cardsFiltered)
-    }
-    else{
-        cardsFiltered = dataBase;
+      });
+    } else {
+      cardsFiltered = dataBase;
     }
 
     cardsFoundForTitle = cardsFiltered.filter((card) => {
@@ -90,107 +90,132 @@ export class SearchBar {
 
     cardsFoundForDescription = cardsFiltered.filter((card) => {
       const regExp = new RegExp(searchText.toLowerCase());
-      return regExp.test(card.description.toLowerCase()) && !cardsFoundForTitle.includes(card);
+      return (
+        regExp.test(card.description.toLowerCase()) &&
+        !cardsFoundForTitle.includes(card)
+      );
     });
 
-    cardsFoundForTags = cardsFiltered.filter((card) => {   
-      if (arrayTagSearch != null){
-        arrayTagSearch = arrayTagSearch.map((tag)=> tag.trim())
+    cardsFoundForTags = cardsFiltered.filter((card) => {
+      if (arrayTagSearch != null) {
+        arrayTagSearch = arrayTagSearch.map((tag) => tag.trim());
 
-        tagsFilter = card.tags.filter((tag)=>{
-          return arrayTagSearch.includes(tag)
+        tagsFilter = card.tags.filter((tag) => {
+          return arrayTagSearch.includes(tag);
         });
 
         let tagsFound = tagsFilter.length;
-        card.tags_ocurrence += tagsFound;
+        card.tagsOccurrence += tagsFound;
 
-        return (card.tags_ocurrence > 0)
-      }
-      else{
+        return card.tagsOccurrence > 0;
+      } else {
         return 0;
       }
     });
-    
-      cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription)
-      cardsFound = cardsFound.concat(cardsFoundForTags)
-      cardsFound.sort((a, b) => b.tags_ocurrence - a.tags_ocurrence);
+    cardsFound = cardsFoundForTitle.concat(cardsFoundForDescription);
+    cardsFound = cardsFound.concat(cardsFoundForTags);
+    cardsFound.sort((a, b) => b.tagsOccurrence - a.tagsOccurrence);
 
-      if (cardsFound.length == 0){
-        this.#resetSearchResult(this.searchResultContainer);
-      }
-      else{
-        cardsFound.forEach((cardFound) => {
-          this.#addCard(cardFound);
-        });
-      }
+    if (cardsFound.length == 0) {
+      this.#resetSearchResult(this.searchResultContainer);
+    } else {
+      cardsFound.forEach((cardFound, cardIndex) => {
+        this.#addCard(cardFound, cardIndex);
+      });
+    }
     return true;
   }
 
-  #addCard(cardInfo) {
+  #addCard(cardInfo, cardIndex) {
     const card = document.createElement("article");
-    card.setAttribute("class", "c-searching__card");
+    card.setAttribute(
+      "class",
+      "c-card u-border-radius u-tertiary-bg-color u-mouse-over"
+    );
 
-    const renderedTags = document.createElement("div");
-    renderedTags.setAttribute("class", "u-row-container");
     card.innerHTML = `
-      <aside>
-        <img class="c-searching-container__image" src="${cardInfo.image}" alt="Establishment image">
+      <aside class="c-card__aside">
+        <img class="c-card__img" src="${
+          cardInfo.image
+        }" width="200px" height="100%" alt="Establishment image">
       </aside>
-      <div class="c-searching-container__card-information u-column-container u-all-parent">
+      <div class="u-column-container u-space-between u-text-center u-padding">
         <header>
-          <h2>${cardInfo.title}</h2>
+          <p c-card__title>${cardInfo.title}</p>
         </header>
         <div>
           <p>${cardInfo.description}</p>
         </div>
-        <footer class="c-searching-container__footer u-space-around">
-          <div class="rank">
-              <span>Rank: </span>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-              <i class="ri-star-line"></i>
-          </div>
-          <div class="support">
-            <span>Support</span>
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/Braile.svg"
-              alt="Braille icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/cão guia.svg"
-              alt="Guide dog icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/baixa visão.svg"
-              alt="Low vision icon"
-            />
-            <img
-              class="c-searching-container__icon"
-              src="/assets/imgs/accessibility_icons/interprete libras.svg"
-              alt="Pound interpreter icon"
-            />
-          </div>
-          <div class="locality">
-            <span>Locality: </span><span>...</span>
+        <footer class="u-column-container">
+          <span  class="u-row-container u-space-around u-mobile__container">
+            <div id="c-rate-container${cardIndex}" class="u-gap u-center u-margin">
+                <span>Rank: </span>
+            </div>
+            <div class="support u-center">
+              <span>Support</span>
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/Braile.svg"
+                alt="Braille icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/cão guia.svg"
+                alt="Guide dog icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/baixa visão.svg"
+                alt="Low vision icon"
+              />
+              <img
+                class="c-card__icons"
+                src="/assets/imgs/accessibility_icons/interprete libras.svg"
+                alt="Pound interpreter icon"
+              />
+            </div>
+            <div class="locality u-center">
+              <span>Locality: ${cardInfo.address
+                .slice(0, 60)
+                .concat("...")}</span>
+            </div>
+          </span>
+          <div id="rendered-tags-container${cardIndex}" class="u-row-container u-flex-wrap u-center u-margin u-gap u-mobile__none">
           </div>
         </footer>
       </div>
     `;
-    this.#renderTags(cardInfo.tags, renderedTags);
-    card.childNodes[3].appendChild(renderedTags);
+
+    card.onclick = () => {
+      if (!window.location.href.endsWith("establishmentPage")) {
+        window.location.href = "../html/establishmentPage.html";
+        localStorage.setItem("establishmentIndex", cardInfo.id);
+      }
+    };
+
     this.searchResultContainer.appendChild(card);
+    this.#setRate(cardIndex);
+    this.#renderTags(cardInfo.tags, cardIndex);
   }
 
   #resetSearchResult(container) {
     container.innerHTML = `
       <div class="u-padding">
-              <h1>No stablishments found</h1>
+              <h3>No establishments found</h3>
       </div>
     `;
+  }
+
+  #setRate(cardIndex) {
+    const rateContainer = document.getElementById(
+      "c-rate-container" + cardIndex
+    );
+    for (let index = 0; index < 5; ++index) {
+      let star = '<i class="ri-star-fill"></i>';
+      if (index < this.dataBase[cardIndex].rate) {
+        star = '<i class="ri-star-fill u-highlight-color"></i>';
+      }
+      rateContainer.innerHTML += star;
+    }
   }
 }

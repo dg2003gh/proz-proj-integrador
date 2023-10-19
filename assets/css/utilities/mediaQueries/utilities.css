@@ -18,3 +18,7 @@
   overflow-y: hidden;
   margin: 40px 0;
 }
+
+.u-mobile__none {
+  display: none;
+}
